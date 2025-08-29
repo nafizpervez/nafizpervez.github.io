@@ -56,7 +56,6 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-WZXPVQDR2Q");
   </script>
   <body class="container-fluid body_section">
@@ -105,103 +104,265 @@
         </div>
       </nav>
     </header>
+
+    <!-- ============ INLINE CSS (after header only) ============ -->
+    <style>
+      :root{
+        --bar-h: 48px;
+        --bar-bg: #ebe8ff;
+        --bar-fill: linear-gradient(90deg,#6a5af9 0%, #7f6aff 60%, #a191ff 100%);
+        --text-dark: #292651;
+      }
+      body.body_section{
+        background:
+          radial-gradient(1200px 500px at 50% -200px, rgba(122,101,255,.12), transparent 70%),
+          radial-gradient(900px 400px at 90% 120%, rgba(122,101,255,.10), transparent 70%);
+      }
+
+      .Skill-heading{font-weight:800;font-size:2rem;color:var(--text-dark);margin:18px 0;text-align:center}
+
+      /* Top orbit row: left | picture | right */
+      .skills-orbit{
+        display:grid; grid-template-columns: 1fr 460px 1fr;
+        gap:24px; align-items:start; padding:18px 10px 8px;
+        max-width:1200px; margin:0 auto;
+      }
+      .skills-col{display:flex;flex-direction:column;gap:16px}
+
+      /* Center illustration circle with hover */
+      .center-circle{position:relative; display:flex; justify-content:center; align-items:center; min-height:480px;}
+      .circle-wrap{
+        width:420px;height:420px;border-radius:50%;
+        background: radial-gradient(circle at 40% 35%, rgba(122,101,255,.22), rgba(122,101,255,.06) 55%, rgba(122,101,255,0) 70%),
+                    linear-gradient(180deg, #ffffff 0%, #f7f7ff 100%);
+        box-shadow:
+          0 18px 38px rgba(86,74,200,.20),
+          inset 0 1px 0 rgba(255,255,255,.7);
+        display:grid;place-items:center;overflow:hidden;
+        transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+      }
+      .circle-wrap:hover{
+        transform: translateY(-6px) scale(1.04) rotate(-1.5deg);
+        box-shadow:
+          0 28px 52px rgba(86,74,200,.28),
+          0 0 0 10px rgba(122,101,255,.08),
+          inset 0 1px 0 rgba(255,255,255,.8);
+        filter: saturate(1.05);
+      }
+      .circle-wrap img{width:78%;height:auto;filter:drop-shadow(0 10px 22px rgba(0,0,0,.15))}
+
+      /* Skill bar */
+      .SkillBar{width:100%}
+      .skill-card{position:relative;transition:transform .18s ease, box-shadow .18s ease;border-radius:18px}
+      .skill-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(122,101,255,.18)}
+      .skill-meter{
+        position:relative;height:var(--bar-h);border-radius:9999px;background:var(--bar-bg);
+        overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.6), inset 0 -4px 10px rgba(0,0,0,.06);
+      }
+      .skill-fill{
+        position:absolute;inset:0 auto 0 0;width:calc(var(--p,0) * 1%);background:var(--bar-fill);
+        border-radius:inherit;transition:width .9s ease;box-shadow:inset 0 -1px 0 rgba(255,255,255,.35);
+      }
+      .skill-fill::after{
+        content:"";position:absolute;inset:0 auto 0 0;width:38%;transform:translateX(-120%);
+        background:linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 100%);
+        pointer-events:none;
+      }
+      .skill-card:hover .skill-fill::after{animation:shimmer 1.8s linear infinite}
+      @keyframes shimmer{from{transform:translateX(-120%)}to{transform:translateX(320%)}}
+
+      .icon-badge{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:9999px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 14px rgba(0,0,0,.12);z-index:2}
+      .icon-badge .iconify{width:24px;height:24px}
+      .skill-name{position:absolute;left:62px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--text-dark);z-index:2}
+      .skill-percent{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-weight:800;color:var(--text-dark);z-index:2}
+
+      /* Bottom row under the picture: 3 columns to fill middle area */
+      .skills-bottom{
+        max-width:1200px; margin:6px auto 8px; padding:0 10px;
+        display:grid; grid-template-columns: repeat(3, 1fr); gap:18px;
+      }
+      .skills-bottom .skills-col{gap:16px}
+
+      /* OS section (4 columns, single row; scroll horizontally on small screens) */
+      .os-wrap{max-width:1200px;margin:22px auto 32px;padding:0 10px;overflow-x:auto}
+      .os-grid{display:grid;grid-template-columns:repeat(4,minmax(260px,1fr));gap:18px;min-width:1040px}
+      .subheading{font-weight:800;font-size:1.35rem;margin:16px 0 12px;text-align:center;color:var(--text-dark)}
+
+      /* responsive */
+      @media (max-width: 992px){
+        .skills-orbit{grid-template-columns:1fr}
+        .center-circle{order:-1;margin-bottom:10px}
+        .circle-wrap{width:360px;height:360px}
+        .skills-bottom{grid-template-columns:1fr}
+      }
+      @media (max-width: 480px){
+        .circle-wrap{width:300px;height:300px}
+        .skill-name{left:56px}
+      }
+    </style>
+
+    <!-- =================== CONTENT AFTER HEADER =================== -->
     <section class="Section1">
-      <div class="row">
-        <div class="col-lg-6 col-md-6">
-          <img class="skill-img" src="Image/Skills.svg" alt="" />
-        </div>
-        <div class="col-lg-6 col-md-6">
-          <div id="SkillBox">
-            <center class="Skill-heading">Proficiency</center>
-            <div class="SkillBar">
-              <div id="Skill-Cplus">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="logos:c-plusplus"
-                  data-inline="false"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
+      <h2 class="Skill-heading">Proficiency</h2>
 
-            <div class="SkillBar">
-              <div id="Skill-C">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="logos:c"
-                  data-inline="false"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
+      <!-- Top row: left | center image | right -->
+      <div class="skills-orbit">
+        <div id="skills-left" class="skills-col"></div>
 
-            <div class="SkillBar">
-              <div id="Skill-Python">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="logos:python"
-                  data-inline="false"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
-
-            <div class="SkillBar">
-              <div id="Skill-HTML">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="logos:html-5"
-                  data-inline="false"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
-
-            <div class="SkillBar">
-              <div id="Skill-CSS">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="logos:css-3"
-                  data-inline="false"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
-
-            <div class="SkillBar">
-              <div id="Skill-JS">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="logos:javascript"
-                  data-inline="false"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
-
-            <div class="SkillBar">
-              <div id="Skill-SQL">
-                <span
-                  class="Skill-Area iconify"
-                  data-icon="dashicons:database"
-                  data-inline="false"
-                  style="color: black;"
-                  data-width="35"
-                  data-height="35"
-                ></span>
-              </div>
-            </div>
+        <div class="center-circle">
+          <div class="circle-wrap" title="Hover me ✨">
+            <img src="Image/Skills.svg" alt="Skills Illustration" />
           </div>
         </div>
+
+        <div id="skills-right" class="skills-col"></div>
+      </div>
+
+      <!-- Bottom row with 3 columns to cover middle area -->
+      <div class="skills-bottom">
+        <div id="skills-bot-1" class="skills-col"></div>
+        <div id="skills-bot-2" class="skills-col"></div>
+        <div id="skills-bot-3" class="skills-col"></div>
+      </div>
+
+      <!-- OS comfort (4 columns, 1 row) -->
+      <div class="os-wrap">
+        <div class="subheading">Operating System Comfort</div>
+        <div id="OSBars" class="os-grid"></div>
       </div>
     </section>
+
     <footer class="footer">Made with ❤️ by Nafiz Pervez</footer>
     <script src="dark-mode.js"></script>
+
+    <!-- ===== Render all skills + OS bars ===== -->
+    <script>
+      // Skills (with your prior replacements + CI/CD added)
+      const skills = [
+        { name:'C++', icon:'logos:c-plusplus', level:88 },
+        { name:'C', icon:'logos:c', level:82 },
+        { name:'Python', icon:'logos:python', level:90 },
+        { name:'HTML', icon:'logos:html-5', level:86 },
+        { name:'CSS', icon:'logos:css-3', level:72 },
+
+        /* from here we want the 3-column middle row to begin on the LEFT */
+        { name:'JavaScript', icon:'logos:javascript', level:70 },
+
+        { name:'SQL (General)', icon:'mdi:database', level:78 },
+        { name:'C#', icon:'mdi:language-csharp', level:84 },
+        { name:'.NET', icon:'simple-icons:dotnet', level:82 },
+        { name:'ArcGIS (Esri)', icon:'simple-icons:esri', level:92 },
+        { name:'React', icon:'logos:react', level:81 },
+        { name:'Next.js', icon:'simple-icons:nextdotjs', level:78 },
+        { name:'Tailwind CSS', icon:'logos:tailwindcss', level:80 },
+        { name:'Git', icon:'logos:git-icon', level:85 },
+        { name:'Node.js', icon:'logos:nodejs-icon', level:76 },
+        { name:'NVM', icon:'mdi:console', level:70 },
+        { name:'Bash', icon:'simple-icons:gnubash', level:65 },
+        { name:'Docker', icon:'logos:docker-icon', level:68 },
+        { name:'Docker Compose', icon:'simple-icons:docker', level:62 },
+        { name:'Kubernetes', icon:'logos:kubernetes', level:55 },
+        { name:'Azure', icon:'logos:microsoft-azure', level:60 },
+        { name:'VMware', icon:'simple-icons:vmware', level:58 },
+        { name:'Deployment', icon:'mdi:rocket-launch-outline', level:75 },
+
+        /* NEW: CI/CD */
+        { name:'CI/CD', icon:'mdi:infinity', level:80 },
+
+        { name:'SQLAlchemy', icon:'simple-icons:sqlalchemy', level:70 },
+        { name:'MySQL', icon:'logos:mysql', level:78 },
+        { name:'SQL Server', icon:'simple-icons:microsoftsqlserver', level:77 },
+        { name:'PostgreSQL', icon:'logos:postgresql', level:72 },
+        { name:'MongoDB', icon:'logos:mongodb-icon', level:73 },
+        { name:'GeoDatabase', icon:'mdi:database', level:86 },
+        { name:'PHP', icon:'logos:php', level:65 },
+        { name:'Laravel', icon:'logos:laravel', level:68 },
+        { name:'XAMPP', icon:'simple-icons:xampp', level:66 },
+        { name:'ArcPy', icon:'mdi:snake', level:88 },
+        { name:'JAVA', icon:'logos:java', level:82 },
+        { name:'PyTorch', icon:'logos:pytorch-icon', level:79 },
+        { name:'Deep Learning', icon:'mdi:brain', level:82 },
+        { name:'Machine Learning', icon:'mdi:robot-outline', level:84 }, // stays in RIGHT column top
+        { name:'Neural Network', icon:'mdi:source-branch', level:82 },   // stays in RIGHT column top
+        { name:'DCGAN', icon:'mdi:blur', level:70 },                      // stays in RIGHT column top
+        { name:'CUDA', icon:'simple-icons:nvidia', level:60 },            // stays in RIGHT column top
+        { name:'Photoshop', icon:'simple-icons:adobephotoshop', level:62 },// last item in RIGHT column top
+
+        /* from here we want the 3-column middle row to begin on the RIGHT */
+        { name:'Figma', icon:'logos:figma', level:65 },
+
+        { name:'GoLand', icon:'logos:goland', level:25 },
+        { name:'REST API', icon:'mdi:api', level:50 },
+        { name:'Flutter', icon:'logos:flutter', level:58 },
+        { name:'Android Studio', icon:'simple-icons:androidstudio', level:60 },
+        { name:'RabbitMQ', icon:'simple-icons:rabbitmq', level:68 },
+        { name:'Middleware services', icon:'mdi:server', level:72 },
+        { name:'ArcGIS Enterprise', icon:'simple-icons:esri', level:88 },
+        { name:'ArcGIS StoryMaps', icon:'mdi:book-open-variant', level:80 },
+        { name:'ArcGIS Survey123', icon:'mdi:clipboard-text-outline', level:84 },
+        { name:'ArcGIS Pro', icon:'simple-icons:esri', level:92 },
+        { name:'Microsoft Office', icon:'simple-icons:microsoftoffice', level:90 },
+        { name:'Project Management', icon:'mdi:clipboard-check-outline', level:78 }
+      ];
+
+      const osComfort = [
+        { name:'Linux', icon:'logos:linux-tux', level:92 },
+        { name:'macOS', icon:'logos:apple', level:91 },
+        { name:'Windows', icon:'logos:microsoft-windows', level:95 },
+        { name:'Server OS', icon:'mdi:server', level:78 }
+      ];
+
+      function skillHTML(s){
+        return `
+          <div class="SkillBar skill-card" title="${s.name}: ${s.level}%">
+            <div class="skill-meter" style="--p:${s.level}">
+              <span class="icon-badge">
+                <span class="iconify" data-icon="${s.icon}" data-width="24" data-height="24"></span>
+              </span>
+              <span class="skill-name">${s.name}</span>
+              <span class="skill-percent">${s.level}%</span>
+              <div class="skill-fill"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      // --- LAYOUT LOGIC ---
+      // Start 3-column grid from "JavaScript" on the left, and from "Figma" on the right.
+      const startLeftName = 'JavaScript';
+      const startRightName = 'Figma';
+      const rightKeepTop = new Set(['Machine Learning','Neural Network','DCGAN','CUDA','Photoshop']);
+
+      const idxLeftStart = skills.findIndex(s => s.name === startLeftName);
+      const idxRightStart = skills.findIndex(s => s.name === startRightName);
+
+      // Left column (top) = everything before JavaScript
+      const leftTop = skills.slice(0, idxLeftStart);
+
+      // Right column (top) = only the hand-picked items before Figma
+      const rightTop = skills.filter((s,i) => i < idxRightStart && rightKeepTop.has(s.name));
+
+      // Bottom grid = everything from JavaScript onward EXCEPT the rightTop items,
+      // plus everything from Figma onward.
+      const bottom = skills.filter((s,i) => {
+        if (i < idxLeftStart) return false;             // before JS -> in leftTop
+        if (i < idxRightStart && rightKeepTop.has(s.name)) return false; // pinned rightTop
+        return true; // JS..end, but skipping those pinned to rightTop
+      });
+
+      // Distribute bottom into 3 columns (balanced)
+      const botCols = [[],[],[]];
+      bottom.forEach((item, i) => botCols[i % 3].push(item));
+
+      // Render
+      document.getElementById('skills-left').innerHTML  = leftTop.map(skillHTML).join('');
+      document.getElementById('skills-right').innerHTML = rightTop.map(skillHTML).join('');
+      document.getElementById('skills-bot-1').innerHTML = botCols[0].map(skillHTML).join('');
+      document.getElementById('skills-bot-2').innerHTML = botCols[1].map(skillHTML).join('');
+      document.getElementById('skills-bot-3').innerHTML = botCols[2].map(skillHTML).join('');
+
+      // OS (4 columns)
+      document.getElementById('OSBars').innerHTML = osComfort.map(skillHTML).join('');
+    </script>
   </body>
 </html>
