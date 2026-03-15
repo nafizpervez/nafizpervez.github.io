@@ -22,7 +22,6 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
@@ -47,7 +46,247 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      :root {
+        --cert-card-radius: 22px;
+        --cert-shadow: 0 14px 38px rgba(15, 23, 42, 0.08);
+        --cert-shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.14);
+        --cert-border: rgba(148, 163, 184, 0.18);
+        --cert-preview-bg: linear-gradient(
+          135deg,
+          #eff6ff 0%,
+          #f8fafc 50%,
+          #eef2ff 100%
+        );
+      }
+
+      #section3 {
+        padding-top: 30px;
+        padding-bottom: 80px;
+      }
+
+      .certificate-subtitle {
+        max-width: 860px;
+        margin: 10px auto 36px;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.8;
+        opacity: 0.85;
+      }
+
+      .certificate-grid .col-lg-3,
+      .certificate-grid .col-md-6,
+      .certificate-grid .col-sm-12 {
+        display: flex;
+      }
+
+      .certificate-card {
+        width: 100%;
+        border: 1px solid var(--cert-border);
+        border-radius: var(--cert-card-radius);
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: var(--cert-shadow);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .certificate-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--cert-shadow-hover);
+        border-color: rgba(59, 130, 246, 0.25);
+      }
+
+      .certificate-thumb {
+        height: 220px;
+        background: var(--cert-preview-bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .certificate-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .pdf-thumb {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: var(--cert-preview-bg);
+      }
+
+      .pdf-thumb i {
+        font-size: 4rem;
+        color: #dc2626;
+        margin-bottom: 12px;
+      }
+
+      .pdf-thumb .pdf-label {
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+        color: #0f172a;
+        text-transform: uppercase;
+      }
+
+      .pdf-thumb .pdf-name {
+        font-size: 0.9rem;
+        line-height: 1.45;
+        margin-top: 10px;
+        color: #334155;
+        word-break: break-word;
+      }
+
+      .certificate-card .card-body {
+        padding: 1.15rem 1rem 1.1rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .certificate-title {
+        font-size: 1rem;
+        font-weight: 800;
+        line-height: 1.45;
+        margin-bottom: 0.55rem;
+        min-height: 3rem;
+        color: #0f172a;
+      }
+
+      .certificate-issuer {
+        font-size: 0.92rem;
+        color: #64748b;
+        margin-bottom: 0.85rem;
+        min-height: 2.5rem;
+      }
+
+      .certificate-meta {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.85rem;
+      }
+
+      .certificate-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(59, 130, 246, 0.08);
+        color: #1d4ed8;
+        font-weight: 700;
+      }
+
+      .certificate-open {
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .certificate-open i {
+        margin-left: 4px;
+      }
+
+      .certificate-modal .modal-content {
+        border: none;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(2, 8, 23, 0.25);
+      }
+
+      .certificate-modal .modal-header {
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        padding: 18px 24px;
+      }
+
+      .certificate-modal .modal-title {
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .certificate-modal .modal-body {
+        padding: 18px;
+        background: #f8fafc;
+      }
+
+      .certificate-preview-wrap {
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.16);
+      }
+
+      .certificate-preview-wrap iframe {
+        width: 100%;
+        height: 78vh;
+        border: 0;
+        display: block;
+      }
+
+      .certificate-preview-wrap img {
+        width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        display: block;
+        background: #f8fafc;
+      }
+
+      .certificate-modal-footer-actions {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding-top: 16px;
+        flex-wrap: wrap;
+      }
+
+      .certificate-btn {
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 991.98px) {
+        .certificate-thumb {
+          height: 210px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .certificate-title {
+          min-height: auto;
+        }
+
+        .certificate-issuer {
+          min-height: auto;
+        }
+
+        .certificate-thumb {
+          height: 200px;
+        }
+      }
+    </style>
   </head>
+
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-WZXPVQDR2Q"
@@ -58,7 +297,6 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-WZXPVQDR2Q");
   </script>
 
@@ -108,6 +346,7 @@
         </div>
       </nav>
     </header>
+
     <section id="Section1">
       <div class="row">
         <div class="col-lg-6 col-md">
@@ -132,8 +371,8 @@
             </li>
             <li>
               <a href="https://www.hackerrank.com/nafiz_pervez" target="_blank">
-                <i class="fab fa-hackerrank fa-4x"></i
-              ></a>
+                <i class="fab fa-hackerrank fa-4x"></i>
+              </a>
             </li>
             <li>
               <a href="https://leetcode.com/nafizpervez/" target="_blank">
@@ -150,6 +389,7 @@
         </div>
       </div>
     </section>
+
     <section>
       <div class="container">
         <div class="Heading">
@@ -158,14 +398,15 @@
         </div>
         <div class="timeline">
           <div class="timeline-month">Education</div>
+
           <div class="timeline-section">
             <div class="timeline-date">2016 - 2021</div>
             <div class="row">
               <div class="col-lg">
                 <div class="timeline-box">
                   <div class="box-title">
-                    <i class="fas fa-graduation-cap" aria-hidden="true"></i
-                    >North South University
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    North South University
                     <p class="degree">
                       B.Sc. in Computer Science and Engineering
                     </p>
@@ -177,8 +418,9 @@
                       href="https://www.northsouth.edu/"
                       target="_blank"
                       style="color: white"
-                      >Website</a
                     >
+                      Website
+                    </a>
                     <div class="box-item">
                       💥 Studied software engineering subjects like Data
                       Structures, Algorithms, DBMS, OS etc.
@@ -195,8 +437,8 @@
               <div class="col-lg">
                 <div class="timeline-box">
                   <div class="box-title">
-                    <i class="fas fa-school" aria-hidden="true"></i> Milestone
-                    College, Dhaka
+                    <i class="fas fa-school" aria-hidden="true"></i>
+                    Milestone College, Dhaka
                     <p class="degree">Higher Secondary Certificate (HSC)</p>
                   </div>
                   <div class="box-content">
@@ -205,8 +447,9 @@
                       role="button"
                       style="color: white"
                       href="https://www.milestonecollege.com/"
-                      >Website</a
                     >
+                      Website
+                    </a>
                     <div class="box-item">
                       💥 Studied the pure science subjects Physics, Chemistry,
                       Mathematics, Biology etc.
@@ -223,8 +466,8 @@
               <div class="col-lg">
                 <div class="timeline-box">
                   <div class="box-title">
-                    <i class="fas fa-school" aria-hidden="true"></i> Milestone
-                    School and College, Dhaka
+                    <i class="fas fa-school" aria-hidden="true"></i>
+                    Milestone School and College, Dhaka
                     <p class="degree">Secondary School Certificate (SSC)</p>
                   </div>
                   <div class="box-content">
@@ -233,8 +476,9 @@
                       role="button"
                       style="color: white"
                       href="https://www.milestonecollege.com/"
-                      >Website</a
                     >
+                      Website
+                    </a>
                     <div class="box-item">
                       💥 Studied the pure science subjects Physics, Chemistry,
                       Mathematics etc.
@@ -251,8 +495,8 @@
               <div class="col-lg">
                 <div class="timeline-box">
                   <div class="box-title">
-                    <i class="fas fa-school" aria-hidden="true"></i> Bangladesh
-                    Navy School, Dhaka
+                    <i class="fas fa-school" aria-hidden="true"></i>
+                    Bangladesh Navy School, Dhaka
                     <p class="degree">Junior School Certificate (JSC)</p>
                   </div>
                   <div class="box-content">
@@ -261,8 +505,9 @@
                       role="button"
                       style="color: white"
                       href="https://bncd.edu.bd/"
-                      >Website</a
                     >
+                      Website
+                    </a>
                     <div class="box-item">
                       💥 Studied subjects Physics, Chemistry, Mathematics etc.
                     </div>
@@ -274,1435 +519,486 @@
         </div>
       </div>
     </section>
+
     <section id="section3">
       <div class="Heading">
         <h1>Certifications</h1>
       </div>
+      <p class="certificate-subtitle">
+        A consolidated view of professional certificates across GIS, AI, data,
+        cloud, business communication, Docker, and platform engineering. Click
+        any card to preview the certificate directly on the page.
+      </p>
 
       <div class="container certificate">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Business Email.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Business Email.jpg"
-                  alt="Business Email"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Business Email</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
+        <div class="row certificate-grid" id="certificateGrid"></div>
+      </div>
+    </section>
 
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/AI for Business Professionals.pdf"
+    <div
+      class="modal fade certificate-modal"
+      id="certificatePreviewModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="certificatePreviewModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="certificatePreviewModalLabel">
+              Certificates
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
             >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/AI for Business Professionals.jpg"
-                  alt="AI for Business Professionals"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    AI for Business Professionals
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/AI for Beginners.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/AI for Beginners.jpg"
-                  alt="AI for Beginners"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">AI for Beginners</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Professional Networking for Career Growth.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Professional Networking for Career Growth.jpg"
-                  alt="Professional Networking for Career Growth"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Professional Networking for Career Growth
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Introduction to Cybersecurity Awareness.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Introduction to Cybersecurity Awareness.jpg"
-                  alt="Introduction to Cybersecurity Awareness"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Introduction to Cybersecurity Awareness
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Agile Project Management.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Agile Project Management.jpg"
-                  alt="Agile Project Management"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Agile Project Management
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Critical Thinking in the AI Era.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Critical Thinking in the AI Era.jpg"
-                  alt="Critical Thinking in the AI Era"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Critical Thinking in the AI Era
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Cartography.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Cartography.jpg"
-                  alt="Cartography"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Cartography</p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Essentials of MS Excel - Formulas and Functions.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Essentials of MS Excel - Formulas and Functions.jpg"
-                  alt="Essentials of MS Excel - Formulas and Functions"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Essentials of MS Excel - Formulas and Functions
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Agents and Environments in AI.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Agents and Environments in AI.jpg"
-                  alt="Basics of Agents and Environments in AI"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Agents & Environments in AI
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/ArcGIS Online - Editing Essentials.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS Online - Editing Essentials.jpg"
-                  alt="ArcGIS Online - Editing Essentials"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ArcGIS Online: Editing Essentials
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Managing Data in ArcGIS.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Managing Data in ArcGIS.jpg"
-                  alt="Managing Data in ArcGIS"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Managing Data in ArcGIS
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Place-Based Storytelling Using ArcGIS StoryMaps.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Place-Based Storytelling Using ArcGIS StoryMaps.jpg"
-                  alt="Place-Based Storytelling Using ArcGIS StoryMaps"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Place-Based Storytelling Using ArcGIS StoryMaps
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/ArcGIS API for Python.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS API for Python.jpg"
-                  alt="ArcGIS API for Python"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ArcGIS API for Python
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/ArcGIS Online - Performing Analysis.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS Online - Performing Analysis.jpg"
-                  alt="ArcGIS Online - Performing Analysis"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ArcGIS Online: Performing Analysis
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/ArcGIS Online - Creating and Styling a Map.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS Online - Creating and Styling a Map.jpg"
-                  alt="ArcGIS Online - Creating and Styling a Map"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ArcGIS Online: Creating and Styling a Map
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/ArcGIS for Excel.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS for Excel.jpg"
-                  alt="ArcGIS for Excel"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">ArcGIS for Excel</p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/ArcGIS Maps SDK for JavaScript.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS Maps SDK for JavaScript.jpg"
-                  alt="ArcGIS Maps SDK for JavaScript"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ArcGIS Maps SDK for JavaScript
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/ArcGIS Online Basics.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS Online Basics.jpg"
-                  alt="ArcGIS Online Basics"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">ArcGIS Online Basics</p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/GIS Basics.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/GIS Basics.jpg"
-                  alt="GIS Basics"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">GIS Basics</p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Basics of Pandas.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Pandas.jpg"
-                  alt="Basics of Pandas"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Basics of Pandas</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Make an Impact with Modern Geo Apps.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Make an Impact with Modern Geo Apps.jpg"
-                  alt="Make an Impact with Modern Geo Apps"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Make an Impact with Modern Geo Apps
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/GIS for Climate Action.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/GIS for Climate Action.jpg"
-                  alt="GIS for Climate Action"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    GIS for Climate Action
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Artificial Intelligence.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Artificial Intelligence.jpg"
-                  alt="Basics of Artificial Intelligence"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Artificial Intelligence
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Maturity Models in Business Intelligence.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Maturity Models in Business Intelligence.jpg"
-                  alt="Basics of Maturity Models in Business Intelligence"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Maturity Models in Business Intelligence
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of SQL - Aggregate Functions and Joins.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of SQL - Aggregate Functions and Joins.jpg"
-                  alt="Basics of SQL - Aggregate Functions and Joins"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of SQL - Aggregate Functions & Joins
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Univariate Bivariate and Multivariate Analysis.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Univariate Bivariate and Multivariate Analysis.jpg"
-                  alt="Basics of Univariate Bivariate and Multivariate Analysis"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Univariate, Bivariate & Multivariate Analysis
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Regression Algorithms in Machine Learning.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Regression Algorithms in Machine Learning.jpg"
-                  alt="Basics of Regression Algorithms in Machine Learning"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Regression Algorithms in Machine Learning
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Artificial Intelligence - Learning Models.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Artificial Intelligence - Learning Models.jpg"
-                  alt="Basics of Artificial Intelligence - Learning Models"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Artificial Intelligence - Learning Models
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Basics of Data Cleaning.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Data Cleaning.jpg"
-                  alt="Basics of Data Cleaning"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Data Cleaning
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of SQL Statements and Indexes.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of SQL Statements and Indexes.jpg"
-                  alt="Basics of SQL Statements and Indexes"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of SQL Statements & Indexes
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Essentials of Data Visualization using MS Excel.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Essentials of Data Visualization using MS Excel.jpg"
-                  alt="Essentials of Data Visualization using MS Excel"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Essentials of Data Visualization using MS Excel
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Acacia University
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Digital Marketing.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Digital Marketing.jpg"
-                  alt="Basics of Digital Marketing"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Digital Marketing
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Master ChatGPT.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Master ChatGPT.jpg"
-                  alt="Master ChatGPT"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Master ChatGPT</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Allison / AI Mental Global Education
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/ChatGPT Advanced Course.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ChatGPT Advanced Course.jpg"
-                  alt="ChatGPT Advanced Course"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ChatGPT Advanced Course
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Simplilearn
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Effective Leadership.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Effective Leadership.jpg"
-                  alt="Effective Leadership"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Effective Leadership</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by HP LIFE
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Basics of Python.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Python.jpg"
-                  alt="Basics of Python"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Basics of Python</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Basics of Data Science.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Data Science.jpg"
-                  alt="Basics of Data Science"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Data Science
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basics of Machine Learning Algorithms.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basics of Machine Learning Algorithms.jpg"
-                  alt="Basics of Machine Learning Algorithms"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basics of Machine Learning Algorithms
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Cambridge International Qualifications, UK
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Innovating with Google Cloud AI.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Innovating with Google Cloud AI.jpg"
-                  alt="Innovating with Google Cloud AI"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Innovating with Google Cloud AI
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Simplilearn
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/AI Claude.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/AI Claude.jpg"
-                  alt="AI Claude"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">AI Claude</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Oxford Home Study College
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Convolutional Neural Networks.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Convolutional Neural Networks.jpg"
-                  alt="Convolutional Neural Networks"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Convolutional Neural Networks
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Oxford Home Study College
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Generative AI for Beginners.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Generative AI for Beginners.jpg"
-                  alt="Generative AI for Beginners"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Generative AI for Beginners
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Simplilearn
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Google Analytics Certification.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Google Analytics Certification.jpg"
-                  alt="Google Analytics Certification"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Google Analytics Certification
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Google Digital Academy (Skillshop)
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Putting Your GIS Skills to Work.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Putting Your GIS Skills to Work.jpg"
-                  alt="Putting Your GIS Skills to Work"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Putting Your GIS Skills to Work
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Telling Stories With GIS Maps.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Telling Stories With GIS Maps.jpg"
-                  alt="Telling Stories With GIS Maps"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Telling Stories With GIS Maps
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Getting Information from a GIS Map.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Getting Information from a GIS Map.jpg"
-                  alt="Getting Information from a GIS Map"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Getting Information from a GIS Map
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Exploring GIS Maps.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Exploring GIS Maps.jpg"
-                  alt="Exploring GIS Maps"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Exploring GIS Maps</p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Using GIS to Solve Problems.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Using GIS to Solve Problems.jpg"
-                  alt="Using GIS to Solve Problems"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Using GIS to Solve Problems
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Information Systems Development and Society.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Information Systems Development and Society.jpg"
-                  alt="Information Systems Development and Society"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Information Systems Development and Society
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by Alison
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/ArcGIS Pro Basics.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ArcGIS Pro Basics.jpg"
-                  alt="ArcGIS Pro Basics"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">ArcGIS Pro Basics</p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Basic of JavaScript Web Apps.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Basic of JavaScript Web Apps.jpg"
-                  alt="Basic of JavaScript Web Apps"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Basic of JavaScript Web Apps
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Pair Programming with a Large Language Model.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Pair Programming with a Large Language Model.jpg"
-                  alt="Pair Programming with a Large Language Model"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Pair Programming with a Large Language Model
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by DeepLearning.AI
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Prompt Engineering with Llama.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Prompt Engineering with Llama.jpg"
-                  alt="Prompt Engineering with Llama"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Prompt Engineering with Llama
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by DeepLearning.AI
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/PAX PaxMe Platform Solution Development.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PAX PaxMe Platform Solution Development.jpg"
-                  alt="PAX PaxMe Platform Solution Development"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    PAX PaxMe Platform Solution Development
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/PED Pin Entry Device System Development.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PED Pin Entry Device System Development.jpg"
-                  alt="PED Pin Entry Device System Development"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    PED (Pin Entry Device) System Development
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/PAXSTORE Deployment.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PAXSTORE Deployment.jpg"
-                  alt="PAXSTORE Deployment"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">PAXSTORE Deployment</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/PAX Paydroid RDC Template Development.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PAX Paydroid RDC Template Development.jpg"
-                  alt="PAX Paydroid RDC Template Development"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    PAX Paydroid RDC Template Development
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/PAX IOT Soundbox Application Development.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PAX IOT Soundbox Application Development.jpg"
-                  alt="PAX IOT Soundbox Application Development"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    PAX IOT Soundbox Application Development
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/PAX PaxMe Application Development.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PAX PaxMe Application Development.jpg"
-                  alt="PAX PaxMe Application Development"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    PAX PaxMe Application Development
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/ChatGPT Prompt Engineering for Developers.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/ChatGPT Prompt Engineering for Developers.jpg"
-                  alt="ChatGPT Prompt Engineering for Developers"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    ChatGPT Prompt Engineering for Developers
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by DeepLearning.AI
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Performing Analysis Using ArcGIS API for Python.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Performing Analysis Using ArcGIS API for Python.jpg"
-                  alt="Performing Analysis Using ArcGIS API for Python"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Performing Analysis Using ArcGIS API for Python
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Accessing Data in a Portal Using ArcGIS API for Python.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Accessing Data in a Portal Using ArcGIS API for Python.jpg"
-                  alt="Accessing Data in a Portal Using ArcGIS API for Python"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Accessing Data in a Portal Using ArcGIS API for Python
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Introduction to ArcGIS API for Python.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Introduction to ArcGIS API for Python.jpg"
-                  alt="Introduction to ArcGIS API for Python"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Introduction to ArcGIS API for Python
-                  </p>
-                  <p class="certificate-text" style="color: gray">- by Esri</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Learning Docker Compose.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Learning Docker Compose.jpg"
-                  alt="Learning Docker Compose"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Learning Docker Compose
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by LinkedIn
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/PAX PaxMe Platform Deployment for Developer.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/PAX PaxMe Platform Deployment for Developer.jpg"
-                  alt="PAX PaxMe Platform Deployment for Developer"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    PAX PaxMe Platform Deployment for Developer
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a
-              target="_blank"
-              href="Certificates/Paydroid OS and SDK Development.pdf"
-            >
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Paydroid OS and SDK Development.jpg"
-                  alt="Paydroid OS and SDK Development"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">
-                    Paydroid OS & SDK Development
-                  </p>
-                  <p class="certificate-text" style="color: gray">
-                    - by PAX Technology EMEA
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <a target="_blank" href="Certificates/Learning Docker.pdf">
-              <div class="card mb-4 box-shadow">
-                <img
-                  class="card-img-top"
-                  src="Image/Certificates/Learning Docker.jpg"
-                  alt="Learning Docker"
-                />
-                <div class="card-body">
-                  <p class="card-text certificate-text">Learning Docker</p>
-                  <p class="certificate-text" style="color: gray">
-                    - by LinkedIn Learn
-                  </p>
-                </div>
-              </div>
-            </a>
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div
+              class="certificate-preview-wrap"
+              id="certificatePreviewBody"
+            ></div>
+            <div class="certificate-modal-footer-actions">
+              <a
+                id="certificateOpenLink"
+                href="#"
+                target="_blank"
+                class="btn btn-dark certificate-btn"
+              >
+                Open Full File
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
     <footer class="footer">Made with 🧘 by Nafiz Pervez ✌︎㋡</footer>
+
+    <script>
+      const certificates = [
+        {
+          title: "Business Email",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/Business Email.pdf",
+        },
+        {
+          title: "AI for Business Professionals",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/AI for Business Professionals.pdf",
+        },
+        {
+          title: "AI for Beginners",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/AI for Beginners.pdf",
+        },
+        {
+          title: "Professional Networking for Career Growth",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/Professional Networking for Career Growth.pdf",
+        },
+        {
+          title: "Introduction to Cybersecurity Awareness",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/Introduction to Cybersecurity Awareness.pdf",
+        },
+        {
+          title: "Agile Project Management",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/Agile Project Management.pdf",
+        },
+        {
+          title: "Critical Thinking in the AI Era",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/Critical Thinking in the AI Era.pdf",
+        },
+        {
+          title: "Effective Leadership",
+          issuer: "HP LIFE",
+          type: "pdf",
+          file: "Image/Certificates/Effective Leadership.pdf",
+        },
+        {
+          title: "Information Systems Development and Society",
+          issuer: "Alison",
+          type: "pdf",
+          file: "Image/Certificates/Alison_Certificate-3320-46848548_Information Systems Development and Society.pdf",
+        },
+        {
+          title: "ArcGIS Online Basics",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/ArcGIS Online Basics_Certificate.pdf",
+        },
+        {
+          title: "ArcGIS Online: Performing Analysis",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/ArcGIS Online_ Performing Analysis_Certificate_08122025.pdf",
+        },
+        {
+          title: "ArcGIS Pro Basics",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/ArcGIS Pro Basics_Certificate_03052025.pdf",
+        },
+        {
+          title: "Exploring GIS Maps",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Exploring GIS Maps_Certificate_03092025.pdf",
+        },
+        {
+          title: "Getting Information from a GIS Map",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Getting Information from a GIS Map_Certificate_03092025.pdf",
+        },
+        {
+          title: "GIS Basics",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/GIS Basics_Certificate.pdf",
+        },
+        {
+          title: "Make an Impact with Modern Geo Apps",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Make an Impact with Modern Geo Apps_Certificate_05012025.pdf",
+        },
+        {
+          title: "Putting Your GIS Skills to Work",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Putting Your GIS Skills to Work_Certificate_03092025.pdf",
+        },
+        {
+          title: "Telling Stories with GIS Maps",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Telling Stories with GIS Maps_Certificate_03092025.pdf",
+        },
+        {
+          title: "Using GIS to Solve Problems",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Using GIS to Solve Problems_Certificate_03092025.pdf",
+        },
+        {
+          title: "Performing Analysis Using ArcGIS API for Python",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Performing Analysis Using ArcGIS API for Python_Certificate_05302024.pdf",
+        },
+        {
+          title: "Accessing Data in a Portal Using ArcGIS API for Python",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Accessing Data in a Portal Using ArcGIS API for Python_Certificate_05302024.pdf",
+        },
+        {
+          title: "Introduction to ArcGIS API for Python",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Introduction to ArcGIS API for Python_Certificate_08192025.pdf",
+        },
+        {
+          title: "Basics of Artificial Intelligence",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Artificial Intelligence_certificate.pdf",
+        },
+        {
+          title: "Basics of Artificial Intelligence - Learnings Models",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Artificial Intelligence - Learnings Models_certificate.pdf",
+        },
+        {
+          title: "Basics of Data Cleaning",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Data Cleaning_certificate.pdf",
+        },
+        {
+          title: "Basics of Data Science",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Data Science.pdf",
+        },
+        {
+          title: "Basics of Digital Marketing",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Digital Marketing_certificate.pdf",
+        },
+        {
+          title: "Basics of JavaScript Web Apps",
+          issuer: "Esri",
+          type: "pdf",
+          file: "Image/Certificates/Basics of JavaScript Web Apps_Certificate_03052025.pdf",
+        },
+        {
+          title: "Basics of Machine Learning Algorithms",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Machine Learning.pdf",
+        },
+        {
+          title: "Basics of Maturity Models in Business Intelligence",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Maturity Models in Business Intelligence_certificate.pdf",
+        },
+        {
+          title: "Basics of Python",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Python.pdf",
+        },
+        {
+          title: "Basics of Regression Algorithm in Machine Learning",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Regression Algorithm in Machine Learning_certificate.pdf",
+        },
+        {
+          title: "Basics of SQL Statements & Indexes",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of SQL Statements & Indexes_certificate.pdf",
+        },
+        {
+          title: "Basics of SQL - Aggregate Functions & Joins",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of SQL- Aggregate Functions & Joins_certificate.pdf",
+        },
+        {
+          title: "Basics of Univariate, Bivariate & Multivariate Analysis",
+          issuer: "Cambridge International Qualifications, UK",
+          type: "pdf",
+          file: "Image/Certificates/Basics of Univariate, Bivariate & Multivariate Analysis_certificate.pdf",
+        },
+        {
+          title: "Essentials of Data Visualization using MS Excel",
+          issuer: "Acacia University",
+          type: "pdf",
+          file: "Image/Certificates/Essentials of Data Visualization using MS_EXCEL_certificate.pdf",
+        },
+        {
+          title: "Master ChatGPT",
+          issuer: "AI Mental Global Education",
+          type: "pdf",
+          file: "Image/Certificates/Master ChatGPT_certificate.pdf",
+        },
+        {
+          title: "ChatGPT Advanced Course",
+          issuer: "Simplilearn",
+          type: "pdf",
+          file: "Image/Certificates/ChatGPT Advanced Course.pdf",
+        },
+        {
+          title: "Innovating with Google Cloud AI",
+          issuer: "Simplilearn",
+          type: "pdf",
+          file: "Image/Certificates/Innovating with Google Cloud AI.pdf",
+        },
+        {
+          title: "AI Claude Free Course",
+          issuer: "Oxford Home Study College",
+          type: "pdf",
+          file: "Image/Certificates/AI Claude Free Course.pdf",
+        },
+        {
+          title: "Convolutional Neural Networks Free Course",
+          issuer: "Oxford Home Study College",
+          type: "pdf",
+          file: "Image/Certificates/Convolutional Neural Networks Free Course.pdf",
+        },
+        {
+          title: "Generative AI for Beginners",
+          issuer: "Simplilearn",
+          type: "pdf",
+          file: "Image/Certificates/Generative AI for Beginners.pdf",
+        },
+        {
+          title: "Google Analytics Certification",
+          issuer: "Google Digital Academy (Skillshop)",
+          type: "image",
+          file: "Image/Certificates/Google Analytics Certification.jpg",
+        },
+        {
+          title: "Learning Docker Compose",
+          issuer: "LinkedIn Learning",
+          type: "pdf",
+          file: "Image/Certificates/CertificateOfCompletion_Learning Docker Compose.pdf",
+        },
+        {
+          title: "Learning Docker",
+          issuer: "LinkedIn Learning",
+          type: "pdf",
+          file: "Image/Certificates/CertificateOfCompletion_Learning Docker.pdf",
+        },
+        {
+          title: "PAX PaxMe Platform Deployment for Developer",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX  PaxME Platform Deployment for Developer.pdf",
+        },
+        {
+          title: "PAX IOT Soundbox Application Development",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX IOT Soundbox Application Development.pdf",
+        },
+        {
+          title: "PAX PaxMe Application Development",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX PaxMe Application Development.pdf",
+        },
+        {
+          title: "PAX PaxMe Platform Solution Development",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX PaxMe Platform Solution Development.pdf",
+        },
+        {
+          title: "PAXSTORE Deployment",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX PAXSTORE Deployment.pdf",
+        },
+        {
+          title: "PAX Paydroid EDC Template Development",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX Paydroid EDC Template Development.pdf",
+        },
+        {
+          title: "PAX Paydroid OS & SDK Development",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX Paydroid OS & SDK Development.pdf",
+        },
+        {
+          title: "PAX PED System Development",
+          issuer: "PAX Technology EMEA",
+          type: "pdf",
+          file: "Image/Certificates/Certificate of Completion PAX PED System Development.pdf",
+        },
+      ];
+
+      function getThumbMarkup(certificate) {
+        if (certificate.type === "image") {
+          return `
+            <div class="certificate-thumb">
+              <img src="${certificate.file}" alt="${certificate.title}" />
+            </div>
+          `;
+        }
+
+        return `
+          <div class="certificate-thumb">
+            <div class="pdf-thumb">
+              <i class="fas fa-file-pdf"></i>
+              <div class="pdf-label">PDF Certificate</div>
+              <div class="pdf-name">${certificate.title}</div>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderCertificates() {
+        const grid = document.getElementById("certificateGrid");
+        grid.innerHTML = certificates
+          .map(
+            (certificate) => `
+              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div
+                  class="card certificate-card"
+                  data-title="${certificate.title.replace(/"/g, "&quot;")}"
+                  data-issuer="${certificate.issuer.replace(/"/g, "&quot;")}"
+                  data-type="${certificate.type}"
+                  data-file="${certificate.file.replace(/"/g, "&quot;")}"
+                >
+                  ${getThumbMarkup(certificate)}
+                  <div class="card-body">
+                    <div class="certificate-title">${certificate.title}</div>
+                    <div class="certificate-issuer">Issued by ${certificate.issuer}</div>
+                    <div class="certificate-meta">
+                      <span class="certificate-badge">
+                        <i class="fas ${certificate.type === "pdf" ? "fa-file-pdf" : "fa-image"}"></i>
+                        ${certificate.type === "pdf" ? "PDF" : "Image"}
+                      </span>
+                      <span class="certificate-open">
+                        Preview <i class="fas fa-arrow-right"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `,
+          )
+          .join("");
+      }
+
+      function openCertificatePreview(card) {
+        const title = card.getAttribute("data-title");
+        const type = card.getAttribute("data-type");
+        const file = card.getAttribute("data-file");
+
+        const modalTitle = document.getElementById(
+          "certificatePreviewModalLabel",
+        );
+        const modalBody = document.getElementById("certificatePreviewBody");
+        const openLink = document.getElementById("certificateOpenLink");
+
+        modalTitle.textContent = title;
+        openLink.href = file;
+
+        if (type === "pdf") {
+          modalBody.innerHTML = `
+            <iframe
+              src="${file}"
+              title="${title}"
+              loading="lazy"
+            ></iframe>
+          `;
+        } else {
+          modalBody.innerHTML = `
+            <img src="${file}" alt="${title}" />
+          `;
+        }
+
+        $("#certificatePreviewModal").modal("show");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderCertificates();
+
+        document.addEventListener("click", function (event) {
+          const card = event.target.closest(".certificate-card");
+          if (!card) return;
+          openCertificatePreview(card);
+        });
+      });
+    </script>
+
     <script src="dark-mode.js"></script>
   </body>
 </html>
