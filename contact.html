@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nafiz's Portfolio</title>
-    <link rel="icon" href="Image/engineer.ico" />
+    <title>Nafiz's Portfolio | Contact</title>
+    <link rel="icon" type="image/svg+xml" href="Image/favicon.svg" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="dark-mode.css" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
 
@@ -94,7 +94,9 @@
               <a class="nav-link headerachor" href="project.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link headerachor" href="contact.html">Contact Me</a>
+              <a class="nav-link headerachor active-page" href="contact.html"
+                >Contact Me</a
+              >
             </li>
             <li>
               <iframe
@@ -107,75 +109,266 @@
         </div>
       </nav>
     </header>
-    <section id="contact">
-      <div class="row first-section">
-        <div class="col-lg-6 col-md-6">
-          <img class="Profilepic" src="Image/Nafiz.png" alt="" />
-        </div>
-        <div class="col-lg-6 col-md-6 context">
-          <h1>Reach out to me!</h1>
-          <p>
-            I am available on LinkedIn and Mail.<br />
-            You want to discuss a project or just want to say hi? My Inbox is
-            always open for you.
-          </p>
-          <ul class="ico">
-            <li class="icon">
+
+    <main class="contact-shell">
+      <section id="contact" class="contact-hero">
+        <div class="contact-hero-grid">
+          <div class="contact-visual-wrap">
+            <div class="contact-visual-card">
+              <img
+                class="Profilepic"
+                src="Image/Nafiz.png"
+                alt="Nafiz Pervez"
+              />
+              <span class="floating-chip chip-1"
+                ><i class="fas fa-map-marker-alt"></i> Bangladesh</span
+              >
+              <span class="floating-chip chip-2"
+                ><i class="fas fa-briefcase"></i> Open to opportunities</span
+              >
+              <span class="floating-chip chip-3"
+                ><i class="fas fa-code"></i> GIS + Software</span
+              >
+            </div>
+          </div>
+
+          <div class="contact-content">
+            <span class="hero-badge"
+              ><i class="fas fa-paper-plane"></i> Contact & Collaboration</span
+            >
+            <h1 class="hero-title">
+              Let’s connect and build something
+              <span class="accent">valuable</span>
+            </h1>
+            <p class="hero-text">
+              I am available for discussions around GIS applications, web
+              engineering, geospatial systems, automation workflows, enterprise
+              software, and product-focused technical collaboration.
+            </p>
+            <p class="hero-subtext">
+              Whether you want to discuss a role, a project, a partnership, or
+              simply connect professionally, you can reach me through the
+              channels below.
+            </p>
+
+            <div class="contact-action-grid">
+              <a
+                class="contact-action-card"
+                href="mailto:nafizpervez@gmail.com"
+                target="_blank"
+              >
+                <div class="contact-action-icon email-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h3>Email</h3>
+                  <p>nafizpervez@gmail.com</p>
+                </div>
+              </a>
+
+              <a
+                class="contact-action-card"
+                href="https://www.linkedin.com/in/nafizpervez/"
+                target="_blank"
+              >
+                <div class="contact-action-icon linkedin-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <h3>LinkedIn</h3>
+                  <p>Professional profile and networking</p>
+                </div>
+              </a>
+
+              <a
+                class="contact-action-card"
+                href="https://github.com/nafizpervez"
+                target="_blank"
+              >
+                <div class="contact-action-icon github-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div>
+                  <h3>GitHub</h3>
+                  <p>Code repositories and technical work</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="hero-buttons">
+              <a
+                href="mailto:nafizpervez@gmail.com"
+                target="_blank"
+                class="hero-btn primary-btn"
+              >
+                Send Email
+              </a>
+
+              <button
+                type="button"
+                class="hero-btn secondary-btn"
+                data-toggle="modal"
+                data-target="#resumeModal"
+              >
+                View Resume
+              </button>
+            </div>
+
+            <div class="social-strip">
               <a href="https://github.com/nafizpervez" target="_blank">
                 <span
                   class="iconify github"
                   data-icon="ant-design:github-filled"
                   data-inline="false"
-                  data-width="50"
-                  data-height="50"
-                >
-                </span
-              ></a>
-            </li>
-            <li class="icon">
-              <a href="https://www.linkedin.com/in/nafizpervez/" target="_blank"
-                ><span
+                  data-width="34"
+                  data-height="34"
+                ></span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/nafizpervez/"
+                target="_blank"
+              >
+                <span
                   class="iconify linkedin"
                   data-icon="entypo-social:linkedin-with-circle"
                   data-inline="false"
-                  data-width="50"
-                  data-height="50"
-                ></span
-              ></a>
-            </li>
-            <li class="icon">
-              <a href="mailto:nafizpervez@gmail.com" target="_blank"
-                ><span
+                  data-width="34"
+                  data-height="34"
+                ></span>
+              </a>
+
+              <a href="mailto:nafizpervez@gmail.com" target="_blank">
+                <span
                   class="iconify google"
                   data-icon="ant-design:google-plus-circle-filled"
                   data-inline="false"
-                  data-width="50"
-                  data-height="50"
-                ></span
-              ></a>
-            </li>
-          </ul>
+                  data-width="34"
+                  data-height="34"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-info-section">
+        <div class="section-heading-wrap text-center">
+          <span class="section-tag">Professional Contact</span>
+          <h2 class="section-title">Ways to reach me</h2>
+          <p class="section-subtitle">
+            I am most responsive through email and LinkedIn for professional
+            communication, project discussions, and collaboration opportunities.
+          </p>
+        </div>
+
+        <div class="contact-info-grid">
+          <div class="info-card">
+            <div class="info-card-icon">
+              <i class="fas fa-envelope-open-text"></i>
+            </div>
+            <h3>Email Communication</h3>
+            <p>
+              Best for project discussions, professional inquiries, interview
+              coordination, and formal communication.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fab fa-linkedin-in"></i></div>
+            <h3>LinkedIn Networking</h3>
+            <p>
+              Ideal for professional connection, profile review, opportunity
+              discussions, and industry networking.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-card-icon"><i class="fab fa-github"></i></div>
+            <h3>Technical Portfolio</h3>
+            <p>
+              Explore selected repositories, engineering work, code structure,
+              and practical implementation projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-box text-center">
+          <h2>Let’s connect and build something together</h2>
+          <p>
+            I am interested in meaningful work across GIS, enterprise software,
+            web engineering, automation, and intelligent geospatial solutions.
+          </p>
           <a
-            href="https://drive.google.com/file/d/1WJhtOHTtq9xk8hYlFev_24Jlga4JeOgQ/view?usp=sharing"
+            class="cta-btn"
+            href="mailto:nafizpervez@gmail.com"
             target="_blank"
-            ><button type="button" class="btn btn-primary btn-lg Resume">
-              See my Resume
-            </button></a
           >
+            Say Hello <span class="wave">👋</span>
+          </a>
+          <div class="connect-image-wrap">
+            <img class="connection" src="Image/connection.svg" alt="Connect" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Resume Modal -->
+    <div
+      class="modal fade resume-modal"
+      id="resumeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="resumeModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-scrollable"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title" id="resumeModalLabel">My Resume</h5>
+              <div class="modal-subtitle">
+                Embedded preview from Google Drive
+              </div>
+            </div>
+            <button
+              type="button"
+              class="close modal-close-btn"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <div class="resume-preview-wrap">
+              <iframe
+                class="resume-frame"
+                src="https://drive.google.com/file/d/1WJhtOHTtq9xk8hYlFev_24Jlga4JeOgQ/preview"
+                allow="autoplay"
+              ></iframe>
+            </div>
+
+            <div class="resume-actions">
+              <a
+                href="https://drive.google.com/file/d/1WJhtOHTtq9xk8hYlFev_24Jlga4JeOgQ/view?usp=sharing"
+                target="_blank"
+                class="resume-action-btn primary-action"
+              >
+                Open Resume in New Tab
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section>
-      <div class="second-section">
-        <h1 class="connect">Let's connect and build something together!</h1>
-        <a class="sayhello" href="#contact"
-          >Say Hello <span class="wave">👋</span></a
-        >
-        <div class="col-lg-6 connect-image m-auto">
-          <img class="connection" src="Image/connection.svg" alt="" />
-        </div>
-      </div>
-    </section>
+    </div>
+
     <footer class="footer">Made with ~ ✌︎㋡ ~ by Nafiz Pervez</footer>
     <script src="dark-mode.js"></script>
   </body>

@@ -1,13 +1,28 @@
 :root {
-  --dark-background-color: #171c28;
-  --dark-text-color: #ffffff;
-  --dark-button-color: #55198b;
+  --dark-background-color: #0b1020;
+  --dark-background-elevated: #11182b;
+  --dark-background-elevated-2: #151d33;
+  --dark-surface-glass: rgba(21, 29, 51, 0.78);
+  --dark-border-color: rgba(148, 163, 184, 0.12);
+  --dark-border-strong: rgba(129, 140, 248, 0.24);
+  --dark-text-color: #f8fafc;
+  --dark-text-muted: #cbd5e1;
+  --dark-text-soft: #94a3b8;
+  --dark-button-color: #7c3aed;
+  --dark-button-hover: #8b5cf6;
+  --dark-accent: #8b5cf6;
+  --dark-accent-2: #6366f1;
+  --dark-accent-soft: rgba(139, 92, 246, 0.16);
+  --dark-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --dark-shadow-md: 0 14px 34px rgba(0, 0, 0, 0.32);
+  --dark-shadow-sm: 0 10px 22px rgba(0, 0, 0, 0.24);
 }
 
 iframe {
   border: none;
   width: 92px;
   height: 65px;
+  background: transparent;
 }
 
 @media (min-width: 992px) {
@@ -16,40 +31,576 @@ iframe {
   }
 }
 
+/* =========================================================
+   GLOBAL DARK FOUNDATION
+========================================================= */
 .dark-mode {
-  background-color: var(--dark-background-color) !important;
-  background-image: var(--dark-background-color) !important;
+  background:
+    radial-gradient(
+      900px 420px at 0% 0%,
+      rgba(99, 102, 241, 0.15),
+      transparent 65%
+    ),
+    radial-gradient(
+      950px 480px at 100% 20%,
+      rgba(139, 92, 246, 0.13),
+      transparent 70%
+    ),
+    radial-gradient(
+      780px 420px at 50% 100%,
+      rgba(59, 130, 246, 0.09),
+      transparent 70%
+    ),
+    linear-gradient(180deg, #0b1020 0%, #0f172a 45%, #111827 100%) !important;
   color: var(--dark-text-color) !important;
 }
 
-.dark-mode .card-title {
-  color: var(--dark-text-color);
-}
-
-.dark-mode .card {
-  background-color: var(--dark-background-color);
-}
-
-.dark-mode .column1 {
-  background-image: var(--dark-background-color) !important;
-}
-
-.dark-mode .nav-link {
+.dark-mode body,
+.dark-mode html {
+  background: transparent !important;
   color: var(--dark-text-color) !important;
 }
 
-.dark-mode .headerachor:hover {
-  background-color: var(--dark-button-color) !important;
-}
-
-.dark-mode .brand-name {
-  color: var(--dark-text-color) !important;
-}
-
-.dark-mode .brand-name:hover {
-  color: var(--dark-button-color) !important;
+.dark-mode p,
+.dark-mode li,
+.dark-mode small,
+.dark-mode span,
+.dark-mode div,
+.dark-mode label {
+  color: inherit;
 }
 
 .dark-mode p {
-  color: #fffff0 !important;
+  color: var(--dark-text-muted) !important;
+}
+
+.dark-mode a {
+  color: #c4b5fd;
+}
+
+.dark-mode a:hover {
+  color: #ddd6fe;
+  text-decoration: none;
+}
+
+.dark-mode strong,
+.dark-mode b,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode .card-title,
+.dark-mode .modal-title,
+.dark-mode .section-title,
+.dark-mode .hero-title,
+.dark-mode .chips-title,
+.dark-mode .project-card-title,
+.dark-mode .skill-category-title,
+.dark-mode .os-name,
+.dark-mode .info-card h3,
+.dark-mode .highlight-card h3,
+.dark-mode .summary-card h3,
+.dark-mode .expertise-card h3,
+.dark-mode .snapshot-card h3,
+.dark-mode .edu-card h3,
+.dark-mode .platform-card h4,
+.dark-mode .certificate-title {
+  color: var(--dark-text-color) !important;
+}
+
+.dark-mode .section-desc,
+.dark-mode .section-subtitle,
+.dark-mode .hero-text,
+.dark-mode .hero-subtext,
+.dark-mode .hero-description,
+.dark-mode .hero-subtitle,
+.dark-mode .edu-degree,
+.dark-mode .edu-desc,
+.dark-mode .platform-card p,
+.dark-mode .certificate-issuer,
+.dark-mode .project-card-text,
+.dark-mode .modal-paragraph,
+.dark-mode .preview-note,
+.dark-mode .modal-subtitle,
+.dark-mode .os-caption,
+.dark-mode .skill-note,
+.dark-mode .project-card p,
+.dark-mode .contact-action-card p,
+.dark-mode .summary-card p,
+.dark-mode .expertise-card p,
+.dark-mode .highlight-card p,
+.dark-mode .snapshot-card p,
+.dark-mode .info-card p {
+  color: var(--dark-text-muted) !important;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.dark-mode .navbar {
+  background: transparent !important;
+}
+
+.dark-mode .nav-link,
+.dark-mode .headerachor {
+  color: var(--dark-text-muted) !important;
+}
+
+.dark-mode .headerachor:hover,
+.dark-mode .headerachor.active-page {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .brand-name,
+.dark-mode .navbar-light .navbar-brand,
+.dark-mode .navbar-dark .navbar-brand {
+  color: #f8fafc !important;
+}
+
+.dark-mode .brand-name:hover {
+  color: #ddd6fe !important;
+}
+
+.dark-mode .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.dark-mode .navbar-toggler-icon {
+  filter: invert(1) brightness(1.6);
+}
+
+/* =========================================================
+   GENERIC SURFACES / CARDS / PANELS
+========================================================= */
+.dark-mode .card,
+.dark-mode .boxx,
+.dark-mode .summary-card,
+.dark-mode .highlight-card,
+.dark-mode .snapshot-card,
+.dark-mode .expertise-card,
+.dark-mode .skill-category-card,
+.dark-mode .chips-panel,
+.dark-mode .os-card,
+.dark-mode .cert-skill-card,
+.dark-mode .info-card,
+.dark-mode .project-card,
+.dark-mode .modal-panel,
+.dark-mode .contact-action-card,
+.dark-mode .hero-stat-card,
+.dark-mode .mini-stat,
+.dark-mode .platform-card,
+.dark-mode .edu-card,
+.dark-mode .certificate-card {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.92) 0%,
+    rgba(15, 23, 42, 0.96) 100%
+  ) !important;
+  border: 1px solid var(--dark-border-color) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+  color: var(--dark-text-color) !important;
+}
+
+.dark-mode .project-card:hover,
+.dark-mode .summary-card:hover,
+.dark-mode .highlight-card:hover,
+.dark-mode .expertise-card:hover,
+.dark-mode .platform-card:hover,
+.dark-mode .edu-card:hover,
+.dark-mode .certificate-card:hover,
+.dark-mode .contact-action-card:hover,
+.dark-mode .skill-item:hover {
+  border-color: var(--dark-border-strong) !important;
+  box-shadow: var(--dark-shadow-lg) !important;
+}
+
+/* =========================================================
+   HERO / GLASS CONTAINERS
+========================================================= */
+.dark-mode .education-hero,
+.dark-mode .projects-hero,
+.dark-mode .contact-hero,
+.dark-mode .hero-skill,
+.dark-mode .hero-image-card,
+.dark-mode .hero-visual,
+.dark-mode .projects-hero-visual,
+.dark-mode .contact-visual-card,
+.dark-mode .platform-graphic,
+.dark-mode .final-cta-box,
+.dark-mode .cta-box {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(17, 24, 39, 0.82) 0%,
+      rgba(15, 23, 42, 0.92) 100%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(99, 102, 241, 0.14),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(139, 92, 246, 0.14),
+      transparent 35%
+    ) !important;
+  border: 1px solid var(--dark-border-color) !important;
+  box-shadow: var(--dark-shadow-lg) !important;
+  color: var(--dark-text-color) !important;
+}
+
+.dark-mode .hero-badge,
+.dark-mode .section-tag,
+.dark-mode .project-type,
+.dark-mode .certificate-category-badge,
+.dark-mode .skill-count-pill,
+.dark-mode .section-count-badge,
+.dark-mode .status-pill {
+  background: var(--dark-accent-soft) !important;
+  color: #ddd6fe !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+}
+
+.dark-mode .project-link-chip {
+  background: rgba(16, 185, 129, 0.16) !important;
+  color: #a7f3d0 !important;
+  border: 1px solid rgba(16, 185, 129, 0.18) !important;
+}
+
+.dark-mode .project-link-chip.no-link {
+  background: rgba(148, 163, 184, 0.12) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+}
+
+.dark-mode .floating-chip,
+.dark-mode .skill-chip,
+.dark-mode .modal-skill,
+.dark-mode .project-tags span,
+.dark-mode .tech-stack-grid span,
+.dark-mode .certificate-badge {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--dark-text-muted) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .hero-title .accent {
+  background: linear-gradient(90deg, #c4b5fd, #93c5fd) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode .hero-stat-card h3,
+.dark-mode .mini-stat h3,
+.dark-mode .snapshot-card h3,
+.dark-mode .section-count-badge span {
+  color: #ffffff !important;
+}
+
+.dark-mode .section-count-badge small,
+.dark-mode .hero-stat-card p,
+.dark-mode .mini-stat p {
+  color: var(--dark-text-soft) !important;
+}
+
+/* =========================================================
+   INDEX / LANDING PAGE SPECIFIC
+========================================================= */
+.dark-mode .column1 {
+  background: transparent !important;
+}
+
+.dark-mode .btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #c4b5fd !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--dark-shadow-sm) !important;
+}
+
+.dark-mode .btn i {
+  color: inherit !important;
+}
+
+.dark-mode .btn::before {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+}
+
+.dark-mode .modern-social-icons .btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ddd6fe !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .modern-social-icons .btn:hover {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   EDUCATION PAGE
+========================================================= */
+.dark-mode .education-line {
+  background: linear-gradient(180deg, #8b5cf6 0%, #334155 100%) !important;
+}
+
+.dark-mode .edu-year {
+  background: rgba(139, 92, 246, 0.14) !important;
+  color: #e9d5ff !important;
+  border: 1px solid rgba(139, 92, 246, 0.18) !important;
+}
+
+.dark-mode .edu-dot {
+  background: #8b5cf6 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.18) !important;
+}
+
+.dark-mode .edu-icon,
+.dark-mode .platform-icon,
+.dark-mode .skill-category-icon,
+.dark-mode .info-card-icon,
+.dark-mode .expertise-icon,
+.dark-mode .contact-action-icon,
+.dark-mode .os-icon,
+.dark-mode .skill-icon-badge {
+  background: linear-gradient(
+    180deg,
+    rgba(139, 92, 246, 0.18) 0%,
+    rgba(99, 102, 241, 0.12) 100%
+  ) !important;
+  color: #ddd6fe !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .edu-link,
+.dark-mode .project-link-btn,
+.dark-mode .primary-action,
+.dark-mode .primary-btn,
+.dark-mode .cta-btn,
+.dark-mode .hero-btn.primary-btn,
+.dark-mode .resume-action-btn.primary-action {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.35) !important;
+}
+
+.dark-mode .edu-link:hover,
+.dark-mode .project-link-btn:hover,
+.dark-mode .primary-btn:hover,
+.dark-mode .primary-action:hover,
+.dark-mode .cta-btn:hover,
+.dark-mode .hero-btn.primary-btn:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .cert-search-wrap input {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: var(--dark-text-color) !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .cert-search-wrap input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.dark-mode .cert-search-wrap i {
+  color: #94a3b8 !important;
+}
+
+.dark-mode .cert-filter-chip {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--dark-text-muted) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+}
+
+.dark-mode .cert-filter-chip:hover,
+.dark-mode .cert-filter-chip.active {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .cert-empty-state,
+.dark-mode .preview-unavailable {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: var(--dark-text-muted) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =========================================================
+   PROJECT PAGE
+========================================================= */
+.dark-mode .project-card,
+.dark-mode .project-card button {
+  color: var(--dark-text-color) !important;
+}
+
+.dark-mode .preview-box,
+.dark-mode .resume-preview-wrap,
+.dark-mode .certificate-preview-wrap {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-mode .preview-frame,
+.dark-mode .resume-frame {
+  background: #0b1020 !important;
+}
+
+.dark-mode .modal-list li,
+.dark-mode .lp-list li {
+  color: var(--dark-text-muted) !important;
+}
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+.dark-mode .email-icon {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+}
+
+.dark-mode .linkedin-icon {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+}
+
+.dark-mode .github-icon {
+  background: linear-gradient(135deg, #475569, #0f172a) !important;
+}
+
+.dark-mode .secondary-btn,
+.dark-mode .hero-btn.secondary-btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ddd6fe !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .secondary-btn:hover,
+.dark-mode .hero-btn.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   SKILLS PAGE
+========================================================= */
+.dark-mode .skill-item {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark-mode .skill-bar-track {
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.24) !important;
+}
+
+.dark-mode .skill-bar-fill {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 0%,
+    #6366f1 55%,
+    #3b82f6 100%
+  ) !important;
+}
+
+.dark-mode .skill-name,
+.dark-mode .skill-percent,
+.dark-mode .os-value,
+.dark-mode .os-name,
+.dark-mode .chips-title,
+.dark-mode .skill-category-meta,
+.dark-mode .skill-chip,
+.dark-mode .cert-skill-item {
+  color: var(--dark-text-color) !important;
+}
+
+.dark-mode .skill-category-meta,
+.dark-mode .skill-note,
+.dark-mode .os-caption {
+  color: var(--dark-text-soft) !important;
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+.dark-mode .modal-content,
+.dark-mode .certificate-modal .modal-content,
+.dark-mode .project-modal .modal-content,
+.dark-mode .resume-modal .modal-content {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.98) 0%,
+    rgba(15, 23, 42, 0.98) 100%
+  ) !important;
+  color: var(--dark-text-color) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark-mode .modal-header,
+.dark-mode .certificate-modal .modal-header,
+.dark-mode .project-modal .modal-header,
+.dark-mode .resume-modal .modal-header {
+  background: linear-gradient(
+    180deg,
+    rgba(23, 33, 56, 0.98) 0%,
+    rgba(17, 24, 39, 0.98) 100%
+  ) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .modal-body,
+.dark-mode .certificate-modal .modal-body,
+.dark-mode .project-modal .modal-body,
+.dark-mode .resume-modal .modal-body {
+  background: #0f172a !important;
+}
+
+.dark-mode .close,
+.dark-mode .modal-close-btn {
+  color: #e2e8f0 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   ICON COLORS / SPECIAL FIXES
+========================================================= */
+.dark-mode .fab,
+.dark-mode .fas,
+.dark-mode .iconify {
+  color: inherit;
+}
+
+.dark-mode .github {
+  color: #e2e8f0 !important;
+}
+
+.dark-mode .linkedin {
+  color: #60a5fa !important;
+}
+
+.dark-mode .google {
+  color: #fda4af !important;
+}
+
+.dark-mode .moon,
+.dark-mode .sun {
+  color: inherit;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.dark-mode .footer,
+.dark-mode footer {
+  color: var(--dark-text-soft) !important;
 }
