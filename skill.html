@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nafiz's Portfolio</title>
+    <title>Nafiz's Portfolio | Skills</title>
     <link rel="icon" href="Image/engineer.ico" />
     <link
       rel="stylesheet"
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="dark-mode.css" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -30,6 +30,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     />
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -45,7 +46,693 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+
+    <style>
+      :root {
+        --primary-1: #6d5efc;
+        --primary-2: #8e80ff;
+        --primary-3: #b9b0ff;
+        --text-dark: #211d4f;
+        --text-mid: #5e5a87;
+        --card-bg: rgba(255, 255, 255, 0.82);
+        --card-border: rgba(109, 94, 252, 0.12);
+        --soft-shadow: 0 16px 40px rgba(43, 32, 131, 0.12);
+        --soft-shadow-hover: 0 22px 48px rgba(43, 32, 131, 0.18);
+        --bar-bg: #ebe8ff;
+        --bar-fill: linear-gradient(
+          90deg,
+          #6a5af9 0%,
+          #7f6aff 55%,
+          #a191ff 100%
+        );
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body.body_section {
+        font-family: "Montserrat", "Open Sans", sans-serif;
+        background:
+          radial-gradient(
+            900px 420px at 0% 0%,
+            rgba(125, 102, 255, 0.12),
+            transparent 65%
+          ),
+          radial-gradient(
+            950px 480px at 100% 20%,
+            rgba(106, 90, 249, 0.11),
+            transparent 70%
+          ),
+          radial-gradient(
+            780px 420px at 50% 100%,
+            rgba(141, 128, 255, 0.09),
+            transparent 70%
+          ),
+          linear-gradient(180deg, #fbfbff 0%, #f4f6ff 100%);
+        color: var(--text-dark);
+      }
+
+      .navbar {
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+
+      .main-shell {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 10px 14px 60px;
+      }
+
+      .hero-skill {
+        position: relative;
+        overflow: hidden;
+        border-radius: 34px;
+        padding: 46px 40px;
+        margin-top: 18px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.92) 0%,
+          rgba(243, 244, 255, 0.95) 55%,
+          rgba(236, 239, 255, 0.98) 100%
+        );
+        border: 1px solid rgba(109, 94, 252, 0.08);
+        box-shadow: 0 24px 60px rgba(52, 41, 150, 0.12);
+      }
+
+      .hero-skill::before {
+        content: "";
+        position: absolute;
+        inset: auto auto -90px -90px;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(109, 94, 252, 0.18) 0%,
+          rgba(109, 94, 252, 0) 72%
+        );
+        pointer-events: none;
+      }
+
+      .hero-skill::after {
+        content: "";
+        position: absolute;
+        top: -90px;
+        right: -90px;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(142, 128, 255, 0.2) 0%,
+          rgba(142, 128, 255, 0) 72%
+        );
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(109, 94, 252, 0.1);
+        color: var(--primary-1);
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        line-height: 1.1;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 16px;
+      }
+
+      .hero-title .accent {
+        background: linear-gradient(90deg, #5b4cf0, #907eff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+        line-height: 1.9;
+        color: var(--text-mid);
+        max-width: 690px;
+        margin-bottom: 24px;
+      }
+
+      .hero-mini-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .mini-stat {
+        border-radius: 20px;
+        padding: 18px 18px;
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(109, 94, 252, 0.08);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .mini-stat h3 {
+        margin: 0;
+        font-size: 1.7rem;
+        font-weight: 800;
+        color: var(--text-dark);
+      }
+
+      .mini-stat p {
+        margin: 6px 0 0;
+        font-size: 0.9rem;
+        color: var(--text-mid);
+        font-weight: 600;
+      }
+
+      .hero-visual-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-visual {
+        width: 100%;
+        max-width: 430px;
+        min-height: 430px;
+        border-radius: 32px;
+        background:
+          radial-gradient(
+            circle at 35% 30%,
+            rgba(123, 101, 255, 0.24),
+            rgba(123, 101, 255, 0.08) 48%,
+            rgba(123, 101, 255, 0) 70%
+          ),
+          linear-gradient(180deg, #ffffff 0%, #f7f7ff 100%);
+        border: 1px solid rgba(109, 94, 252, 0.08);
+        box-shadow:
+          0 22px 50px rgba(62, 47, 170, 0.14),
+          inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .hero-visual:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow:
+          0 32px 65px rgba(62, 47, 170, 0.2),
+          0 0 0 10px rgba(109, 94, 252, 0.07);
+      }
+
+      .hero-visual img {
+        width: 78%;
+        height: auto;
+        filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.12));
+      }
+
+      .floating-chip {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--text-dark);
+        font-size: 0.85rem;
+        font-weight: 700;
+        box-shadow: 0 12px 24px rgba(39, 28, 119, 0.12);
+      }
+
+      .chip-1 {
+        top: 28px;
+        left: 26px;
+      }
+
+      .chip-2 {
+        top: 92px;
+        right: 24px;
+      }
+
+      .chip-3 {
+        bottom: 40px;
+        left: 24px;
+      }
+
+      .section-block {
+        margin-top: 34px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin: 0;
+      }
+
+      .section-desc {
+        margin: 8px 0 0;
+        color: var(--text-mid);
+        line-height: 1.8;
+        max-width: 840px;
+      }
+
+      .skill-category-card {
+        border-radius: 28px;
+        padding: 24px;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow: var(--soft-shadow);
+        backdrop-filter: blur(12px);
+        height: 100%;
+      }
+
+      .skill-category-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .skill-category-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .skill-category-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(
+          180deg,
+          rgba(109, 94, 252, 0.16) 0%,
+          rgba(109, 94, 252, 0.08) 100%
+        );
+        color: var(--primary-1);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      }
+
+      .skill-category-icon .iconify,
+      .skill-category-icon i {
+        font-size: 26px;
+        width: 26px;
+        height: 26px;
+      }
+
+      .skill-category-title {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-dark);
+      }
+
+      .skill-category-meta {
+        margin: 3px 0 0;
+        font-size: 0.9rem;
+        color: var(--text-mid);
+        font-weight: 600;
+      }
+
+      .skill-count-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px;
+        height: 38px;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: rgba(109, 94, 252, 0.1);
+        color: var(--primary-1);
+        font-weight: 800;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .skill-item {
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+        border-radius: 20px;
+        padding: 14px 14px 14px 14px;
+        background: rgba(255, 255, 255, 0.62);
+        border: 1px solid rgba(109, 94, 252, 0.08);
+      }
+
+      .skill-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 28px rgba(67, 52, 178, 0.12);
+        border-color: rgba(109, 94, 252, 0.16);
+      }
+
+      .skill-item-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 11px;
+      }
+
+      .skill-item-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .skill-icon-badge {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: #ffffff;
+        box-shadow: 0 8px 18px rgba(33, 29, 79, 0.1);
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      .skill-icon-badge .iconify,
+      .skill-icon-badge i {
+        width: 24px;
+        height: 24px;
+      }
+
+      .skill-label-wrap {
+        min-width: 0;
+      }
+
+      .skill-name {
+        font-size: 0.98rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        line-height: 1.35;
+        word-break: break-word;
+      }
+
+      .skill-note {
+        font-size: 0.82rem;
+        color: var(--text-mid);
+        margin-top: 2px;
+        font-weight: 600;
+      }
+
+      .skill-percent {
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        flex-shrink: 0;
+      }
+
+      .skill-bar-track {
+        position: relative;
+        height: 12px;
+        border-radius: 999px;
+        background: var(--bar-bg);
+        overflow: hidden;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.06);
+      }
+
+      .skill-bar-fill {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: calc(var(--value, 0) * 1%);
+        border-radius: inherit;
+        background: var(--bar-fill);
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.28);
+      }
+
+      .skill-bar-fill::after {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 34%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.36) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: translateX(-130%);
+      }
+
+      .skill-item:hover .skill-bar-fill::after {
+        animation: shimmer 1.6s linear infinite;
+      }
+
+      @keyframes shimmer {
+        from {
+          transform: translateX(-130%);
+        }
+        to {
+          transform: translateX(340%);
+        }
+      }
+
+      .chips-panel {
+        border-radius: 28px;
+        padding: 24px;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .chips-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 14px;
+      }
+
+      .skills-chip-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .skill-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(109, 94, 252, 0.08);
+        box-shadow: 0 10px 24px rgba(43, 32, 131, 0.08);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--text-dark);
+      }
+
+      .skill-chip .iconify,
+      .skill-chip i {
+        width: 18px;
+        height: 18px;
+      }
+
+      .os-card {
+        border-radius: 24px;
+        padding: 20px;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        box-shadow: var(--soft-shadow);
+        height: 100%;
+      }
+
+      .os-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .os-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .os-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        background: rgba(109, 94, 252, 0.1);
+        display: grid;
+        place-items: center;
+      }
+
+      .os-icon .iconify {
+        width: 26px;
+        height: 26px;
+      }
+
+      .os-name {
+        font-size: 1rem;
+        font-weight: 800;
+        margin: 0;
+        color: var(--text-dark);
+      }
+
+      .os-caption {
+        font-size: 0.84rem;
+        color: var(--text-mid);
+        font-weight: 600;
+      }
+
+      .os-value {
+        font-weight: 800;
+        color: var(--text-dark);
+      }
+
+      .cert-skill-card {
+        border-radius: 28px;
+        padding: 24px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(244, 246, 255, 0.95) 100%
+        );
+        border: 1px solid rgba(109, 94, 252, 0.08);
+        box-shadow: var(--soft-shadow);
+      }
+
+      .cert-skill-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .cert-skill-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid rgba(109, 94, 252, 0.08);
+        font-weight: 700;
+        color: var(--text-dark);
+      }
+
+      .cert-skill-item .iconify,
+      .cert-skill-item i {
+        width: 20px;
+        height: 20px;
+        color: var(--primary-1);
+      }
+
+      .footer {
+        margin-top: 30px;
+      }
+
+      @media (max-width: 1199.98px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          min-height: 360px;
+        }
+
+        .hero-mini-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .main-shell {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        .hero-skill {
+          padding: 26px 20px;
+          border-radius: 24px;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+        }
+
+        .cert-skill-list {
+          grid-template-columns: 1fr;
+        }
+
+        .floating-chip {
+          font-size: 0.78rem;
+          padding: 8px 12px;
+        }
+
+        .chip-1 {
+          top: 18px;
+          left: 16px;
+        }
+
+        .chip-2 {
+          top: 70px;
+          right: 14px;
+        }
+
+        .chip-3 {
+          bottom: 24px;
+          left: 16px;
+        }
+
+        .hero-visual {
+          min-height: 300px;
+        }
+      }
+    </style>
   </head>
+
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-WZXPVQDR2Q"
@@ -58,6 +745,7 @@
     gtag("js", new Date());
     gtag("config", "G-WZXPVQDR2Q");
   </script>
+
   <body class="container-fluid body_section">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -105,462 +793,718 @@
       </nav>
     </header>
 
-    <!-- ============ INLINE CSS (after header only) ============ -->
-    <style>
-      :root {
-        --bar-h: 48px;
-        --bar-bg: #ebe8ff;
-        --bar-fill: linear-gradient(
-          90deg,
-          #6a5af9 0%,
-          #7f6aff 60%,
-          #a191ff 100%
-        );
-        --text-dark: #292651;
-      }
-      body.body_section {
-        background:
-          radial-gradient(
-            1200px 500px at 50% -200px,
-            rgba(122, 101, 255, 0.12),
-            transparent 70%
-          ),
-          radial-gradient(
-            900px 400px at 90% 120%,
-            rgba(122, 101, 255, 0.1),
-            transparent 70%
-          );
-      }
+    <main class="main-shell">
+      <section class="hero-skill">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">
+              <i class="fas fa-sparkles"></i>
+              Technical Capability Overview
+            </div>
 
-      .Skill-heading {
-        font-weight: 800;
-        font-size: 2rem;
-        color: var(--text-dark);
-        margin: 18px 0;
-        text-align: center;
-      }
+            <h1 class="hero-title">
+              Building with
+              <span class="accent">GIS, AI, Full Stack, Data,</span>
+              and Enterprise Systems
+            </h1>
 
-      /* Top orbit row: left | picture | right */
-      .skills-orbit {
-        display: grid;
-        grid-template-columns: 1fr 460px 1fr;
-        gap: 24px;
-        align-items: start;
-        padding: 18px 10px 8px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      .skills-col {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
+            <p class="hero-text">
+              My skill set combines geospatial engineering, frontend
+              development, backend services, DevOps tooling, AI and machine
+              learning exposure, and platform-oriented delivery. It reflects
+              both project experience and structured learning through
+              certifications across Esri, AI, Docker, cloud, business,
+              analytics, and data domains.
+            </p>
 
-      /* Center illustration circle with hover */
-      .center-circle {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 480px;
-      }
-      .circle-wrap {
-        width: 420px;
-        height: 420px;
-        border-radius: 50%;
-        background:
-          radial-gradient(
-            circle at 40% 35%,
-            rgba(122, 101, 255, 0.22),
-            rgba(122, 101, 255, 0.06) 55%,
-            rgba(122, 101, 255, 0) 70%
-          ),
-          linear-gradient(180deg, #ffffff 0%, #f7f7ff 100%);
-        box-shadow:
-          0 18px 38px rgba(86, 74, 200, 0.2),
-          inset 0 1px 0 rgba(255, 255, 255, 0.7);
-        display: grid;
-        place-items: center;
-        overflow: hidden;
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease,
-          filter 0.25s ease;
-      }
-      .circle-wrap:hover {
-        transform: translateY(-6px) scale(1.04) rotate(-1.5deg);
-        box-shadow:
-          0 28px 52px rgba(86, 74, 200, 0.28),
-          0 0 0 10px rgba(122, 101, 255, 0.08),
-          inset 0 1px 0 rgba(255, 255, 255, 0.8);
-        filter: saturate(1.05);
-      }
-      .circle-wrap img {
-        width: 78%;
-        height: auto;
-        filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.15));
-      }
+            <div class="hero-mini-stats">
+              <div class="mini-stat">
+                <h3>60+</h3>
+                <p>Core and supporting skills</p>
+              </div>
+              <div class="mini-stat">
+                <h3>8</h3>
+                <p>Primary capability groups</p>
+              </div>
+              <div class="mini-stat">
+                <h3>50+</h3>
+                <p>Certificates informing this stack</p>
+              </div>
+            </div>
+          </div>
 
-      /* Skill bar */
-      .SkillBar {
-        width: 100%;
-      }
-      .skill-card {
-        position: relative;
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease;
-        border-radius: 18px;
-      }
-      .skill-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 28px rgba(122, 101, 255, 0.18);
-      }
-      .skill-meter {
-        position: relative;
-        height: var(--bar-h);
-        border-radius: 9999px;
-        background: var(--bar-bg);
-        overflow: hidden;
-        box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.6),
-          inset 0 -4px 10px rgba(0, 0, 0, 0.06);
-      }
-      .skill-fill {
-        position: absolute;
-        inset: 0 auto 0 0;
-        width: calc(var(--p, 0) * 1%);
-        background: var(--bar-fill);
-        border-radius: inherit;
-        transition: width 0.9s ease;
-        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.35);
-      }
-      .skill-fill::after {
-        content: "";
-        position: absolute;
-        inset: 0 auto 0 0;
-        width: 38%;
-        transform: translateX(-120%);
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.35) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        pointer-events: none;
-      }
-      .skill-card:hover .skill-fill::after {
-        animation: shimmer 1.8s linear infinite;
-      }
-      @keyframes shimmer {
-        from {
-          transform: translateX(-120%);
-        }
-        to {
-          transform: translateX(320%);
-        }
-      }
+          <div class="hero-visual-wrap">
+            <div class="hero-visual">
+              <span class="floating-chip chip-1">
+                <span class="iconify" data-icon="simple-icons:esri"></span>
+                GIS
+              </span>
+              <span class="floating-chip chip-2">
+                <span class="iconify" data-icon="logos:react"></span>
+                Frontend
+              </span>
+              <span class="floating-chip chip-3">
+                <span class="iconify" data-icon="logos:python"></span>
+                AI / Data
+              </span>
+              <img src="Image/Skills.svg" alt="Skills Illustration" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      .icon-badge {
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 9999px;
-        background: #fff;
-        display: grid;
-        place-items: center;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-        z-index: 2;
-      }
-      .icon-badge .iconify {
-        width: 24px;
-        height: 24px;
-      }
-      .skill-name {
-        position: absolute;
-        left: 62px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-weight: 700;
-        color: var(--text-dark);
-        z-index: 2;
-      }
-      .skill-percent {
-        position: absolute;
-        right: 14px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-weight: 800;
-        color: var(--text-dark);
-        z-index: 2;
-      }
-
-      /* Bottom row under the picture: 3 columns to fill middle area */
-      .skills-bottom {
-        max-width: 1200px;
-        margin: 6px auto 8px;
-        padding: 0 10px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-      .skills-bottom .skills-col {
-        gap: 16px;
-      }
-
-      /* OS section (4 columns, single row; scroll horizontally on small screens) */
-      .os-wrap {
-        max-width: 1200px;
-        margin: 22px auto 32px;
-        padding: 0 10px;
-        overflow-x: auto;
-      }
-      .os-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(260px, 1fr));
-        gap: 18px;
-        min-width: 1040px;
-      }
-      .subheading {
-        font-weight: 800;
-        font-size: 1.35rem;
-        margin: 16px 0 12px;
-        text-align: center;
-        color: var(--text-dark);
-      }
-
-      /* responsive */
-      @media (max-width: 992px) {
-        .skills-orbit {
-          grid-template-columns: 1fr;
-        }
-        .center-circle {
-          order: -1;
-          margin-bottom: 10px;
-        }
-        .circle-wrap {
-          width: 360px;
-          height: 360px;
-        }
-        .skills-bottom {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 480px) {
-        .circle-wrap {
-          width: 300px;
-          height: 300px;
-        }
-        .skill-name {
-          left: 56px;
-        }
-      }
-    </style>
-
-    <!-- =================== CONTENT AFTER HEADER =================== -->
-    <section class="Section1">
-      <h2 class="Skill-heading">Proficiency</h2>
-
-      <!-- Top row: left | center image | right -->
-      <div class="skills-orbit">
-        <div id="skills-left" class="skills-col"></div>
-
-        <div class="center-circle">
-          <div class="circle-wrap" title="Hover me ✨">
-            <img src="Image/Skills.svg" alt="Skills Illustration" />
+      <section class="section-block">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Core Proficiency</h2>
+            <p class="section-desc">
+              The layout below groups the stack into practical portfolio
+              categories instead of one long generic list. This makes the page
+              cleaner and better aligned with how real project work is
+              delivered.
+            </p>
           </div>
         </div>
 
-        <div id="skills-right" class="skills-col"></div>
-      </div>
+        <div class="row" id="skillCategoryGrid"></div>
+      </section>
 
-      <!-- Bottom row with 3 columns to cover middle area -->
-      <div class="skills-bottom">
-        <div id="skills-bot-1" class="skills-col"></div>
-        <div id="skills-bot-2" class="skills-col"></div>
-        <div id="skills-bot-3" class="skills-col"></div>
-      </div>
+      <section class="section-block">
+        <div class="row">
+          <div class="col-lg-7 mb-4">
+            <div class="chips-panel">
+              <div class="chips-title">Additional Capability Tags</div>
+              <div class="skills-chip-grid" id="extraSkillsChips"></div>
+            </div>
+          </div>
 
-      <!-- OS comfort (4 columns, 1 row) -->
-      <div class="os-wrap">
-        <div class="subheading">Operating System Comfort</div>
-        <div id="OSBars" class="os-grid"></div>
-      </div>
-    </section>
+          <div class="col-lg-5 mb-4">
+            <div class="cert-skill-card">
+              <div class="chips-title">Skills Reinforced by Certifications</div>
+              <div class="cert-skill-list" id="certificationSkills"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Operating System Comfort</h2>
+            <p class="section-desc">
+              Practical comfort across development, deployment, remote work, and
+              server-side environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="row" id="osGrid"></div>
+      </section>
+    </main>
 
     <footer class="footer">Made with ~ ✌︎㋡ ~ by Nafiz Pervez</footer>
     <script src="dark-mode.js"></script>
 
-    <!-- ===== Render all skills + OS bars ===== -->
     <script>
-      // Skills (with your prior replacements + CI/CD added)
-      const skills = [
-        { name: "C++", icon: "logos:c-plusplus", level: 88 },
-        { name: "C", icon: "logos:c", level: 82 },
-        { name: "Python", icon: "logos:python", level: 90 },
-        { name: "HTML", icon: "logos:html-5", level: 86 },
-        { name: "CSS", icon: "logos:css-3", level: 72 },
-
-        /* from here we want the 3-column middle row to begin on the LEFT */
-        { name: "JavaScript", icon: "logos:javascript", level: 70 },
-
-        { name: "SQL (General)", icon: "mdi:database", level: 78 },
-        { name: "C#", icon: "mdi:language-csharp", level: 84 },
-        { name: ".NET", icon: "simple-icons:dotnet", level: 82 },
-        { name: "ArcGIS (Esri)", icon: "simple-icons:esri", level: 92 },
-        { name: "React", icon: "logos:react", level: 81 },
-        { name: "Next.js", icon: "simple-icons:nextdotjs", level: 78 },
-        { name: "Tailwind CSS", icon: "logos:tailwindcss", level: 80 },
-        { name: "Git", icon: "logos:git-icon", level: 85 },
-        { name: "Node.js", icon: "logos:nodejs-icon", level: 76 },
-        { name: "NVM", icon: "mdi:console", level: 70 },
-        { name: "Bash", icon: "simple-icons:gnubash", level: 65 },
-        { name: "Docker", icon: "logos:docker-icon", level: 68 },
-        { name: "Docker Compose", icon: "simple-icons:docker", level: 62 },
-        { name: "Kubernetes", icon: "logos:kubernetes", level: 55 },
-        { name: "Azure", icon: "logos:microsoft-azure", level: 60 },
-        { name: "VMware", icon: "simple-icons:vmware", level: 58 },
-        { name: "Deployment", icon: "mdi:rocket-launch-outline", level: 75 },
-
-        /* NEW: CI/CD */
-        { name: "CI/CD", icon: "mdi:infinity", level: 80 },
-
-        { name: "SQLAlchemy", icon: "simple-icons:sqlalchemy", level: 70 },
-        { name: "MySQL", icon: "logos:mysql", level: 78 },
+      const skillCategories = [
         {
-          name: "SQL Server",
-          icon: "simple-icons:microsoftsqlserver",
-          level: 77,
-        },
-        { name: "PostgreSQL", icon: "logos:postgresql", level: 72 },
-        { name: "MongoDB", icon: "logos:mongodb-icon", level: 73 },
-        { name: "GeoDatabase", icon: "mdi:database", level: 86 },
-        { name: "PHP", icon: "logos:php", level: 65 },
-        { name: "Laravel", icon: "logos:laravel", level: 68 },
-        { name: "XAMPP", icon: "simple-icons:xampp", level: 66 },
-        { name: "ArcPy", icon: "mdi:snake", level: 88 },
-        { name: "JAVA", icon: "logos:java", level: 82 },
-        { name: "PyTorch", icon: "logos:pytorch-icon", level: 79 },
-        { name: "Deep Learning", icon: "mdi:brain", level: 82 },
-        { name: "Machine Learning", icon: "mdi:robot-outline", level: 84 }, // stays in RIGHT column top
-        { name: "Neural Network", icon: "mdi:source-branch", level: 82 }, // stays in RIGHT column top
-        { name: "DCGAN", icon: "mdi:blur", level: 70 }, // stays in RIGHT column top
-        { name: "CUDA", icon: "simple-icons:nvidia", level: 60 }, // stays in RIGHT column top
-        { name: "Photoshop", icon: "simple-icons:adobephotoshop", level: 62 }, // last item in RIGHT column top
-
-        /* from here we want the 3-column middle row to begin on the RIGHT */
-        { name: "Figma", icon: "logos:figma", level: 65 },
-
-        { name: "GoLand", icon: "logos:goland", level: 25 },
-        { name: "REST API", icon: "mdi:api", level: 50 },
-        { name: "Flutter", icon: "logos:flutter", level: 58 },
-        {
-          name: "Android Studio",
-          icon: "simple-icons:androidstudio",
-          level: 60,
-        },
-        { name: "RabbitMQ", icon: "simple-icons:rabbitmq", level: 68 },
-        { name: "Middleware services", icon: "mdi:server", level: 72 },
-        { name: "ArcGIS Enterprise", icon: "simple-icons:esri", level: 88 },
-        { name: "ArcGIS StoryMaps", icon: "mdi:book-open-variant", level: 80 },
-        {
-          name: "ArcGIS Survey123",
-          icon: "mdi:clipboard-text-outline",
-          level: 84,
-        },
-        { name: "ArcGIS Pro", icon: "simple-icons:esri", level: 92 },
-        {
-          name: "Microsoft Office",
-          icon: "simple-icons:microsoftoffice",
-          level: 90,
+          title: "GIS & Geospatial Stack",
+          subtitle: "Esri, geospatial analysis, enterprise mapping",
+          icon: "simple-icons:esri",
+          skills: [
+            {
+              name: "ArcGIS (Esri)",
+              icon: "simple-icons:esri",
+              level: 92,
+              note: "Core geospatial platform",
+            },
+            {
+              name: "ArcGIS Pro",
+              icon: "simple-icons:esri",
+              level: 92,
+              note: "Desktop GIS and analysis",
+            },
+            {
+              name: "ArcGIS Enterprise",
+              icon: "simple-icons:esri",
+              level: 88,
+              note: "Portal and enterprise deployment",
+            },
+            {
+              name: "ArcPy",
+              icon: "mdi:snake",
+              level: 88,
+              note: "Automation and GIS scripting",
+            },
+            {
+              name: "GeoDatabase",
+              icon: "mdi:database",
+              level: 86,
+              note: "Spatial data management",
+            },
+            {
+              name: "ArcGIS Survey123",
+              icon: "mdi:clipboard-text-outline",
+              level: 84,
+              note: "Field data workflows",
+            },
+            {
+              name: "ArcGIS StoryMaps",
+              icon: "mdi:book-open-variant",
+              level: 80,
+              note: "Narrative geospatial communication",
+            },
+            {
+              name: "Cartography",
+              icon: "mdi:map-outline",
+              level: 84,
+              note: "Map design and storytelling",
+            },
+          ],
         },
         {
-          name: "Project Management",
-          icon: "mdi:clipboard-check-outline",
-          level: 78,
+          title: "Frontend Engineering",
+          subtitle: "Web UI, component systems, modern app delivery",
+          icon: "logos:react",
+          skills: [
+            {
+              name: "React",
+              icon: "logos:react",
+              level: 81,
+              note: "Component-based frontend",
+            },
+            {
+              name: "Next.js",
+              icon: "simple-icons:nextdotjs",
+              level: 78,
+              note: "App routing and production UI",
+            },
+            {
+              name: "JavaScript",
+              icon: "logos:javascript",
+              level: 70,
+              note: "Core interactive web logic",
+            },
+            {
+              name: "HTML",
+              icon: "logos:html-5",
+              level: 86,
+              note: "Semantic web structure",
+            },
+            {
+              name: "CSS",
+              icon: "logos:css-3",
+              level: 72,
+              note: "Responsive interface styling",
+            },
+            {
+              name: "Tailwind CSS",
+              icon: "logos:tailwindcss",
+              level: 80,
+              note: "Utility-first styling",
+            },
+            {
+              name: "Figma",
+              icon: "logos:figma",
+              level: 65,
+              note: "UI exploration and layout design",
+            },
+            {
+              name: "Photoshop",
+              icon: "simple-icons:adobephotoshop",
+              level: 62,
+              note: "Visual edits and asset refinement",
+            },
+          ],
         },
+        {
+          title: "Backend, APIs & Application Engineering",
+          subtitle: "Services, APIs, workers, and platform logic",
+          icon: "mdi:server-outline",
+          skills: [
+            {
+              name: "C#",
+              icon: "mdi:language-csharp",
+              level: 84,
+              note: ".NET application development",
+            },
+            {
+              name: ".NET",
+              icon: "simple-icons:dotnet",
+              level: 82,
+              note: "Backend and worker services",
+            },
+            {
+              name: "REST API",
+              icon: "mdi:api",
+              level: 75,
+              note: "Service integration and endpoints",
+            },
+            {
+              name: "Middleware Services",
+              icon: "mdi:server",
+              level: 72,
+              note: "Data flow and processing layers",
+            },
+            {
+              name: "Node.js",
+              icon: "logos:nodejs-icon",
+              level: 76,
+              note: "JavaScript runtime ecosystem",
+            },
+            {
+              name: "PHP",
+              icon: "logos:php",
+              level: 65,
+              note: "Server-side scripting",
+            },
+            {
+              name: "Laravel",
+              icon: "logos:laravel",
+              level: 68,
+              note: "PHP web framework",
+            },
+            {
+              name: "XAMPP",
+              icon: "simple-icons:xampp",
+              level: 66,
+              note: "Local development environment",
+            },
+          ],
+        },
+        {
+          title: "Programming Languages",
+          subtitle: "General engineering and algorithmic foundations",
+          icon: "mdi:code-tags",
+          skills: [
+            {
+              name: "Python",
+              icon: "logos:python",
+              level: 90,
+              note: "Automation, AI, scripting",
+            },
+            {
+              name: "C++",
+              icon: "logos:c-plusplus",
+              level: 88,
+              note: "Problem solving and fundamentals",
+            },
+            {
+              name: "Java",
+              icon: "logos:java",
+              level: 82,
+              note: "Object-oriented programming",
+            },
+            {
+              name: "C",
+              icon: "logos:c",
+              level: 82,
+              note: "Low-level programming foundation",
+            },
+            {
+              name: "SQL (General)",
+              icon: "mdi:database",
+              level: 78,
+              note: "Relational data operations",
+            },
+            {
+              name: "Bash",
+              icon: "simple-icons:gnubash",
+              level: 65,
+              note: "CLI and shell operations",
+            },
+          ],
+        },
+        {
+          title: "Data, Databases & Analytics",
+          subtitle: "Relational, NoSQL, BI, and analytical workflows",
+          icon: "mdi:database-search-outline",
+          skills: [
+            {
+              name: "SQL Server",
+              icon: "simple-icons:microsoftsqlserver",
+              level: 77,
+              note: "Enterprise database work",
+            },
+            {
+              name: "MySQL",
+              icon: "logos:mysql",
+              level: 78,
+              note: "Relational DB systems",
+            },
+            {
+              name: "PostgreSQL",
+              icon: "logos:postgresql",
+              level: 72,
+              note: "Open source relational DB",
+            },
+            {
+              name: "MongoDB",
+              icon: "logos:mongodb-icon",
+              level: 73,
+              note: "Document database workflows",
+            },
+            {
+              name: "SQLAlchemy",
+              icon: "simple-icons:sqlalchemy",
+              level: 70,
+              note: "ORM and data integration",
+            },
+            {
+              name: "Data Cleaning",
+              icon: "mdi:broom",
+              level: 78,
+              note: "Dataset preparation skills",
+            },
+            {
+              name: "Data Visualization",
+              icon: "mdi:chart-line",
+              level: 80,
+              note: "Excel and reporting-driven insights",
+            },
+            {
+              name: "Google Analytics",
+              icon: "mdi:chart-box-outline",
+              level: 72,
+              note: "Measurement and analytics exposure",
+            },
+          ],
+        },
+        {
+          title: "AI, ML & Emerging Tech",
+          subtitle: "Model concepts, deep learning, AI tooling",
+          icon: "mdi:brain",
+          skills: [
+            {
+              name: "Machine Learning",
+              icon: "mdi:robot-outline",
+              level: 84,
+              note: "Applied ML understanding",
+            },
+            {
+              name: "Deep Learning",
+              icon: "mdi:brain",
+              level: 82,
+              note: "Neural model concepts",
+            },
+            {
+              name: "Neural Network",
+              icon: "mdi:source-branch",
+              level: 82,
+              note: "Network architectures",
+            },
+            {
+              name: "PyTorch",
+              icon: "logos:pytorch-icon",
+              level: 79,
+              note: "Deep learning framework",
+            },
+            {
+              name: "Generative AI",
+              icon: "mdi:creation-outline",
+              level: 78,
+              note: "LLM and GenAI exposure",
+            },
+            {
+              name: "Prompt Engineering",
+              icon: "mdi:message-processing-outline",
+              level: 84,
+              note: "Developer-focused LLM prompting",
+            },
+            {
+              name: "Convolutional Neural Networks",
+              icon: "mdi:grid-large",
+              level: 72,
+              note: "CNN exposure and coursework",
+            },
+            {
+              name: "Google Cloud AI",
+              icon: "mdi:cloud-outline",
+              level: 68,
+              note: "Cloud AI solution familiarity",
+            },
+          ],
+        },
+        {
+          title: "DevOps, Containers & Delivery",
+          subtitle: "Build, release, environment, and infra tooling",
+          icon: "logos:docker-icon",
+          skills: [
+            {
+              name: "Git",
+              icon: "logos:git-icon",
+              level: 85,
+              note: "Version control workflow",
+            },
+            {
+              name: "Deployment",
+              icon: "mdi:rocket-launch-outline",
+              level: 75,
+              note: "Release and production execution",
+            },
+            {
+              name: "CI/CD",
+              icon: "mdi:infinity",
+              level: 80,
+              note: "Delivery pipeline mindset",
+            },
+            {
+              name: "Docker",
+              icon: "logos:docker-icon",
+              level: 68,
+              note: "Containerized development",
+            },
+            {
+              name: "Docker Compose",
+              icon: "simple-icons:docker",
+              level: 62,
+              note: "Multi-service local orchestration",
+            },
+            {
+              name: "Kubernetes",
+              icon: "logos:kubernetes",
+              level: 55,
+              note: "Container orchestration exposure",
+            },
+            {
+              name: "Azure",
+              icon: "logos:microsoft-azure",
+              level: 60,
+              note: "Cloud platform familiarity",
+            },
+            {
+              name: "VMware",
+              icon: "simple-icons:vmware",
+              level: 58,
+              note: "Virtualization exposure",
+            },
+          ],
+        },
+        {
+          title: "Tools, Productivity & Platform Support",
+          subtitle: "Day-to-day execution, collaboration, and delivery support",
+          icon: "mdi:tools",
+          skills: [
+            {
+              name: "Microsoft Office",
+              icon: "simple-icons:microsoftoffice",
+              level: 90,
+              note: "Documentation and presentation work",
+            },
+            {
+              name: "Project Management",
+              icon: "mdi:clipboard-check-outline",
+              level: 78,
+              note: "Coordination and delivery support",
+            },
+            {
+              name: "Flutter",
+              icon: "logos:flutter",
+              level: 58,
+              note: "Cross-platform mobile exposure",
+            },
+            {
+              name: "Android Studio",
+              icon: "simple-icons:androidstudio",
+              level: 60,
+              note: "Mobile dev environment",
+            },
+            {
+              name: "GoLand",
+              icon: "logos:goland",
+              level: 25,
+              note: "Introductory tooling exposure",
+            },
+            {
+              name: "NVM",
+              icon: "mdi:console",
+              level: 70,
+              note: "Node version management",
+            },
+            {
+              name: "RabbitMQ",
+              icon: "simple-icons:rabbitmq",
+              level: 68,
+              note: "Messaging workflow familiarity",
+            },
+            {
+              name: "Business Communication",
+              icon: "mdi:email-outline",
+              level: 82,
+              note: "Professional written communication",
+            },
+          ],
+        },
+      ];
+
+      const extraSkills = [
+        { name: "Storytelling with Maps", icon: "mdi:map-legend" },
+        { name: "Spatial Analysis", icon: "mdi:map-search-outline" },
+        { name: "Editing in ArcGIS Online", icon: "mdi:pencil-ruler" },
+        { name: "Portal Data Access", icon: "mdi:database-arrow-down-outline" },
+        { name: "Cybersecurity Awareness", icon: "mdi:shield-check-outline" },
+        { name: "Agile Delivery", icon: "mdi:lightning-bolt-outline" },
+        { name: "Critical Thinking", icon: "mdi:head-cog-outline" },
+        { name: "Business Intelligence", icon: "mdi:briefcase-search-outline" },
+        { name: "Regression Algorithms", icon: "mdi:sigma" },
+        { name: "SQL Joins & Aggregation", icon: "mdi:table-search" },
+        { name: "Univariate Analysis", icon: "mdi:chart-bell-curve" },
+        { name: "Bivariate Analysis", icon: "mdi:chart-scatter-plot" },
+        { name: "Multivariate Analysis", icon: "mdi:chart-box-multiple" },
+        { name: "Data Cleaning", icon: "mdi:broom" },
+        { name: "PAX Platform Development", icon: "mdi:cellphone-cog" },
+        {
+          name: "Developer Productivity with AI",
+          icon: "mdi:robot-happy-outline",
+        },
+      ];
+
+      const certificationDrivenSkills = [
+        { name: "ArcGIS Online", icon: "simple-icons:esri" },
+        { name: "ArcGIS API for Python", icon: "mdi:language-python" },
+        { name: "GIS Analysis", icon: "mdi:map-marker-path" },
+        { name: "Cartography", icon: "mdi:map-outline" },
+        { name: "StoryMaps", icon: "mdi:book-open-page-variant" },
+        { name: "Business Email", icon: "mdi:email-fast-outline" },
+        {
+          name: "Agile Project Management",
+          icon: "mdi:timeline-check-outline",
+        },
+        { name: "Prompt Engineering", icon: "mdi:text-box-edit-outline" },
+        { name: "Generative AI", icon: "mdi:auto-fix" },
+        { name: "Google Cloud AI", icon: "mdi:cloud-braces" },
+        { name: "Docker", icon: "logos:docker-icon" },
+        { name: "Analytics", icon: "mdi:google-analytics" },
       ];
 
       const osComfort = [
-        { name: "Linux", icon: "logos:linux-tux", level: 92 },
-        { name: "macOS", icon: "logos:apple", level: 91 },
-        { name: "Windows", icon: "logos:microsoft-windows", level: 95 },
-        { name: "Server OS", icon: "mdi:server", level: 78 },
+        {
+          name: "Linux",
+          icon: "logos:linux-tux",
+          level: 92,
+          caption: "Development and server comfort",
+        },
+        {
+          name: "macOS",
+          icon: "logos:apple",
+          level: 91,
+          caption: "Daily productivity and dev usage",
+        },
+        {
+          name: "Windows",
+          icon: "logos:microsoft-windows",
+          level: 95,
+          caption: "Primary engineering environment",
+        },
+        {
+          name: "Server OS",
+          icon: "mdi:server",
+          level: 78,
+          caption: "Infrastructure and deployment work",
+        },
       ];
 
-      function skillHTML(s) {
+      function skillItemHTML(skill) {
         return `
-          <div class="SkillBar skill-card" title="${s.name}: ${s.level}%">
-            <div class="skill-meter" style="--p:${s.level}">
-              <span class="icon-badge">
-                <span class="iconify" data-icon="${s.icon}" data-width="24" data-height="24"></span>
-              </span>
-              <span class="skill-name">${s.name}</span>
-              <span class="skill-percent">${s.level}%</span>
-              <div class="skill-fill"></div>
+          <div class="skill-item">
+            <div class="skill-item-top">
+              <div class="skill-item-left">
+                <div class="skill-icon-badge">
+                  <span class="iconify" data-icon="${skill.icon}" data-width="24" data-height="24"></span>
+                </div>
+                <div class="skill-label-wrap">
+                  <div class="skill-name">${skill.name}</div>
+                  <div class="skill-note">${skill.note || ""}</div>
+                </div>
+              </div>
+              <div class="skill-percent">${skill.level}%</div>
+            </div>
+            <div class="skill-bar-track">
+              <div class="skill-bar-fill" style="--value:${skill.level}"></div>
             </div>
           </div>
         `;
       }
 
-      // --- LAYOUT LOGIC ---
-      // Start 3-column grid from "JavaScript" on the left, and from "Figma" on the right.
-      const startLeftName = "JavaScript";
-      const startRightName = "Figma";
-      const rightKeepTop = new Set([
-        "Machine Learning",
-        "Neural Network",
-        "DCGAN",
-        "CUDA",
-        "Photoshop",
-      ]);
+      function categoryHTML(category) {
+        return `
+          <div class="col-xl-6 mb-4">
+            <div class="skill-category-card">
+              <div class="skill-category-header">
+                <div class="skill-category-left">
+                  <div class="skill-category-icon">
+                    <span class="iconify" data-icon="${category.icon}" data-width="26" data-height="26"></span>
+                  </div>
+                  <div>
+                    <h3 class="skill-category-title">${category.title}</h3>
+                    <div class="skill-category-meta">${category.subtitle}</div>
+                  </div>
+                </div>
+                <div class="skill-count-pill">${category.skills.length}</div>
+              </div>
+              <div class="skill-list">
+                ${category.skills.map(skillItemHTML).join("")}
+              </div>
+            </div>
+          </div>
+        `;
+      }
 
-      const idxLeftStart = skills.findIndex((s) => s.name === startLeftName);
-      const idxRightStart = skills.findIndex((s) => s.name === startRightName);
+      function extraSkillChipHTML(skill) {
+        return `
+          <span class="skill-chip">
+            <span class="iconify" data-icon="${skill.icon}" data-width="18" data-height="18"></span>
+            ${skill.name}
+          </span>
+        `;
+      }
 
-      // Left column (top) = everything before JavaScript
-      const leftTop = skills.slice(0, idxLeftStart);
+      function certSkillHTML(skill) {
+        return `
+          <div class="cert-skill-item">
+            <span class="iconify" data-icon="${skill.icon}" data-width="20" data-height="20"></span>
+            <span>${skill.name}</span>
+          </div>
+        `;
+      }
 
-      // Right column (top) = only the hand-picked items before Figma
-      const rightTop = skills.filter(
-        (s, i) => i < idxRightStart && rightKeepTop.has(s.name),
-      );
+      function osCardHTML(os) {
+        return `
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="os-card">
+              <div class="os-top">
+                <div class="os-left">
+                  <div class="os-icon">
+                    <span class="iconify" data-icon="${os.icon}" data-width="26" data-height="26"></span>
+                  </div>
+                  <div>
+                    <h4 class="os-name">${os.name}</h4>
+                    <div class="os-caption">${os.caption}</div>
+                  </div>
+                </div>
+                <div class="os-value">${os.level}%</div>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="--value:${os.level}"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
 
-      // Bottom grid = everything from JavaScript onward EXCEPT the rightTop items,
-      // plus everything from Figma onward.
-      const bottom = skills.filter((s, i) => {
-        if (i < idxLeftStart) return false; // before JS -> in leftTop
-        if (i < idxRightStart && rightKeepTop.has(s.name)) return false; // pinned rightTop
-        return true; // JS..end, but skipping those pinned to rightTop
-      });
-
-      // Distribute bottom into 3 columns (balanced)
-      const botCols = [[], [], []];
-      bottom.forEach((item, i) => botCols[i % 3].push(item));
-
-      // Render
-      document.getElementById("skills-left").innerHTML = leftTop
-        .map(skillHTML)
+      document.getElementById("skillCategoryGrid").innerHTML = skillCategories
+        .map(categoryHTML)
         .join("");
-      document.getElementById("skills-right").innerHTML = rightTop
-        .map(skillHTML)
-        .join("");
-      document.getElementById("skills-bot-1").innerHTML = botCols[0]
-        .map(skillHTML)
-        .join("");
-      document.getElementById("skills-bot-2").innerHTML = botCols[1]
-        .map(skillHTML)
-        .join("");
-      document.getElementById("skills-bot-3").innerHTML = botCols[2]
-        .map(skillHTML)
+
+      document.getElementById("extraSkillsChips").innerHTML = extraSkills
+        .map(extraSkillChipHTML)
         .join("");
 
-      // OS (4 columns)
-      document.getElementById("OSBars").innerHTML = osComfort
-        .map(skillHTML)
+      document.getElementById("certificationSkills").innerHTML =
+        certificationDrivenSkills.map(certSkillHTML).join("");
+
+      document.getElementById("osGrid").innerHTML = osComfort
+        .map(osCardHTML)
         .join("");
     </script>
   </body>
