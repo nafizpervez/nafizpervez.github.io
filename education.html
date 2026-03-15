@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Nafiz's Portfolio</title>
+    <title>Nafiz's Portfolio | Education</title>
     <link rel="icon" href="Image/engineer.ico" />
     <link
       rel="stylesheet"
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="dark-mode.css" />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -46,245 +46,6 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-
-    <style>
-      :root {
-        --cert-card-radius: 22px;
-        --cert-shadow: 0 14px 38px rgba(15, 23, 42, 0.08);
-        --cert-shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.14);
-        --cert-border: rgba(148, 163, 184, 0.18);
-        --cert-preview-bg: linear-gradient(
-          135deg,
-          #eff6ff 0%,
-          #f8fafc 50%,
-          #eef2ff 100%
-        );
-      }
-
-      #section3 {
-        padding-top: 30px;
-        padding-bottom: 80px;
-      }
-
-      .certificate-subtitle {
-        max-width: 860px;
-        margin: 10px auto 36px;
-        text-align: center;
-        font-size: 1rem;
-        line-height: 1.8;
-        opacity: 0.85;
-      }
-
-      .certificate-grid .col-lg-3,
-      .certificate-grid .col-md-6,
-      .certificate-grid .col-sm-12 {
-        display: flex;
-      }
-
-      .certificate-card {
-        width: 100%;
-        border: 1px solid var(--cert-border);
-        border-radius: var(--cert-card-radius);
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.92);
-        box-shadow: var(--cert-shadow);
-        transition:
-          transform 0.25s ease,
-          box-shadow 0.25s ease,
-          border-color 0.25s ease;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        min-height: 100%;
-      }
-
-      .certificate-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--cert-shadow-hover);
-        border-color: rgba(59, 130, 246, 0.25);
-      }
-
-      .certificate-thumb {
-        height: 220px;
-        background: var(--cert-preview-bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .certificate-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .pdf-thumb {
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: var(--cert-preview-bg);
-      }
-
-      .pdf-thumb i {
-        font-size: 4rem;
-        color: #dc2626;
-        margin-bottom: 12px;
-      }
-
-      .pdf-thumb .pdf-label {
-        font-weight: 800;
-        font-size: 1rem;
-        letter-spacing: 0.04em;
-        color: #0f172a;
-        text-transform: uppercase;
-      }
-
-      .pdf-thumb .pdf-name {
-        font-size: 0.9rem;
-        line-height: 1.45;
-        margin-top: 10px;
-        color: #334155;
-        word-break: break-word;
-      }
-
-      .certificate-card .card-body {
-        padding: 1.15rem 1rem 1.1rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
-
-      .certificate-title {
-        font-size: 1rem;
-        font-weight: 800;
-        line-height: 1.45;
-        margin-bottom: 0.55rem;
-        min-height: 3rem;
-        color: #0f172a;
-      }
-
-      .certificate-issuer {
-        font-size: 0.92rem;
-        color: #64748b;
-        margin-bottom: 0.85rem;
-        min-height: 2.5rem;
-      }
-
-      .certificate-meta {
-        margin-top: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 12px;
-        font-size: 0.85rem;
-      }
-
-      .certificate-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(59, 130, 246, 0.08);
-        color: #1d4ed8;
-        font-weight: 700;
-      }
-
-      .certificate-open {
-        font-weight: 700;
-        color: #0f172a;
-      }
-
-      .certificate-open i {
-        margin-left: 4px;
-      }
-
-      .certificate-modal .modal-content {
-        border: none;
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 30px 80px rgba(2, 8, 23, 0.25);
-      }
-
-      .certificate-modal .modal-header {
-        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-        padding: 18px 24px;
-      }
-
-      .certificate-modal .modal-title {
-        font-weight: 800;
-        font-size: 1.1rem;
-      }
-
-      .certificate-modal .modal-body {
-        padding: 18px;
-        background: #f8fafc;
-      }
-
-      .certificate-preview-wrap {
-        background: #ffffff;
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.16);
-      }
-
-      .certificate-preview-wrap iframe {
-        width: 100%;
-        height: 78vh;
-        border: 0;
-        display: block;
-      }
-
-      .certificate-preview-wrap img {
-        width: 100%;
-        max-height: 78vh;
-        object-fit: contain;
-        display: block;
-        background: #f8fafc;
-      }
-
-      .certificate-modal-footer-actions {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        padding-top: 16px;
-        flex-wrap: wrap;
-      }
-
-      .certificate-btn {
-        border-radius: 999px;
-        padding: 10px 18px;
-        font-weight: 700;
-      }
-
-      @media (max-width: 991.98px) {
-        .certificate-thumb {
-          height: 210px;
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .certificate-title {
-          min-height: auto;
-        }
-
-        .certificate-issuer {
-          min-height: auto;
-        }
-
-        .certificate-thumb {
-          height: 200px;
-        }
-      }
-    </style>
   </head>
 
   <script
@@ -322,7 +83,7 @@
               <a class="nav-link headerachor" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link headerachor" href="education.html"
+              <a class="nav-link headerachor active-page" href="education.html"
                 >Education</a
               >
             </li>
@@ -347,193 +108,322 @@
       </nav>
     </header>
 
-    <section id="Section1">
-      <div class="row">
-        <div class="col-lg-6 col-md">
-          <img class="Programming" src="Image/Programming.svg" alt="" />
+    <main class="education-shell">
+      <section class="education-hero">
+        <div class="education-hero-grid">
+          <div class="hero-copy">
+            <div class="hero-badge">
+              <i class="fas fa-user-graduate"></i>
+              Academic Background & Professional Learning
+            </div>
+
+            <h1 class="hero-title">
+              Structured Education with
+              <span class="accent">Continuous Certification Growth</span>
+            </h1>
+
+            <p class="hero-text">
+              This page combines formal academic history with a large
+              certification portfolio across GIS, AI, development, data, cloud,
+              analytics, and enterprise technology. The layout is built to feel
+              modern, fast, and interactive while keeping the content easy to
+              scan.
+            </p>
+
+            <div class="hero-stats">
+              <div class="hero-stat-card">
+                <h3>4</h3>
+                <p>Academic milestones</p>
+              </div>
+              <div class="hero-stat-card">
+                <h3 id="certCountTop">0</h3>
+                <p>Certificates listed</p>
+              </div>
+              <div class="hero-stat-card">
+                <h3>Multi-domain</h3>
+                <p>Learning across GIS, AI, software, cloud, and data</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual-wrap">
+            <div class="hero-visual">
+              <span class="floating-chip chip-1">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+              </span>
+              <span class="floating-chip chip-2">
+                <i class="fas fa-certificate"></i>
+                Certifications
+              </span>
+              <span class="floating-chip chip-3">
+                <i class="fas fa-layer-group"></i>
+                Portfolio UI
+              </span>
+              <img
+                class="Programming"
+                src="Image/Programming.svg"
+                alt="Education Illustration"
+              />
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6 col-md Coding">
-          <h1>Competitive Programming</h1>
-          <ul class="competitive_icon">
-            <li>
+      </section>
+
+      <section class="section-block">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Competitive Programming</h2>
+            <p class="section-desc">
+              Platform presence across programming challenge ecosystems and
+              problem-solving communities.
+            </p>
+          </div>
+        </div>
+
+        <div class="platform-panel">
+          <div class="platform-left">
+            <div class="platform-graphic">
+              <img src="Image/Programming.svg" alt="Programming" />
+            </div>
+          </div>
+          <div class="platform-right">
+            <div class="platform-grid">
               <a
+                class="platform-card"
                 href="https://www.hackerearth.com/@nafizpervez"
                 target="_blank"
               >
-                <i
-                  class="iconify"
-                  data-icon="simple-icons:hackerearth"
-                  data-inline="false"
-                  data-width="50px"
-                  data-height="50px"
-                ></i>
+                <div class="platform-icon">
+                  <i
+                    class="iconify"
+                    data-icon="simple-icons:hackerearth"
+                    data-inline="false"
+                    data-width="38px"
+                    data-height="38px"
+                  ></i>
+                </div>
+                <div>
+                  <h4>HackerEarth</h4>
+                  <p>Problem solving and coding challenge profile</p>
+                </div>
               </a>
-            </li>
-            <li>
-              <a href="https://www.hackerrank.com/nafiz_pervez" target="_blank">
-                <i class="fab fa-hackerrank fa-4x"></i>
+
+              <a
+                class="platform-card"
+                href="https://www.hackerrank.com/nafiz_pervez"
+                target="_blank"
+              >
+                <div class="platform-icon">
+                  <i class="fab fa-hackerrank"></i>
+                </div>
+                <div>
+                  <h4>HackerRank</h4>
+                  <p>
+                    Programming, algorithms, and technical assessment practice
+                  </p>
+                </div>
               </a>
-            </li>
-            <li>
-              <a href="https://leetcode.com/nafizpervez/" target="_blank">
-                <i
-                  class="iconify"
-                  data-icon="simple-icons:leetcode"
-                  data-inline="false"
-                  data-width="50px"
-                  data-height="50px"
-                ></i>
+
+              <a
+                class="platform-card"
+                href="https://leetcode.com/nafizpervez/"
+                target="_blank"
+              >
+                <div class="platform-icon">
+                  <i
+                    class="iconify"
+                    data-icon="simple-icons:leetcode"
+                    data-inline="false"
+                    data-width="38px"
+                    data-height="38px"
+                  ></i>
+                </div>
+                <div>
+                  <h4>LeetCode</h4>
+                  <p>
+                    Data structures, algorithms, and interview-style practice
+                  </p>
+                </div>
               </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="Heading">
-          <h1>Degrees Received</h1>
-          <br />
-        </div>
-        <div class="timeline">
-          <div class="timeline-month">Education</div>
-
-          <div class="timeline-section">
-            <div class="timeline-date">2016 - 2021</div>
-            <div class="row">
-              <div class="col-lg">
-                <div class="timeline-box">
-                  <div class="box-title">
-                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                    North South University
-                    <p class="degree">
-                      B.Sc. in Computer Science and Engineering
-                    </p>
-                  </div>
-                  <div class="box-content">
-                    <a
-                      class="btn btn-sm btn-dark float-right"
-                      role="button"
-                      href="https://www.northsouth.edu/"
-                      target="_blank"
-                      style="color: white"
-                    >
-                      Website
-                    </a>
-                    <div class="box-item">
-                      💥 Studied software engineering subjects like Data
-                      Structures, Algorithms, DBMS, OS etc.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-section">
-            <div class="timeline-date">2013 - 2015</div>
-            <div class="row">
-              <div class="col-lg">
-                <div class="timeline-box">
-                  <div class="box-title">
-                    <i class="fas fa-school" aria-hidden="true"></i>
-                    Milestone College, Dhaka
-                    <p class="degree">Higher Secondary Certificate (HSC)</p>
-                  </div>
-                  <div class="box-content">
-                    <a
-                      class="btn btn-sm btn-dark float-right"
-                      role="button"
-                      style="color: white"
-                      href="https://www.milestonecollege.com/"
-                    >
-                      Website
-                    </a>
-                    <div class="box-item">
-                      💥 Studied the pure science subjects Physics, Chemistry,
-                      Mathematics, Biology etc.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-section">
-            <div class="timeline-date">2010 - 2012</div>
-            <div class="row">
-              <div class="col-lg">
-                <div class="timeline-box">
-                  <div class="box-title">
-                    <i class="fas fa-school" aria-hidden="true"></i>
-                    Milestone School and College, Dhaka
-                    <p class="degree">Secondary School Certificate (SSC)</p>
-                  </div>
-                  <div class="box-content">
-                    <a
-                      class="btn btn-sm btn-dark float-right"
-                      role="button"
-                      style="color: white"
-                      href="https://www.milestonecollege.com/"
-                    >
-                      Website
-                    </a>
-                    <div class="box-item">
-                      💥 Studied the pure science subjects Physics, Chemistry,
-                      Mathematics etc.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-section">
-            <div class="timeline-date">2009</div>
-            <div class="row">
-              <div class="col-lg">
-                <div class="timeline-box">
-                  <div class="box-title">
-                    <i class="fas fa-school" aria-hidden="true"></i>
-                    Bangladesh Navy School, Dhaka
-                    <p class="degree">Junior School Certificate (JSC)</p>
-                  </div>
-                  <div class="box-content">
-                    <a
-                      class="btn btn-sm btn-dark float-right"
-                      role="button"
-                      style="color: white"
-                      href="https://bncd.edu.bd/"
-                    >
-                      Website
-                    </a>
-                    <div class="box-item">
-                      💥 Studied subjects Physics, Chemistry, Mathematics etc.
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="section3">
-      <div class="Heading">
-        <h1>Certifications</h1>
-      </div>
-      <p class="certificate-subtitle">
-        A consolidated view of professional certificates across GIS, AI, data,
-        cloud, business communication, Docker, and platform engineering. Click
-        any card to preview the certificate directly on the page.
-      </p>
+      <section class="section-block">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Academic Timeline</h2>
+            <p class="section-desc">
+              Formal education milestones arranged in a cleaner, more modern,
+              portfolio-style timeline.
+            </p>
+          </div>
+        </div>
 
-      <div class="container certificate">
-        <div class="row certificate-grid" id="certificateGrid"></div>
-      </div>
-    </section>
+        <div class="education-timeline-modern">
+          <div class="education-line"></div>
+
+          <div class="edu-item">
+            <div class="edu-year">2016 - 2021</div>
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-top">
+                <div class="edu-icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div>
+                  <h3>North South University</h3>
+                  <p class="edu-degree">
+                    B.Sc. in Computer Science and Engineering
+                  </p>
+                </div>
+                <a
+                  class="edu-link"
+                  href="https://www.northsouth.edu/"
+                  target="_blank"
+                >
+                  Website
+                </a>
+              </div>
+              <p class="edu-desc">
+                Studied software engineering subjects including Data Structures,
+                Algorithms, DBMS, Operating Systems, and core computing
+                fundamentals.
+              </p>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-year">2013 - 2015</div>
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-top">
+                <div class="edu-icon"><i class="fas fa-school"></i></div>
+                <div>
+                  <h3>Milestone College, Dhaka</h3>
+                  <p class="edu-degree">Higher Secondary Certificate (HSC)</p>
+                </div>
+                <a
+                  class="edu-link"
+                  href="https://www.milestonecollege.com/"
+                  target="_blank"
+                >
+                  Website
+                </a>
+              </div>
+              <p class="edu-desc">
+                Focused on pure science subjects including Physics, Chemistry,
+                Mathematics, and Biology.
+              </p>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-year">2010 - 2012</div>
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-top">
+                <div class="edu-icon"><i class="fas fa-school"></i></div>
+                <div>
+                  <h3>Milestone School and College, Dhaka</h3>
+                  <p class="edu-degree">Secondary School Certificate (SSC)</p>
+                </div>
+                <a
+                  class="edu-link"
+                  href="https://www.milestonecollege.com/"
+                  target="_blank"
+                >
+                  Website
+                </a>
+              </div>
+              <p class="edu-desc">
+                Studied core science disciplines including Physics, Chemistry,
+                and Mathematics.
+              </p>
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-year">2009</div>
+            <div class="edu-dot"></div>
+            <div class="edu-card">
+              <div class="edu-card-top">
+                <div class="edu-icon"><i class="fas fa-school"></i></div>
+                <div>
+                  <h3>Bangladesh Navy School, Dhaka</h3>
+                  <p class="edu-degree">Junior School Certificate (JSC)</p>
+                </div>
+                <a class="edu-link" href="https://bncd.edu.bd/" target="_blank">
+                  Website
+                </a>
+              </div>
+              <p class="edu-desc">
+                Early academic foundation built around science and mathematics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section3" class="section-block">
+        <div class="section-head section-head-stack">
+          <div>
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-desc">
+              Thumbnail-first certification gallery. Only lightweight preview
+              images are loaded in the grid. Full-resolution images load only
+              when a card is opened in the modal.
+            </p>
+          </div>
+          <div class="section-count-badge">
+            <span id="certCountBadge">0</span>
+            <small>Items</small>
+          </div>
+        </div>
+
+        <div class="cert-toolbar">
+          <div class="cert-search-wrap">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="certSearch"
+              placeholder="Search certificate, issuer, or keyword..."
+            />
+          </div>
+
+          <div class="cert-filter-group" id="issuerFilters">
+            <button class="cert-filter-chip active" data-filter="all">
+              All
+            </button>
+          </div>
+        </div>
+
+        <div class="cert-status-bar">
+          <div class="cert-status-left">
+            <span class="status-pill">
+              <i class="fas fa-bolt"></i>
+              Lazy thumbnails
+            </span>
+            <span class="status-pill">
+              <i class="fas fa-expand"></i>
+              Full preview on click
+            </span>
+          </div>
+          <div class="cert-status-right">
+            Showing <strong id="visibleCertCount">0</strong> certificates
+          </div>
+        </div>
+
+        <div class="container certificate px-0">
+          <div class="row certificate-grid" id="certificateGrid"></div>
+          <div class="cert-empty-state d-none" id="certEmptyState">
+            No certificates matched your search or filter.
+          </div>
+        </div>
+      </section>
+    </main>
 
     <div
       class="modal fade certificate-modal"
@@ -546,9 +436,12 @@
       <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="certificatePreviewModalLabel">
-              Certificates
-            </h5>
+            <div>
+              <h5 class="modal-title" id="certificatePreviewModalLabel">
+                Certificate Preview
+              </h5>
+              <div class="modal-subtitle" id="certificatePreviewIssuer"></div>
+            </div>
             <button
               type="button"
               class="close"
@@ -560,10 +453,13 @@
           </div>
 
           <div class="modal-body">
-            <div
-              class="certificate-preview-wrap"
-              id="certificatePreviewBody"
-            ></div>
+            <div class="certificate-preview-wrap" id="certificatePreviewBody">
+              <div class="cert-loader" id="certificatePreviewLoader">
+                <div class="spinner-border text-primary" role="status"></div>
+                <p>Loading full-resolution certificate...</p>
+              </div>
+            </div>
+
             <div class="certificate-modal-footer-actions">
               <a
                 id="certificateOpenLink"
@@ -571,7 +467,7 @@
                 target="_blank"
                 class="btn btn-dark certificate-btn"
               >
-                Open Full File
+                Open Full Image
               </a>
             </div>
           </div>
@@ -586,410 +482,577 @@
         {
           title: "Business Email",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/Business Email.pdf",
+          category: "Business",
+          thumb: "Image/Certificates/thumbs/Business Email.jpg",
+          full: "Image/Certificates/Business Email.jpg",
         },
         {
           title: "AI for Business Professionals",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/AI for Business Professionals.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/AI for Business Professionals.jpg",
+          full: "Image/Certificates/AI for Business Professionals.jpg",
         },
         {
           title: "AI for Beginners",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/AI for Beginners.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/AI for Beginners.jpg",
+          full: "Image/Certificates/AI for Beginners.jpg",
         },
         {
           title: "Professional Networking for Career Growth",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/Professional Networking for Career Growth.pdf",
+          category: "Business",
+          thumb:
+            "Image/Certificates/thumbs/Professional Networking for Career Growth.jpg",
+          full: "Image/Certificates/Professional Networking for Career Growth.jpg",
         },
         {
           title: "Introduction to Cybersecurity Awareness",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/Introduction to Cybersecurity Awareness.pdf",
+          category: "Security",
+          thumb:
+            "Image/Certificates/thumbs/Introduction to Cybersecurity Awareness.jpg",
+          full: "Image/Certificates/Introduction to Cybersecurity Awareness.jpg",
         },
         {
           title: "Agile Project Management",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/Agile Project Management.pdf",
+          category: "Management",
+          thumb: "Image/Certificates/thumbs/Agile Project Management.jpg",
+          full: "Image/Certificates/Agile Project Management.jpg",
         },
         {
           title: "Critical Thinking in the AI Era",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/Critical Thinking in the AI Era.pdf",
+          category: "AI",
+          thumb:
+            "Image/Certificates/thumbs/Critical Thinking in the AI Era.jpg",
+          full: "Image/Certificates/Critical Thinking in the AI Era.jpg",
         },
         {
           title: "Effective Leadership",
           issuer: "HP LIFE",
-          type: "pdf",
-          file: "Image/Certificates/Effective Leadership.pdf",
+          category: "Leadership",
+          thumb: "Image/Certificates/thumbs/Effective Leadership.jpg",
+          full: "Image/Certificates/Effective Leadership.jpg",
         },
         {
           title: "Information Systems Development and Society",
           issuer: "Alison",
-          type: "pdf",
-          file: "Image/Certificates/Alison_Certificate-3320-46848548_Information Systems Development and Society.pdf",
+          category: "Systems",
+          thumb:
+            "Image/Certificates/thumbs/Alison_Certificate-3320-46848548_Information Systems Development and Society.jpg",
+          full: "Image/Certificates/Alison_Certificate-3320-46848548_Information Systems Development and Society.jpg",
         },
         {
           title: "ArcGIS Online Basics",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/ArcGIS Online Basics_Certificate.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/ArcGIS Online Basics_Certificate.jpg",
+          full: "Image/Certificates/ArcGIS Online Basics_Certificate.jpg",
         },
         {
           title: "ArcGIS Online: Performing Analysis",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/ArcGIS Online_ Performing Analysis_Certificate_08122025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/ArcGIS Online_ Performing Analysis_Certificate_08122025.jpg",
+          full: "Image/Certificates/ArcGIS Online_ Performing Analysis_Certificate_08122025.jpg",
         },
         {
           title: "ArcGIS Pro Basics",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/ArcGIS Pro Basics_Certificate_03052025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/ArcGIS Pro Basics_Certificate_03052025.jpg",
+          full: "Image/Certificates/ArcGIS Pro Basics_Certificate_03052025.jpg",
         },
         {
           title: "Exploring GIS Maps",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Exploring GIS Maps_Certificate_03092025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Exploring GIS Maps_Certificate_03092025.jpg",
+          full: "Image/Certificates/Exploring GIS Maps_Certificate_03092025.jpg",
         },
         {
           title: "Getting Information from a GIS Map",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Getting Information from a GIS Map_Certificate_03092025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Getting Information from a GIS Map_Certificate_03092025.jpg",
+          full: "Image/Certificates/Getting Information from a GIS Map_Certificate_03092025.jpg",
         },
         {
           title: "GIS Basics",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/GIS Basics_Certificate.pdf",
+          category: "GIS",
+          thumb: "Image/Certificates/thumbs/GIS Basics_Certificate.jpg",
+          full: "Image/Certificates/GIS Basics_Certificate.jpg",
         },
         {
           title: "Make an Impact with Modern Geo Apps",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Make an Impact with Modern Geo Apps_Certificate_05012025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Make an Impact with Modern Geo Apps_Certificate_05012025.jpg",
+          full: "Image/Certificates/Make an Impact with Modern Geo Apps_Certificate_05012025.jpg",
         },
         {
           title: "Putting Your GIS Skills to Work",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Putting Your GIS Skills to Work_Certificate_03092025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Putting Your GIS Skills to Work_Certificate_03092025.jpg",
+          full: "Image/Certificates/Putting Your GIS Skills to Work_Certificate_03092025.jpg",
         },
         {
           title: "Telling Stories with GIS Maps",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Telling Stories with GIS Maps_Certificate_03092025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Telling Stories with GIS Maps_Certificate_03092025.jpg",
+          full: "Image/Certificates/Telling Stories with GIS Maps_Certificate_03092025.jpg",
         },
         {
           title: "Using GIS to Solve Problems",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Using GIS to Solve Problems_Certificate_03092025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Using GIS to Solve Problems_Certificate_03092025.jpg",
+          full: "Image/Certificates/Using GIS to Solve Problems_Certificate_03092025.jpg",
         },
         {
           title: "Performing Analysis Using ArcGIS API for Python",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Performing Analysis Using ArcGIS API for Python_Certificate_05302024.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Performing Analysis Using ArcGIS API for Python_Certificate_05302024.jpg",
+          full: "Image/Certificates/Performing Analysis Using ArcGIS API for Python_Certificate_05302024.jpg",
         },
         {
           title: "Accessing Data in a Portal Using ArcGIS API for Python",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Accessing Data in a Portal Using ArcGIS API for Python_Certificate_05302024.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Accessing Data in a Portal Using ArcGIS API for Python_Certificate_05302024.jpg",
+          full: "Image/Certificates/Accessing Data in a Portal Using ArcGIS API for Python_Certificate_05302024.jpg",
         },
         {
           title: "Introduction to ArcGIS API for Python",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Introduction to ArcGIS API for Python_Certificate_08192025.pdf",
+          category: "GIS",
+          thumb:
+            "Image/Certificates/thumbs/Introduction to ArcGIS API for Python_Certificate_08192025.jpg",
+          full: "Image/Certificates/Introduction to ArcGIS API for Python_Certificate_08192025.jpg",
         },
         {
           title: "Basics of Artificial Intelligence",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Artificial Intelligence_certificate.pdf",
+          category: "AI",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Artificial Intelligence_certificate.jpg",
+          full: "Image/Certificates/Basics of Artificial Intelligence_certificate.jpg",
         },
         {
           title: "Basics of Artificial Intelligence - Learnings Models",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Artificial Intelligence - Learnings Models_certificate.pdf",
+          category: "AI",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Artificial Intelligence - Learnings Models_certificate.jpg",
+          full: "Image/Certificates/Basics of Artificial Intelligence - Learnings Models_certificate.jpg",
         },
         {
           title: "Basics of Data Cleaning",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Data Cleaning_certificate.pdf",
+          category: "Data",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Data Cleaning_certificate.jpg",
+          full: "Image/Certificates/Basics of Data Cleaning_certificate.jpg",
         },
         {
           title: "Basics of Data Science",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Data Science.pdf",
+          category: "Data",
+          thumb: "Image/Certificates/thumbs/Basics of Data Science.jpg",
+          full: "Image/Certificates/Basics of Data Science.jpg",
         },
         {
           title: "Basics of Digital Marketing",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Digital Marketing_certificate.pdf",
+          category: "Marketing",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Digital Marketing_certificate.jpg",
+          full: "Image/Certificates/Basics of Digital Marketing_certificate.jpg",
         },
         {
           title: "Basics of JavaScript Web Apps",
           issuer: "Esri",
-          type: "pdf",
-          file: "Image/Certificates/Basics of JavaScript Web Apps_Certificate_03052025.pdf",
+          category: "Development",
+          thumb:
+            "Image/Certificates/thumbs/Basics of JavaScript Web Apps_Certificate_03052025.jpg",
+          full: "Image/Certificates/Basics of JavaScript Web Apps_Certificate_03052025.jpg",
         },
         {
           title: "Basics of Machine Learning Algorithms",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Machine Learning.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/Basics of Machine Learning.jpg",
+          full: "Image/Certificates/Basics of Machine Learning.jpg",
         },
         {
           title: "Basics of Maturity Models in Business Intelligence",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Maturity Models in Business Intelligence_certificate.pdf",
+          category: "BI",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Maturity Models in Business Intelligence_certificate.jpg",
+          full: "Image/Certificates/Basics of Maturity Models in Business Intelligence_certificate.jpg",
         },
         {
           title: "Basics of Python",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Python.pdf",
+          category: "Development",
+          thumb: "Image/Certificates/thumbs/Basics of Python.jpg",
+          full: "Image/Certificates/Basics of Python.jpg",
         },
         {
           title: "Basics of Regression Algorithm in Machine Learning",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Regression Algorithm in Machine Learning_certificate.pdf",
+          category: "AI",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Regression Algorithm in Machine Learning_certificate.jpg",
+          full: "Image/Certificates/Basics of Regression Algorithm in Machine Learning_certificate.jpg",
         },
         {
           title: "Basics of SQL Statements & Indexes",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of SQL Statements & Indexes_certificate.pdf",
+          category: "Data",
+          thumb:
+            "Image/Certificates/thumbs/Basics of SQL Statements & Indexes_certificate.jpg",
+          full: "Image/Certificates/Basics of SQL Statements & Indexes_certificate.jpg",
         },
         {
           title: "Basics of SQL - Aggregate Functions & Joins",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of SQL- Aggregate Functions & Joins_certificate.pdf",
+          category: "Data",
+          thumb:
+            "Image/Certificates/thumbs/Basics of SQL- Aggregate Functions & Joins_certificate.jpg",
+          full: "Image/Certificates/Basics of SQL- Aggregate Functions & Joins_certificate.jpg",
         },
         {
           title: "Basics of Univariate, Bivariate & Multivariate Analysis",
           issuer: "Cambridge International Qualifications, UK",
-          type: "pdf",
-          file: "Image/Certificates/Basics of Univariate, Bivariate & Multivariate Analysis_certificate.pdf",
+          category: "Data",
+          thumb:
+            "Image/Certificates/thumbs/Basics of Univariate, Bivariate & Multivariate Analysis_certificate.jpg",
+          full: "Image/Certificates/Basics of Univariate, Bivariate & Multivariate Analysis_certificate.jpg",
         },
         {
           title: "Essentials of Data Visualization using MS Excel",
           issuer: "Acacia University",
-          type: "pdf",
-          file: "Image/Certificates/Essentials of Data Visualization using MS_EXCEL_certificate.pdf",
+          category: "Data",
+          thumb:
+            "Image/Certificates/thumbs/Essentials of Data Visualization using MS_EXCEL_certificate.jpg",
+          full: "Image/Certificates/Essentials of Data Visualization using MS_EXCEL_certificate.jpg",
         },
         {
           title: "Master ChatGPT",
           issuer: "AI Mental Global Education",
-          type: "pdf",
-          file: "Image/Certificates/Master ChatGPT_certificate.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/Master ChatGPT_certificate.jpg",
+          full: "Image/Certificates/Master ChatGPT_certificate.jpg",
         },
         {
           title: "ChatGPT Advanced Course",
           issuer: "Simplilearn",
-          type: "pdf",
-          file: "Image/Certificates/ChatGPT Advanced Course.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/ChatGPT Advanced Course.jpg",
+          full: "Image/Certificates/ChatGPT Advanced Course.jpg",
         },
         {
           title: "Innovating with Google Cloud AI",
           issuer: "Simplilearn",
-          type: "pdf",
-          file: "Image/Certificates/Innovating with Google Cloud AI.pdf",
+          category: "Cloud",
+          thumb:
+            "Image/Certificates/thumbs/Innovating with Google Cloud AI.jpg",
+          full: "Image/Certificates/Innovating with Google Cloud AI.jpg",
         },
         {
           title: "AI Claude Free Course",
           issuer: "Oxford Home Study College",
-          type: "pdf",
-          file: "Image/Certificates/AI Claude Free Course.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/AI Claude Free Course.jpg",
+          full: "Image/Certificates/AI Claude Free Course.jpg",
         },
         {
           title: "Convolutional Neural Networks Free Course",
           issuer: "Oxford Home Study College",
-          type: "pdf",
-          file: "Image/Certificates/Convolutional Neural Networks Free Course.pdf",
+          category: "AI",
+          thumb:
+            "Image/Certificates/thumbs/Convolutional Neural Networks Free Course.jpg",
+          full: "Image/Certificates/Convolutional Neural Networks Free Course.jpg",
         },
         {
           title: "Generative AI for Beginners",
           issuer: "Simplilearn",
-          type: "pdf",
-          file: "Image/Certificates/Generative AI for Beginners.pdf",
+          category: "AI",
+          thumb: "Image/Certificates/thumbs/Generative AI for Beginners.jpg",
+          full: "Image/Certificates/Generative AI for Beginners.jpg",
         },
         {
           title: "Google Analytics Certification",
           issuer: "Google Digital Academy (Skillshop)",
-          type: "image",
-          file: "Image/Certificates/Google Analytics Certification.jpg",
+          category: "Analytics",
+          thumb: "Image/Certificates/thumbs/Google Analytics Certification.jpg",
+          full: "Image/Certificates/Google Analytics Certification.jpg",
         },
         {
           title: "Learning Docker Compose",
           issuer: "LinkedIn Learning",
-          type: "pdf",
-          file: "Image/Certificates/CertificateOfCompletion_Learning Docker Compose.pdf",
+          category: "DevOps",
+          thumb:
+            "Image/Certificates/thumbs/CertificateOfCompletion_Learning Docker Compose.jpg",
+          full: "Image/Certificates/CertificateOfCompletion_Learning Docker Compose.jpg",
         },
         {
           title: "Learning Docker",
           issuer: "LinkedIn Learning",
-          type: "pdf",
-          file: "Image/Certificates/CertificateOfCompletion_Learning Docker.pdf",
+          category: "DevOps",
+          thumb:
+            "Image/Certificates/thumbs/CertificateOfCompletion_Learning Docker.jpg",
+          full: "Image/Certificates/CertificateOfCompletion_Learning Docker.jpg",
         },
         {
           title: "PAX PaxMe Platform Deployment for Developer",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX  PaxME Platform Deployment for Developer.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX  PaxME Platform Deployment for Developer.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX  PaxME Platform Deployment for Developer.jpg",
         },
         {
           title: "PAX IOT Soundbox Application Development",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX IOT Soundbox Application Development.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX IOT Soundbox Application Development.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX IOT Soundbox Application Development.jpg",
         },
         {
           title: "PAX PaxMe Application Development",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX PaxMe Application Development.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX PaxMe Application Development.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX PaxMe Application Development.jpg",
         },
         {
           title: "PAX PaxMe Platform Solution Development",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX PaxMe Platform Solution Development.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX PaxMe Platform Solution Development.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX PaxMe Platform Solution Development.jpg",
         },
         {
           title: "PAXSTORE Deployment",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX PAXSTORE Deployment.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX PAXSTORE Deployment.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX PAXSTORE Deployment.jpg",
         },
         {
           title: "PAX Paydroid EDC Template Development",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX Paydroid EDC Template Development.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX Paydroid EDC Template Development.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX Paydroid EDC Template Development.jpg",
         },
         {
           title: "PAX Paydroid OS & SDK Development",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX Paydroid OS & SDK Development.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX Paydroid OS & SDK Development.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX Paydroid OS & SDK Development.jpg",
         },
         {
           title: "PAX PED System Development",
           issuer: "PAX Technology EMEA",
-          type: "pdf",
-          file: "Image/Certificates/Certificate of Completion PAX PED System Development.pdf",
+          category: "Enterprise",
+          thumb:
+            "Image/Certificates/thumbs/Certificate of Completion PAX PED System Development.jpg",
+          full: "Image/Certificates/Certificate of Completion PAX PED System Development.jpg",
         },
       ];
 
-      function getThumbMarkup(certificate) {
-        if (certificate.type === "image") {
-          return `
-            <div class="certificate-thumb">
-              <img src="${certificate.file}" alt="${certificate.title}" />
-            </div>
-          `;
-        }
+      let activeFilter = "all";
+      let activeSearch = "";
 
+      function slugify(value) {
+        return value.toLowerCase().replace(/\s+/g, "-");
+      }
+
+      function buildIssuerFilters() {
+        const issuerFilters = document.getElementById("issuerFilters");
+        const issuers = [
+          ...new Set(certificates.map((item) => item.issuer)),
+        ].sort();
+
+        issuerFilters.innerHTML = `
+          <button class="cert-filter-chip active" data-filter="all">All</button>
+          ${issuers
+            .map(
+              (issuer) =>
+                `<button class="cert-filter-chip" data-filter="${slugify(issuer)}">${issuer}</button>`,
+            )
+            .join("")}
+        `;
+
+        issuerFilters.addEventListener("click", function (e) {
+          const btn = e.target.closest(".cert-filter-chip");
+          if (!btn) return;
+
+          document
+            .querySelectorAll(".cert-filter-chip")
+            .forEach((chip) => chip.classList.remove("active"));
+
+          btn.classList.add("active");
+          activeFilter = btn.getAttribute("data-filter");
+          renderCertificates();
+        });
+      }
+
+      function createCardMarkup(certificate) {
         return `
-          <div class="certificate-thumb">
-            <div class="pdf-thumb">
-              <i class="fas fa-file-pdf"></i>
-              <div class="pdf-label">PDF Certificate</div>
-              <div class="pdf-name">${certificate.title}</div>
+          <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div
+              class="card certificate-card"
+              data-title="${certificate.title.replace(/"/g, "&quot;")}"
+              data-issuer="${certificate.issuer.replace(/"/g, "&quot;")}"
+              data-full="${certificate.full.replace(/"/g, "&quot;")}"
+            >
+              <div class="certificate-thumb">
+                <img
+                  src="${certificate.thumb}"
+                  alt="${certificate.title}"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.onerror=null;this.src='Image/Programming.svg';this.classList.add('thumb-fallback-image');"
+                />
+              </div>
+              <div class="card-body">
+                <div class="certificate-card-topline">
+                  <span class="certificate-category-badge">${certificate.category}</span>
+                </div>
+                <div class="certificate-title">${certificate.title}</div>
+                <div class="certificate-issuer">Issued by ${certificate.issuer}</div>
+                <div class="certificate-meta">
+                  <span class="certificate-badge">
+                    <i class="fas fa-image"></i>
+                    Image
+                  </span>
+                  <span class="certificate-open">
+                    Preview <i class="fas fa-arrow-right"></i>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         `;
       }
 
+      function getFilteredCertificates() {
+        return certificates.filter((certificate) => {
+          const matchesFilter =
+            activeFilter === "all" ||
+            slugify(certificate.issuer) === activeFilter;
+
+          const text =
+            `${certificate.title} ${certificate.issuer} ${certificate.category}`.toLowerCase();
+          const matchesSearch = text.includes(activeSearch.toLowerCase());
+
+          return matchesFilter && matchesSearch;
+        });
+      }
+
       function renderCertificates() {
         const grid = document.getElementById("certificateGrid");
-        grid.innerHTML = certificates
-          .map(
-            (certificate) => `
-              <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <div
-                  class="card certificate-card"
-                  data-title="${certificate.title.replace(/"/g, "&quot;")}"
-                  data-issuer="${certificate.issuer.replace(/"/g, "&quot;")}"
-                  data-type="${certificate.type}"
-                  data-file="${certificate.file.replace(/"/g, "&quot;")}"
-                >
-                  ${getThumbMarkup(certificate)}
-                  <div class="card-body">
-                    <div class="certificate-title">${certificate.title}</div>
-                    <div class="certificate-issuer">Issued by ${certificate.issuer}</div>
-                    <div class="certificate-meta">
-                      <span class="certificate-badge">
-                        <i class="fas ${certificate.type === "pdf" ? "fa-file-pdf" : "fa-image"}"></i>
-                        ${certificate.type === "pdf" ? "PDF" : "Image"}
-                      </span>
-                      <span class="certificate-open">
-                        Preview <i class="fas fa-arrow-right"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `,
-          )
-          .join("");
+        const filtered = getFilteredCertificates();
+        const emptyState = document.getElementById("certEmptyState");
+
+        grid.innerHTML = filtered.map(createCardMarkup).join("");
+
+        document.getElementById("visibleCertCount").textContent =
+          filtered.length;
+        document.getElementById("certCountBadge").textContent =
+          certificates.length;
+        document.getElementById("certCountTop").textContent =
+          certificates.length;
+
+        if (filtered.length === 0) {
+          emptyState.classList.remove("d-none");
+        } else {
+          emptyState.classList.add("d-none");
+        }
       }
 
       function openCertificatePreview(card) {
         const title = card.getAttribute("data-title");
-        const type = card.getAttribute("data-type");
-        const file = card.getAttribute("data-file");
+        const issuer = card.getAttribute("data-issuer");
+        const full = card.getAttribute("data-full");
 
         const modalTitle = document.getElementById(
           "certificatePreviewModalLabel",
         );
+        const modalIssuer = document.getElementById("certificatePreviewIssuer");
         const modalBody = document.getElementById("certificatePreviewBody");
         const openLink = document.getElementById("certificateOpenLink");
 
         modalTitle.textContent = title;
-        openLink.href = file;
+        modalIssuer.textContent = issuer;
+        openLink.href = full;
 
-        if (type === "pdf") {
-          modalBody.innerHTML = `
-            <iframe
-              src="${file}"
-              title="${title}"
-              loading="lazy"
-            ></iframe>
-          `;
-        } else {
-          modalBody.innerHTML = `
-            <img src="${file}" alt="${title}" />
-          `;
-        }
+        modalBody.innerHTML = `
+          <div class="cert-loader" id="certificatePreviewLoader">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p>Loading full-resolution certificate...</p>
+          </div>
+        `;
 
         $("#certificatePreviewModal").modal("show");
+
+        const fullImage = new Image();
+        fullImage.src = full;
+        fullImage.alt = title;
+        fullImage.onload = function () {
+          modalBody.innerHTML = "";
+          modalBody.appendChild(fullImage);
+        };
+        fullImage.onerror = function () {
+          modalBody.innerHTML = `
+            <div class="cert-error-state">
+              <i class="fas fa-exclamation-triangle"></i>
+              <p>Unable to load full certificate image.</p>
+            </div>
+          `;
+        };
       }
 
       document.addEventListener("DOMContentLoaded", function () {
+        buildIssuerFilters();
         renderCertificates();
+
+        const certSearch = document.getElementById("certSearch");
+        certSearch.addEventListener("input", function () {
+          activeSearch = this.value.trim();
+          renderCertificates();
+        });
 
         document.addEventListener("click", function (event) {
           const card = event.target.closest(".certificate-card");

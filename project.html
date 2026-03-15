@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="dark-mode.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -47,6 +47,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-WZXPVQDR2Q"
@@ -57,9 +58,9 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-WZXPVQDR2Q");
   </script>
+
   <body class="container-fluid body_section">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -106,879 +107,956 @@
         </div>
       </nav>
     </header>
-    <section id="Projects" class="Section1">
-      <div class="row">
-        <div class="col-lg-6 col-md-6">
-          <img class="projectimage" src="Image/Project.svg" alt="" />
+
+    <main class="project-shell">
+      <section class="project-hero">
+        <div class="project-hero-grid">
+          <div class="project-hero-content">
+            <div class="hero-pill">
+              <i class="fas fa-layer-group"></i>
+              Portfolio Projects
+            </div>
+
+            <h1 class="hero-title">
+              Building products across
+              <span>GIS, AI, full stack, automation, and enterprise data</span>
+            </h1>
+
+            <p class="hero-text">
+              This page highlights selected work across geospatial platforms,
+              web applications, cloud-ready systems, backend automation, and
+              product engineering. Each project card gives a concise preview,
+              and the full technical detail opens in a modal for deeper review.
+            </p>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <h3>12</h3>
+                <p>Featured projects</p>
+              </div>
+              <div class="hero-stat">
+                <h3>GIS + AI</h3>
+                <p>Core specialization</p>
+              </div>
+              <div class="hero-stat">
+                <h3>Full Stack</h3>
+                <p>Delivery across frontend and backend</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-hero-visual">
+            <div class="hero-visual-card">
+              <span class="hero-chip chip-one">Enterprise GIS</span>
+              <span class="hero-chip chip-two">Modern Web Apps</span>
+              <span class="hero-chip chip-three">Automation Pipelines</span>
+              <img src="Image/Project.svg" alt="Projects Illustration" />
+            </div>
+          </div>
         </div>
-        <div class="col-lg-6 col-md-6 project-heading">
-          <h1 class="P-heading">Projects</h1>
-          <p class="p-text">
-            My Project uses various framework and technologies to make the model more accurate
-            and stable. Here are Some Remarkable projects that I have worked on. 
-          </p>
+      </section>
+
+      <section class="project-intro-strip">
+        <div class="intro-card">
+          <div class="intro-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div>
+            <h3>Geospatial Systems</h3>
+            <p>
+              ArcGIS Enterprise, dashboards, workflow platforms, imagery, and
+              spatial reporting.
+            </p>
+          </div>
+        </div>
+
+        <div class="intro-card">
+          <div class="intro-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div>
+            <h3>Application Engineering</h3>
+            <p>
+              Next.js, React, .NET, Laravel, Django, Flutter, APIs, and
+              production delivery.
+            </p>
+          </div>
+        </div>
+
+        <div class="intro-card">
+          <div class="intro-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div>
+            <h3>Automation & Data</h3>
+            <p>
+              Pipelines, validation, orchestration, databases, PDF reporting,
+              and platform integration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="Projects" class="projects-section">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-subtitle">
+              Click any project to view the full write-up, highlights, stack,
+              outcome, and links.
+            </p>
+          </div>
+        </div>
+
+        <div class="row project-grid" id="projectGrid"></div>
+      </section>
+    </main>
+
+    <div
+      class="modal fade project-modal"
+      id="projectPreviewModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="projectPreviewModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header project-modal-header">
+            <div>
+              <div class="project-modal-type" id="projectModalType">
+                Project
+              </div>
+              <h5 class="modal-title" id="projectPreviewModalLabel">
+                Project Title
+              </h5>
+            </div>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body project-modal-body">
+            <div class="modal-top-meta">
+              <div class="modal-meta-card">
+                <div class="modal-meta-label">Category</div>
+                <div class="modal-meta-value" id="projectModalCategory"></div>
+              </div>
+              <div class="modal-meta-card">
+                <div class="modal-meta-label">Primary Stack</div>
+                <div class="modal-meta-value" id="projectModalStack"></div>
+              </div>
+              <div class="modal-meta-card">
+                <div class="modal-meta-label">Focus</div>
+                <div class="modal-meta-value" id="projectModalFocus"></div>
+              </div>
+            </div>
+
+            <div class="project-modal-section">
+              <h3>Overview</h3>
+              <p id="projectModalOverview"></p>
+            </div>
+
+            <div class="project-modal-section">
+              <h3>Highlights</h3>
+              <ul id="projectModalHighlights" class="project-modal-list"></ul>
+            </div>
+
+            <div class="project-modal-section">
+              <h3>Tech Stack</h3>
+              <div id="projectModalTech" class="project-kv-list"></div>
+            </div>
+
+            <div class="project-modal-section">
+              <h3>Result</h3>
+              <p id="projectModalResult"></p>
+            </div>
+
+            <div class="project-modal-section">
+              <h3>Skills</h3>
+              <div
+                id="projectModalSkills"
+                class="project-skill-chip-wrap"
+              ></div>
+            </div>
+
+            <div class="project-modal-actions" id="projectModalLinks"></div>
+          </div>
         </div>
       </div>
-      <div class="row Section1">
-        <div class="col-sm-6">
-          <div class="card boxx linkedin-post">
-            <style>
-              /* Scoped-ish styling (prefixed) to avoid clashes */
-              .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem}
-              .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-              .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-              .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-              .lp-dot{opacity:.5}
-              .lp-date{font-weight:500}
-              .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-              .lp-section{margin:.75rem 0}
-              .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-              .lp-list{list-style:none;padding-left:0;margin:0}
-              .lp-list li{margin:.35rem 0;line-height:1.5}
-              .lp-list li::marker{content:""}
-              .lp-list li span.i{width:1.2rem;display:inline-block}
-              .lp-kv{margin:.15rem 0}
-              .lp-kv b{font-weight:700}
-              .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-              .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-              .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-              /* Slight card polish to feel like LinkedIn */
-              .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-            </style>
+    </div>
 
-            <div class="card-body">
-              <h4 class="card-title">Spatial Change Intelligence Platform</h4>
-              
-
-              <p class="lp-desc">
-                A secure, Portal-centric web application that detects, quantifies, and visualizes land-use/land-cover change from multi-date Sentinel and drone imagery. The server performs preprocessing and classification, writes attribute-rich polygons to Hosted Feature Layers, and feeds a map-first dashboard that pairs interactive visualization with synchronized statistics and downloadable PDF reports.
-              </p>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                <ul class="lp-list">
-                  <li><span class="i">🔐</span> SSO to ArcGIS Portal with token/role-based access and group sharing</li>
-                  <li><span class="i">🛠️</span> Custom GP tool (Portal item) driving server-side preprocessing, classification, polygonization, and attribution</li>
-                  <li><span class="i">🛰️</span> Time-aware imagery pipelines for Sentinel &amp; drone via ArcGIS Image Server</li>
-                  <li><span class="i">🗺️</span> Interactive review: filters, time slider, swipe/compare, zoom-to/highlight, clear selections</li>
-                  <li><span class="i">📊</span> Linked stats table: counts, areas/lengths, trends; exports to PDF</li>
-                  <li><span class="i">🔁</span> Append-or-publish outputs to existing Enterprise feature/imagery service</li>
-                  <li><span class="i">⚙️</span> .NET orchestration for payload validation, job control, and appending results</li>
-                  <li><span class="i">🧾</span> Report service (Next.js API + Headless Chrome) for pixel-perfect PDFs with maps, charts, and metadata</li>
-                  <li><span class="i">🧭</span> Auditability &amp; governance: item metadata, lineage, logs/health checks, scheduled runs via Portal Notebooks/Server tasks</li>
-                </ul>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                <div class="lp-kv"><b>Frontend:</b> Next.js, Tailwind, ArcGIS Maps SDK for JavaScript, Redux, Axios</div>
-                <div class="lp-kv"><b>Backend &amp; Processing:</b> .NET API, Python/ArcPy on ArcGIS Server (Custom Geoprocessing Service), Custom DLPK models</div>
-                <div class="lp-kv"><b>ArcGIS Enterprise:</b> Portal, Server, Image Server, Hosted Feature/Imagery Layers, ArcGIS REST API</div>
-                <div class="lp-kv"><b>Data &amp; Reporting:</b> SQL Server, report store with snapshot bytes, Puppeteer/Headless Chrome for PDFs</div>
-                <div class="lp-kv"><b>Ops:</b> Portal item governance, tokens/roles, SSO logging, health checks; container-ready deployment</div>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                <p class="lp-result">
-                  Transforms time-series imagery into actionable, auditable change intelligence—shrinking manual review, standardizing evidence, and accelerating decisions for national-scale programs.
-                </p>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">Skills</div>
-                <div class="lp-skills">
-                  <span class="lp-skill">Next.js</span>
-                  <span class="lp-skill">JavaScript</span>
-                  <span class="lp-skill">.NET Core</span>
-                  <span class="lp-skill">Python</span>
-                  <span class="lp-skill">ArcPy</span>
-                  <span class="lp-skill">Deep Learning</span>
-                  <span class="lp-skill">ArcGIS Enterprise</span>
-                  <span class="lp-skill">ArcGIS Online</span>
-                  <span class="lp-skill">Microsoft SQL Server</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://github.com/nafizpervez/Online_Learning_Platform"
-          >
-            <div class="card boxx linkedin-post">
-              <style>
-                /* Scoped styling for this card only */
-                .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem; position:relative;}
-                .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-                .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-                .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-                .lp-dot{opacity:.5}
-                .lp-date{font-weight:500}
-                .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-                .lp-section{margin:.75rem 0}
-                .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-                .lp-list{list-style:none;padding-left:0;margin:0}
-                .lp-list li{margin:.35rem 0;line-height:1.5}
-                .lp-list li::marker{content:""}
-                .lp-list li span.i{width:1.2rem;display:inline-block}
-                .lp-kv{margin:.15rem 0}
-                .lp-kv b{font-weight:700}
-                .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-                .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-                .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-                .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-                /* Bottom-right icon cluster */
-                .lp-icons{position:absolute; right:.9rem; bottom:.8rem; display:flex; gap:.4rem; align-items:center;}
-                .lp-icons .iconify{height:22px;width:22px;opacity:.9}
-                .lp-icons img.iconify{height:22px;width:22px;object-fit:contain}
-              </style>
-
-              <div class="card-body">
-                <h4 class="card-title">Onliine Learning Platform</h4>
-
-                <p class="lp-desc">
-                  <strong>𝗢𝗟𝗣</strong> is a full-stack <strong>Online Learning Platform</strong> for publishing and managing courses where students register, attend scheduled classes, and take timed tests—while teachers run and track multiple courses from a unified console. A structured scheduling engine prevents overlapping sessions so learners can’t join clashing classes, reinforcing disciplined, focused study.
-                </p>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                  <ul class="lp-list">
-                    <li><span class="i">📅</span> Conflict-free scheduling that blocks overlapping classes per student</li>
-                    <li><span class="i">🧑‍🏫</span> Multi-course management for instructors with enrollment &amp; attendance tracking</li>
-                    <li><span class="i">📝</span> Timed assessments with scheduled windows and automatic availability rules</li>
-                    <li><span class="i">🎛️</span> Role-based portals for students and teachers with focused UX flows</li>
-                    <li><span class="i">⚡</span> Next.js frontend for fast, responsive, SEO-friendly discovery &amp; dashboards</li>
-                    <li><span class="i">🚀</span> FastAPI backend with OpenAPI/Swagger docs for instant API exploration</li>
-                    <li><span class="i">🔄</span> Switchable databases (PostgreSQL/MySQL) via SQLAlchemy without code rewrites</li>
-                    <li><span class="i">🐳</span> Docker + Docker Compose for consistent dev/prod parity and rapid scaling</li>
-                    <li><span class="i">🔁</span> CI/CD pipelines using GitHub Actions (Jenkins optional) for automated build/test/deploy</li>
-                    <li><span class="i">🔎</span> Operational tooling: pgAdmin &amp; SQL readers, health checks, env-based configs</li>
-                  </ul>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                  <div class="lp-kv"><b>Frontend:</b> Next.js (React), REST integration, responsive UI</div>
-                  <div class="lp-kv"><b>Backend:</b> FastAPI (Python), Pydantic, SQLAlchemy</div>
-                  <div class="lp-kv"><b>Databases:</b> PostgreSQL or MySQL (adapter-based switching)</div>
-                  <div class="lp-kv"><b>DevOps:</b> Docker, Docker Compose, GitHub Actions CI/CD (Jenkins optional)</div>
-                  <div class="lp-kv"><b>Cloud:</b> Azure deployment orchestrated with Docker Compose</div>
-                  <div class="lp-kv"><b>Tooling:</b> Swagger UI, Postman collections, pgAdmin (Postgres), SQL readers (MySQL)</div>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                  <p class="lp-result">
-                    A scalable, cloud-deployed learning platform that delivers disciplined, conflict-free scheduling, smooth teacher workflows, and reliable student experiences—backed by portable data architecture, automated delivery, and Azure-ready infrastructure.
-                  </p>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">Skills</div>
-                  <div class="lp-skills">
-                    <span class="lp-skill">CI/CD</span>
-                    <span class="lp-skill">Docker Compose</span>
-                    <span class="lp-skill">FastAPI</span>
-                    <span class="lp-skill">Nginx</span>
-                    <span class="lp-skill">Docker</span>
-                    <span class="lp-skill">GitHub</span>
-                    <span class="lp-skill">SQLAlchemy</span>
-                    <span class="lp-skill">MySQL</span>
-                    <span class="lp-skill">PostgreSQL</span>
-                    <span class="lp-skill">Next.js</span>
-                    <span class="lp-skill">Kubernetes</span>
-                  </div>
-                </div>
-
-                <!-- Bottom-right icons (as requested) -->
-                <div class="lp-icons">
-                  <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span>
-                  <img class="iconify" src="Image/dialogflow.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="col-sm-6">
-          <div class="card boxx linkedin-post">
-            <style>
-              /* Scoped styling for this card only */
-              .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem}
-              .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-              .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-              .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-              .lp-dot{opacity:.5}
-              .lp-date{font-weight:500}
-              .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-              .lp-section{margin:.75rem 0}
-              .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-              .lp-list{list-style:none;padding-left:0;margin:0}
-              .lp-list li{margin:.35rem 0;line-height:1.5}
-              .lp-list li::marker{content:""}
-              .lp-list li span.i{width:1.2rem;display:inline-block}
-              .lp-kv{margin:.15rem 0}
-              .lp-kv b{font-weight:700}
-              .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-              .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-              .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-              .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-            </style>
-
-            <div class="card-body">
-              <h4 class="card-title">ArcGIS — Customized Experience Builder Dashboard</h4>
-
-              <p class="lp-desc">
-                A bespoke ArcGIS Experience Builder custom-widget dashboard powered by custom React + Redux widgets for fast, map-first analytics. Users filter enterprise feature layers via dropdowns and free-text inputs, run ArcGIS REST queries against Portal/Server data, and see attribute-based polygon results with a synchronized statistical report table—all published as a secured, client-facing hosted item for a national mapping authority. Built and tested on Experience Builder Dev Edition with a Node.js dev server and CORS tooling.
-              </p>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                <ul class="lp-list">
-                  <li><span class="i">🧩</span> Custom React + Redux widgets embedded seamlessly in Experience Builder</li>
-                  <li><span class="i">🔎</span> Multi-criteria filtering via dropdowns and free-text inputs for precise queries</li>
-                  <li><span class="i">🗺️</span> Attribute-based polygon outputs rendered live on hosted web maps</li>
-                  <li><span class="i">📊</span> Statistical reporting table synchronized with map selections and filters</li>
-                  <li><span class="i">🌐</span> ArcGIS REST &amp; Enterprise REST queries against Portal/Server feature layers</li>
-                  <li><span class="i">🔐</span> Secure deployment as a token-protected ArcGIS hosted item for client access with SSO Login</li>
-                  <li><span class="i">⚙️</span> ArcGIS Enterprise integration (Portal items, Server services, web maps, feature layers)</li>
-                  <li><span class="i">🚀</span> Node.js custom dev server with CORS-enabled Chrome for smooth Dev Edition workflows</li>
-                  <li><span class="i">🧭</span> Map UX actions &amp; result navigation (zoom-to, highlight, clear filters) for faster spatial insight</li>
-                  <li><span class="i">🧱</span> Configurable endpoints &amp; layers, making the dashboard easily extensible</li>
-                </ul>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                <div class="lp-kv"><b>Platform:</b> ArcGIS Experience Builder (Dev Edition)</div>
-                <div class="lp-kv"><b>Frontend:</b> React, Redux (JavaScript)</div>
-                <div class="lp-kv"><b>GIS Services:</b> ArcGIS Enterprise (Portal &amp; Server), ArcGIS REST API, Web Maps, Feature Layers &amp; services</div>
-                <div class="lp-kv"><b>Runtime/Dev:</b> Node.js (custom dev server), CORS tooling</div>
-                <div class="lp-kv"><b>Deployment:</b> Secured ArcGIS hosted item (client access)</div>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                <p class="lp-result">
-                  A single, secure analytics workspace that turns enterprise GIS data into instant, map-aligned insights—reducing manual query steps and accelerating decision-making for stakeholders.
-                </p>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">Skills</div>
-                <div class="lp-skills">
-                  <span class="lp-skill">React.js</span>
-                  <span class="lp-skill">ArcGIS Enterprise</span>
-                  <span class="lp-skill">REST APIs</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://github.com/nafizpervez/Telemetry-Extractor-by-nafizpervez"
-          >
-          <div class="card boxx linkedin-post">
-            <style>
-              /* Scoped styling for this card only */
-              .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem}
-              .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-              .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-              .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-              .lp-dot{opacity:.5}
-              .lp-date{font-weight:500}
-              .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-              .lp-section{margin:.75rem 0}
-              .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-              .lp-list{list-style:none;padding-left:0;margin:0}
-              .lp-list li{margin:.35rem 0;line-height:1.5}
-              .lp-list li::marker{content:""}
-              .lp-list li span.i{width:1.2rem;display:inline-block}
-              .lp-kv{margin:.15rem 0}
-              .lp-kv b{font-weight:700}
-              .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-              .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-              .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-              .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-            </style>
-
-            <div class="card-body">
-              <h4 class="card-title">Telemetry Extractor</h4>
-
-              <p class="lp-desc">
-                Telemetry Extraction is a full-stack application designed to extract, decode, and process metadata embedded in GoPro-recorded videos, transforming raw footage into actionable, data-enriched media. Extensively tested on multiple recordings from the GoPro Hero 6 Black, it emphasizes scalability, usability, and precision for consistent performance across datasets.
-              </p>
-              <p class="lp-desc">
-                The backend, powered by Node.js, decodes telemetry streams directly from MP4 containers and processes GPS coordinates, speed, altitude, orientation, and motion data for analytical and visualization use cases. A minimalist React interface lets users upload videos, visualize extracted telemetry, and export structured outputs in developer-friendly formats—simplifying complex operations into an accessible workflow.
-              </p>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗞𝗲𝘆 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</div>
-                <ul class="lp-list">
-                  <li><span class="i">🎯</span> <strong>Accurate Telemetry Extraction</strong> — Decodes GPS, orientation, speed, and environmental data embedded in GoPro videos</li>
-                  <li><span class="i">✅</span> <strong>Cross-Video Compatibility</strong> — Validated against multiple Hero 6 Black recordings for reliability across datasets</li>
-                  <li><span class="i">📤</span> <strong>Structured Outputs</strong> — Exports telemetry in formats ready for GIS, analytics platforms, or custom apps</li>
-                </ul>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                <div class="lp-kv"><b>Backend:</b> Node.js (MP4 telemetry decoding, large-file handling)</div>
-                <div class="lp-kv"><b>Frontend:</b> React (minimal, responsive UI)</div>
-                <div class="lp-kv"><b>Devices/Data:</b> GoPro Hero 6 Black recordings (GPS, speed, altitude, orientation, motion)</div>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                <p class="lp-result">
-                  Turns ordinary GoPro footage into data-rich, analysis-ready media—bridging video, mapping, and analytics for faster insight and better decisions.
-                </p>
-              </div>
-
-              <div class="lp-section">
-                <div class="lp-section-title">Skills</div>
-                <div class="lp-skills">
-                  <span class="lp-skill">Node.js</span>
-                  <span class="lp-skill">React.js</span>
-                  <span class="lp-skill">Go (Programming Language)</span>
-                  <span class="lp-skill">GIS</span>
-                </div>
-                <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span
-                  ><img class="iconify" src="Image/dialogflow.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://github.com/nafizpervez/PAYme"
-          >
-            <div class="card boxx linkedin-post">
-              <style>
-                /* Scoped styling for this card only */
-                .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem; position:relative;}
-                .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-                .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-                .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-                .lp-dot{opacity:.5}
-                .lp-date{font-weight:500}
-                .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-                .lp-section{margin:.75rem 0}
-                .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-                .lp-list{list-style:none;padding-left:0;margin:0}
-                .lp-list li{margin:.35rem 0;line-height:1.5}
-                .lp-list li::marker{content:""}
-                .lp-list li span.i{width:1.2rem;display:inline-block}
-                .lp-kv{margin:.15rem 0}
-                .lp-kv b{font-weight:700}
-                .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-                .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-                .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-                .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-                /* Bottom-right icon cluster */
-                .lp-icons{position:absolute; right:.9rem; bottom:.8rem; display:flex; gap:.4rem; align-items:center;}
-                .lp-icons .iconify{height:22px;width:22px;opacity:.9}
-                .lp-icons img.iconify{height:22px;width:22px;object-fit:contain}
-              </style>
-
-              <div class="card-body">
-                <h4 class="card-title">PayME</h4>
-
-                <p class="lp-desc">
-                  <strong>PayME</strong> — a modern, bKash-style multilingual (Bangla/English) mobile wallet built with Flutter and Laravel. It enables instant P2P transfers, QR merchant payments, bill pay, mobile recharge, and agent cash-in/out—delivering a smooth, responsive experience across Android, iOS, and web with bank-grade security and a clean, everyday UI.
-                </p>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                  <ul class="lp-list">
-                    <li><span class="i">💸</span> Instant P2P send/request with favorites &amp; repeat templates</li>
-                    <li><span class="i">📲</span> EMVCo-style static/dynamic QR payments for merchants</li>
-                    <li><span class="i">🧾</span> Bills &amp; mobile recharge with schedules and reminders</li>
-                    <li><span class="i">🏧</span> Agent cash-in/cash-out with transparent fees &amp; limits</li>
-                    <li><span class="i">🔐</span> PIN/biometric + OTP + device binding for strong auth</li>
-                    <li><span class="i">🛡️</span> Risk &amp; AML rules, velocity limits, deny/allow lists</li>
-                    <li><span class="i">🧮</span> Double-entry ledger with holds, reversals, refunds</li>
-                    <li><span class="i">🧾</span> Statements &amp; receipts (PDF/CSV) and dispute flows</li>
-                    <li><span class="i">📊</span> Merchant/agent dashboards: settlements, commissions, refunds</li>
-                    <li><span class="i">⚡</span> Offline-first caching, push notifications, deep links</li>
-                  </ul>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                  <div class="lp-kv"><b>Frontend:</b> Flutter 3.x (Android/iOS/Web)</div>
-                  <div class="lp-kv"><b>Backend:</b> Laravel 10/11 (REST, JWT, Horizon queues)</div>
-                  <div class="lp-kv"><b>Data/Infra:</b> PostgreSQL or MySQL, Redis, Docker + Nginx</div>
-                  <div class="lp-kv"><b>Security:</b> Field-level encryption, idempotent APIs, audit log</div>
-                  <div class="lp-kv"><b>Ops:</b> Observability (logs/metrics/tracing), feature flags</div>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                  <p class="lp-result">
-                    A scalable, compliant wallet that feels effortless for users and reliable for merchants and ops—enabling instant payments, clear records, and rapid growth without sacrificing trust or governance.
-                  </p>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">Skills</div>
-                  <div class="lp-skills">
-                    <span class="lp-skill">Flutter</span>
-                    <span class="lp-skill">Laravel</span>
-                    <span class="lp-skill">MySQL</span>
-                    <span class="lp-skill">PHP</span>
-                  </div>
-                </div>
-
-                <!-- Bottom-right icons (as requested) -->
-                <div class="lp-icons">
-                  <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span>
-                  <img class="iconify" src="Image/dialogflow.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://mastodonbd.com/"
-          >
-            <div class="card boxx linkedin-post">
-              <style>
-                /* Scoped styling for this card only */
-                .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem; position:relative;}
-                .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-                .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-                .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-                .lp-dot{opacity:.5}
-                .lp-date{font-weight:500}
-                .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-                .lp-section{margin:.75rem 0}
-                .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-                .lp-list{list-style:none;padding-left:0;margin:0}
-                .lp-list li{margin:.35rem 0;line-height:1.5}
-                .lp-list li::marker{content:""}
-                .lp-list li span.i{width:1.2rem;display:inline-block}
-                .lp-kv{margin:.15rem 0}
-                .lp-kv b{font-weight:700}
-                .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-                .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-                .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-                .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-                /* Bottom-right icon cluster */
-                .lp-icons{position:absolute; right:.9rem; bottom:.8rem; display:flex; gap:.4rem; align-items:center;}
-                .lp-icons .iconify{height:22px;width:22px;opacity:.9}
-                .lp-icons img.iconify{height:22px;width:22px;object-fit:contain}
-              </style>
-
-              <div class="card-body">
-                <h4 class="card-title">Mastodon Marketplace</h4>
-
-                <p class="lp-desc">
-                  <strong>On-Demand Car Care (Responsive)</strong> — Built a full-stack automotive marketplace that lets drivers book services and buy accessories from home. A clean, fast, mobile-first UI (Bootstrap) pairs with a robust Laravel backend for secure auth, vendors, inventory, orders, and promotions. From flash-sale deals to coupon codes and vendor storefronts, it feels like a modern e-commerce app—tailored for car care.
-                </p>
-                <p class="lp-desc">
-                  Pay from your couch, schedule a service, or grab parts/electronics with a couple of taps. Vendors get a simple dashboard to manage products, prices, and stock; customers enjoy smooth browsing, quick checkout, and order tracking—built to scale and stay reliable during traffic spikes.
-                </p>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗞𝗲𝘆 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</div>
-                  <ul class="lp-list">
-                    <li><span class="i">🚗</span> Home-service booking &amp; accessories shopping in one place</li>
-                    <li><span class="i">🛒</span> Rich catalog: categories, search, best-sellers, new arrivals, featured products</li>
-                    <li><span class="i">⚡</span> Flash Sales &amp; Coupons with countdowns and dynamic pricing</li>
-                    <li><span class="i">🏪</span> Vendor storefronts (role-based dashboards for Admin / Vendor / Customer)</li>
-                    <li><span class="i">📦</span> Order workflow &amp; tracking with status updates and notifications</li>
-                    <li><span class="i">📱</span> Fully responsive (mobile/tablet/desktop) with optimized load times</li>
-                    <li><span class="i">🔒</span> Secure authentication (sessions/CSRF), validation, and admin controls</li>
-                    <li><span class="i">🗂️</span> Inventory &amp; pricing management with bulk updates and media galleries</li>
-                    <li><span class="i">🌐</span> SEO-friendly URLs and metadata for better discovery</li>
-                  </ul>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                  <div class="lp-kv"><b>Frontend:</b> Bootstrap, Blade templates, vanilla JS</div>
-                  <div class="lp-kv"><b>Backend:</b> Laravel (PHP), Eloquent ORM, Policies/Middleware</div>
-                  <div class="lp-kv"><b>Database:</b> MySQL / PostgreSQL (configurable)</div>
-                  <div class="lp-kv"><b>Infra:</b> Nginx / Apache, queue jobs for background tasks, image storage (CDN-ready)</div>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                  <p class="lp-result">
-                    A reliable, scalable car-care marketplace that merges on-demand services with e-commerce—delivering smooth UX for customers and simple tooling for vendors.
-                  </p>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">Skills</div>
-                  <div class="lp-skills">
-                    <span class="lp-skill">Full-Stack Development</span>
-                    <span class="lp-skill">Laravel</span>
-                    <span class="lp-skill">Bootstrap</span>
-                    <span class="lp-skill">Nginx</span>
-                    <span class="lp-skill">MySQL</span>
-                  </div>
-                </div>
-
-                <!-- Bottom-right icons (as requested) -->
-                <div class="lp-icons">
-                  <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span>
-                  <img class="iconify" src="Image/dialogflow.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://github.com/nafizpervez/Django_Projects"
-          >
-            <div class="card boxx linkedin-post">
-              <style>
-                /* Scoped styling for this card only */
-                .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem; position:relative;}
-                .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-                .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-                .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-                .lp-dot{opacity:.5}
-                .lp-date{font-weight:500}
-                .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-                .lp-section{margin:.75rem 0}
-                .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-                .lp-list{list-style:none;padding-left:0;margin:0}
-                .lp-list li{margin:.35rem 0;line-height:1.5}
-                .lp-list li::marker{content:""}
-                .lp-list li span.i{width:1.2rem;display:inline-block}
-                .lp-kv{margin:.15rem 0}
-                .lp-kv b{font-weight:700}
-                .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-                .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-                .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-                .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-                /* Bottom-right icon cluster */
-                .lp-icons{position:absolute; right:.9rem; bottom:.8rem; display:flex; gap:.4rem; align-items:center;}
-                .lp-icons .iconify{height:22px;width:22px;opacity:.9}
-                .lp-icons img.iconify{height:22px;width:22px;object-fit:contain}
-              </style>
-
-              <div class="card-body">
-                <h4 class="card-title">LENUS</h4>
-
-                <p class="lp-desc">
-                  <strong>LENUS — Your All-in-One Healthcare Platform</strong><br/>
-                  LENUS puts everyday care in one place—order medicines, upload prescriptions, chat/call/video-consult a doctor, book an ambulance to your live location, and schedule clinic or at-home visits. Find nearby hospitals with emergency numbers, locate blood from registered banks, and use COVID care mode to view reputable hospitals on a map and check distance from where you are—in a clean, responsive web app.
-                </p>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                  <ul class="lp-list">
-                    <li><span class="i">💊</span> Medicine on demand: buy directly or upload a prescription for verification</li>
-                    <li><span class="i">👩‍⚕️</span> Tele-consults your way: message, WhatsApp, phone, or video call</li>
-                    <li><span class="i">🚑</span> One-tap ambulance: dispatch to your current location</li>
-                    <li><span class="i">🗓️</span> Appointments &amp; house calls: book doctors for clinic or home visits</li>
-                    <li><span class="i">🩸</span> Blood finder: search blood banks &amp; distribution center contacts</li>
-                    <li><span class="i">🏥</span> Nearby hospitals: live map + emergency contacts; COVID-ready distance view</li>
-                    <li><span class="i">🔔</span> Real-time updates: orders, appointments, and alerts in a single dashboard</li>
-                  </ul>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                  <div class="lp-kv"><b>Backend/Web:</b> Django behind Nginx</div>
-                  <div class="lp-kv"><b>UI:</b> Bootstrap&nbsp;5, SCSS</div>
-                  <div class="lp-kv"><b>Realtime &amp; Maps:</b> Firebase, Google Maps API (location, routing, proximity)</div>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                  <p class="lp-result">
-                    A fast, secure, location-aware healthcare hub connecting patients, providers, and services—so care reaches you, not the other way around.
-                  </p>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">Skills</div>
-                  <div class="lp-skills">
-                    <span class="lp-skill">Django</span>
-                    <span class="lp-skill">Bootstrap 5</span>
-                    <span class="lp-skill">SCSS</span>
-                    <span class="lp-skill">Firebase</span>
-                    <span class="lp-skill">Google Maps API</span>
-                    <span class="lp-skill">Nginx</span>
-                  </div>
-                </div>
-
-                <!-- Bottom-right icons (as requested) -->
-                <div class="lp-icons">
-                  <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span>
-                  <img class="iconify" src="Image/dialogflow.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://github.com/nafizpervez/SolutionBrisk-WebApp-Firebase-LeafletApi-Firestore"
-          >
-            <div class="card boxx linkedin-post">
-              <style>
-                /* Scoped styling for this card only */
-                .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem; position:relative;}
-                .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-                .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-                .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-                .lp-dot{opacity:.5}
-                .lp-date{font-weight:500}
-                .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-                .lp-section{margin:.75rem 0}
-                .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-                .lp-list{list-style:none;padding-left:0;margin:0}
-                .lp-list li{margin:.35rem 0;line-height:1.5}
-                .lp-list li::marker{content:""}
-                .lp-list li span.i{width:1.2rem;display:inline-block}
-                .lp-kv{margin:.15rem 0}
-                .lp-kv b{font-weight:700}
-                .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-                .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-                .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-                .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-                /* Bottom-right icon cluster */
-                .lp-icons{position:absolute; right:.9rem; bottom:.8rem; display:flex; gap:.4rem; align-items:center;}
-                .lp-icons .iconify{height:22px;width:22px;opacity:.9}
-                .lp-icons img.iconify{height:22px;width:22px;object-fit:contain}
-              </style>
-
-              <div class="card-body">
-                <h4 class="card-title">SolutionBrisk</h4>
-
-                <p class="lp-desc">
-                  <strong>SolutionBrisk — All-in-One Vehicle Platform (Web + Mobile)</strong><br/>
-                  SolutionBrisk is a cross-platform app that brings the entire vehicle lifecycle to your fingertips—book at-home repairs, buy/sell cars, run auctions, and shop parts—in one place. Built with Firebase (Auth, Firestore, Cloud Functions, Storage) and Leaflet / Google Maps APIs, it’s fast, real-time, and location-aware, delivering a smooth experience on both web and mobile.
-                </p>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                  <ul class="lp-list">
-                    <li><span class="i">🛠️</span> On-site repair bookings: request a mechanic, live location &amp; ETA, service history, invoices</li>
-                    <li><span class="i">🚗</span> Buy/Sell marketplace: listings with photos/specs, verified profiles, secure messaging &amp; offers</li>
-                    <li><span class="i">🔨</span> Parts store: categories, cart, coupons, and order tracking</li>
-                    <li><span class="i">🏷️</span> Vehicle auctions: timed bidding, reserve prices, anti-sniping, real-time bid updates</li>
-                    <li><span class="i">🗺️</span> Smart geosearch: Leaflet + Google Maps for radius filters, routing, distance, coverage zones</li>
-                    <li><span class="i">🔔</span> Real-time UX: Firestore sync, FCM push, in-app chat, role-based dashboards (User/Mechanic/Vendor/Admin)</li>
-                    <li><span class="i">🔒</span> Secure by default: Firebase Auth, server rules, audit trails, Cloud Functions for trusted workflows</li>
-                  </ul>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗧𝗲𝗰𝗵 𝗦𝘁𝗮𝗰𝗸</div>
-                  <div class="lp-kv"><b>Platform:</b> Responsive Web (PWA) + cross-platform mobile support</div>
-                  <div class="lp-kv"><b>Firebase:</b> Auth, Firestore, Cloud Functions, Storage, Hosting</div>
-                  <div class="lp-kv"><b>Maps:</b> Leaflet &amp; Google Maps APIs</div>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                  <p class="lp-result">
-                    A single platform connecting drivers, mechanics, and sellers—reducing downtime, simplifying commerce, and making car care truly on-demand.
-                  </p>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">Skills</div>
-                  <div class="lp-skills">
-                    <span class="lp-skill">Firebase</span>
-                    <span class="lp-skill">Firestore</span>
-                    <span class="lp-skill">Cloud Functions</span>
-                    <span class="lp-skill">Leaflet</span>
-                    <span class="lp-skill">Google Maps API</span>
-                    <span class="lp-skill">PWA</span>
-                  </div>
-                </div>
-
-                <!-- Bottom-right icons (as requested) -->
-                <div class="lp-icons">
-                  <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span>
-                  <img class="iconify" src="Image/dialogflow.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="https://github.com/nafizpervez/FoodManiac-A-complete-WebApp-FrontEnd"
-          >
-            <div class="card boxx linkedin-post">
-              <style>
-                /* Scoped styling for this card only */
-                .linkedin-post .card-body{padding:1.25rem 1.25rem 1rem; position:relative;}
-                .lp-title{margin:0;font-weight:700;font-size:1.1rem}
-                .lp-meta{margin-top:.25rem;color:#6b7280;font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
-                .lp-badge{display:inline-flex;align-items:center;gap:.35rem;background:#eef2ff;border:1px solid #e0e7ff;color:#4338ca;padding:.15rem .5rem;border-radius:9999px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
-                .lp-dot{opacity:.5}
-                .lp-date{font-weight:500}
-                .lp-desc{margin:.75rem 0 1rem;color:#111827;line-height:1.55}
-                .lp-section{margin:.75rem 0}
-                .lp-section-title{font-weight:800;font-size:.92rem;letter-spacing:.02em;margin:.35rem 0 .5rem}
-                .lp-list{list-style:none;padding-left:0;margin:0}
-                .lp-list li{margin:.35rem 0;line-height:1.5}
-                .lp-list li::marker{content:""}
-                .lp-list li span.i{width:1.2rem;display:inline-block}
-                .lp-kv{margin:.15rem 0}
-                .lp-kv b{font-weight:700}
-                .lp-result{margin:.5rem 0 1rem;line-height:1.55}
-                .lp-skills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.35rem}
-                .lp-skill{font-size:.76rem;padding:.25rem .55rem;border:1px solid #e5e7eb;border-radius:9999px;background:#f8fafc}
-                .linkedin-post.card{border:1px solid #e5e7eb;border-radius:12px}
-                /* Bottom-right icon cluster */
-                .lp-icons{position:absolute; right:.9rem; bottom:.8rem; display:flex; gap:.4rem; align-items:center;}
-                .lp-icons .iconify{height:22px;width:22px;opacity:.9}
-                .lp-icons img.iconify{height:22px;width:22px;object-fit:contain}
-              </style>
-
-              <div class="card-body">
-                <h4 class="card-title">FoodManiac</h4>
-
-                <p class="lp-desc">
-                  <strong>Food on Demand</strong><br/>
-                  <strong>FoodManiac</strong> is a sleek, responsive food-ordering platform—think Uber Eats—built with Bootstrap on the front end and Laravel + Apache + MySQL + Google Maps API on the back end. From your current location, discover nearby restaurants, browse menus, apply promo codes, and place an order in a few taps. It’s fast and mobile-first, with live order status so you always know when your meal will arrive.
-                </p>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗛𝗶𝗴𝗵𝗹𝗶𝗴𝗵𝘁𝘀</div>
-                  <ul class="lp-list">
-                    <li><span class="i">📍</span> Geo-aware ordering: auto-detects location; surfaces nearby restaurants &amp; delivery zones</li>
-                    <li><span class="i">🛒</span> Smooth checkout: customizable items, cart/favorites, coupons, taxes/fees breakdown</li>
-                    <li><span class="i">🚴</span> Live tracking: real-time updates from accepted → preparing → picked up → delivered</li>
-                    <li><span class="i">🏪</span> Restaurant &amp; Rider dashboards: manage menus, prices, availability; dispatch &amp; routes</li>
-                    <li><span class="i">🔒</span> Secure &amp; scalable: role-based access, CSRF protection, queue jobs/caching</li>
-                  </ul>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗦𝘁𝗮𝗰𝗸</div>
-                  <div class="lp-kv"><b>Frontend:</b> Bootstrap, Blade/JS</div>
-                  <div class="lp-kv"><b>Backend:</b> Laravel (REST APIs, Queues) behind Apache</div>
-                  <div class="lp-kv"><b>Database &amp; Maps:</b> MySQL, Google Maps API</div>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">𝗥𝗲𝘀𝘂𝗹𝘁</div>
-                  <p class="lp-result">
-                    A modern, location-aware delivery marketplace connecting hungry users with local kitchens—quickly, reliably, and beautifully.
-                  </p>
-                </div>
-
-                <div class="lp-section">
-                  <div class="lp-section-title">Skills</div>
-                  <div class="lp-skills">
-                    <span class="lp-skill">Laravel</span>
-                    <span class="lp-skill">Bootstrap</span>
-                    <span class="lp-skill">MySQL</span>
-                    <span class="lp-skill">Apache</span>
-                    <span class="lp-skill">Google Maps API</span>
-                    <span class="lp-skill">Blade/JS</span>
-                  </div>
-                </div>
-
-                <!-- Bottom-right icons (as requested) -->
-                <div class="lp-icons">
-                  <span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span>
-                  <img class="iconify" src="Image/dialogflow.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-        <div class="col-sm-6">
-          <a
-            class="Project-box"
-            target="_blank"
-            href="#"
-          >
-            <div class="card boxx">
-              <div class="card-body">
-                <h4 class="card-title">Telegram Bot</h4>
-                <p class="card-text project-text">
-                  This bot gives news on diferent topics like sports,
-                  entertainment, according to location and can do small-talk and
-                  also show the covid cases in your state.<span
-                    class="iconify"
-                    data-icon="logos:python"
-                    data-inline="false"
-                  ></span
-                  ><img class="iconify" src="Image/dialogflow.png" alt="" />
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">Made with  ~ ✌︎㋡ ~  by Nafiz Pervez</footer>
+    <footer class="footer">Made with ~ ✌︎㋡ ~ by Nafiz Pervez</footer>
     <script src="dark-mode.js"></script>
+
+    <script>
+      const projects = [
+        {
+          title: "Workflow Reporting & Operational Intelligence Platform",
+          type: "Enterprise GIS Platform",
+          category: "Workflow Reporting / Operational Intelligence",
+          focus:
+            "Workflow visibility, map-based reporting, operational dashboards",
+          summary:
+            "A reporting and monitoring platform that turns enterprise workflow data into map-linked operational intelligence for planning, execution, and decision support.",
+          overview:
+            "A geospatial workflow reporting platform designed to centralize operational visibility across mapping and reporting processes. It transforms enterprise records into a structured dashboard experience with filtering, visual summaries, status intelligence, and decision-ready reporting. The application is focused on making reporting easier, more traceable, and more useful to technical teams and leadership.",
+          highlights: [
+            "Interactive reporting workspace for workflow-driven operational data",
+            "Map-aligned summaries and filtered views for rapid project analysis",
+            "Status-driven dashboards with category, ownership, and time filtering",
+            "Structured report presentation for operational review and follow-up",
+            "Designed to reduce manual reporting effort and improve visibility",
+            "Supports scalable enterprise-style workflows and dashboard expansion",
+          ],
+          tech: [
+            { key: "Frontend", value: "React, TypeScript, Tailwind CSS" },
+            {
+              key: "GIS / Data",
+              value:
+                "ArcGIS services, enterprise workflow data, reporting filters",
+            },
+            {
+              key: "Architecture",
+              value: "Modular feature-based application structure",
+            },
+            {
+              key: "Use Case",
+              value:
+                "Operational reporting, management review, and status monitoring",
+            },
+          ],
+          result:
+            "Created a cleaner, faster, and more operationally useful reporting environment that improves visibility across workflow progress, ownership, and execution status.",
+          skills: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "ArcGIS",
+            "Dashboard Design",
+            "Operational Reporting",
+            "Workflow Analytics",
+          ],
+          previewTags: [
+            "Operational Reporting",
+            "React",
+            "ArcGIS",
+            "Dashboard",
+          ],
+          stackShort: "React, TypeScript, ArcGIS",
+          links: [],
+        },
+        {
+          title: "Geospatial Proposal Preparation Platform",
+          type: "Enterprise GIS Platform",
+          category: "Proposal Preparation / Mapping Planning",
+          focus:
+            "Proposal generation, geospatial planning, structured form workflows",
+          summary:
+            "A geospatial planning platform for preparing, validating, and organizing proposal-ready mapping data through guided enterprise forms and structured workflows.",
+          overview:
+            "A proposal preparation platform built to streamline geospatial planning and structured proposal creation. It supports guided forms, region-aware workflows, mapping sheet logic, validation-driven data entry, and proposal-oriented reporting. The platform is designed to reduce friction in the preparation process and standardize how proposal information is collected and reviewed.",
+          highlights: [
+            "Form-driven proposal preparation workflow with structured data capture",
+            "Region-sensitive logic for mapping and operational planning",
+            "Supports scale, sheet, and planning-based geospatial selection flows",
+            "Improves consistency of proposal generation and data organization",
+            "Designed for operational teams preparing mapping or geospatial proposals",
+            "Modular UI structure for future enhancement and report integration",
+          ],
+          tech: [
+            {
+              key: "Frontend",
+              value: "Next.js, React, TypeScript, Tailwind CSS",
+            },
+            {
+              key: "GIS / Data",
+              value:
+                "ArcGIS FeatureLayers, map-based filtering, proposal-related spatial logic",
+            },
+            {
+              key: "UX",
+              value: "Guided forms, validation, dynamic selection flows",
+            },
+            {
+              key: "Use Case",
+              value:
+                "Planning, proposal preparation, and operational geospatial documentation",
+            },
+          ],
+          result:
+            "Standardized the proposal preparation process into a more guided, scalable, and enterprise-ready application that reduces manual preparation complexity.",
+          skills: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "ArcGIS",
+            "Form Workflows",
+            "Proposal Planning",
+            "Geospatial UI",
+          ],
+          previewTags: ["Proposal Platform", "Next.js", "ArcGIS", "Forms"],
+          stackShort: "Next.js, TypeScript, ArcGIS",
+          links: [],
+        },
+        {
+          title:
+            "Enterprise API Integration & Spatial Data Automation Pipeline",
+          type: "Integration & Automation Platform",
+          category: "API Integration / Spatial Data Pipeline",
+          focus:
+            "Automation, data validation, spatial integration, message-driven ingestion",
+          summary:
+            "A robust automation pipeline that validates, processes, and routes source data into enterprise-ready destinations through staged workflows and integration logic.",
+          overview:
+            "An enterprise data automation pipeline designed to ingest source records from APIs, validate and classify them, perform duplicate and update detection, and prepare data for downstream enterprise systems including spatial destinations. The platform emphasizes staging discipline, governed processing, auditability, and scalable orchestration across multiple collections and workflow stages.",
+          highlights: [
+            "API-to-platform ingestion flow with staged validation and routing logic",
+            "Duplicate, skip, update, insert, and delete detection across data states",
+            "Supports scalable processing using structured collection-based workflow design",
+            "Containerized and deployment-ready with monitoring and operational controls",
+            "Designed for enterprise-grade reliability, traceability, and governance",
+            "Bridges traditional API workflows with spatial and enterprise data destinations",
+          ],
+          tech: [
+            { key: "Backend", value: ".NET Worker Services, C#" },
+            {
+              key: "Messaging / Data",
+              value: "Apache Pulsar, MongoDB, enterprise collection pipelines",
+            },
+            {
+              key: "Ops",
+              value:
+                "Docker, Docker Compose, health checks, operational monitoring",
+            },
+            {
+              key: "Integration",
+              value:
+                "API ingestion, validation processors, enterprise destination workflows",
+            },
+          ],
+          result:
+            "Built a governed, extensible automation backbone for enterprise data movement that reduces manual handling, improves validation discipline, and supports large-scale integration workflows.",
+          skills: [
+            ".NET",
+            "C#",
+            "Apache Pulsar",
+            "MongoDB",
+            "Docker",
+            "Docker Compose",
+            "API Integration",
+            "Data Validation",
+            "Automation Pipeline",
+          ],
+          previewTags: ["Automation", ".NET", "MongoDB", "Pulsar"],
+          stackShort: ".NET, Pulsar, MongoDB, Docker",
+          links: [],
+        },
+        {
+          title: "Spatial Change Intelligence Platform",
+          type: "Geospatial Analytics Platform",
+          category: "Remote Sensing / Change Detection",
+          focus: "Imagery analysis, classification, enterprise GIS, reporting",
+          summary:
+            "A secure enterprise web application that detects, quantifies, and visualizes land-use and land-cover change from multi-date imagery.",
+          overview:
+            "A secure, Portal-centric web application that detects, quantifies, and visualizes land-use and land-cover change from multi-date Sentinel and drone imagery. The server performs preprocessing and classification, writes attribute-rich polygons to Hosted Feature Layers, and feeds a map-first dashboard that pairs interactive visualization with synchronized statistics and downloadable PDF reports.",
+          highlights: [
+            "SSO to ArcGIS Portal with token and role-based access",
+            "Custom GP tool driving preprocessing, classification, polygonization, and attribution",
+            "Time-aware imagery pipelines for Sentinel and drone data",
+            "Interactive review with filters, compare tools, highlight, zoom-to, and clear selections",
+            "Linked statistics table with counts, areas, trends, and PDF export",
+            "Append-or-publish outputs to Enterprise feature and imagery services",
+            "Report service for pixel-perfect PDFs with maps, charts, and metadata",
+          ],
+          tech: [
+            {
+              key: "Frontend",
+              value:
+                "Next.js, Tailwind CSS, ArcGIS Maps SDK for JavaScript, Redux, Axios",
+            },
+            {
+              key: "Backend & Processing",
+              value:
+                ".NET API, Python, ArcPy, ArcGIS Server GP services, DLPK models",
+            },
+            {
+              key: "ArcGIS Enterprise",
+              value:
+                "Portal, Server, Image Server, Hosted Feature Layers, Hosted Imagery Layers",
+            },
+            {
+              key: "Data & Reporting",
+              value:
+                "SQL Server, Puppeteer, Headless Chrome, report snapshot workflows",
+            },
+          ],
+          result:
+            "Transforms time-series imagery into actionable and auditable change intelligence, reducing manual review and accelerating decisions for national-scale programs.",
+          skills: [
+            "Next.js",
+            "JavaScript",
+            ".NET Core",
+            "Python",
+            "ArcPy",
+            "Deep Learning",
+            "ArcGIS Enterprise",
+            "ArcGIS Online",
+            "Microsoft SQL Server",
+          ],
+          previewTags: ["GIS", "AI", "Next.js", "ArcGIS Enterprise"],
+          stackShort: "Next.js, .NET, Python, ArcGIS",
+          links: [],
+        },
+        {
+          title: "Online Learning Platform",
+          type: "Full Stack Web Platform",
+          category: "EdTech / Scheduling Platform",
+          focus: "Conflict-free scheduling, tests, multi-role learning system",
+          summary:
+            "A full-stack online learning platform for course publishing, scheduling, assessments, and conflict-free student participation.",
+          overview:
+            "OLP is a full-stack Online Learning Platform for publishing and managing courses where students register, attend scheduled classes, and take timed tests while teachers run and track multiple courses from a unified console. A structured scheduling engine prevents overlapping sessions so learners cannot join clashing classes, reinforcing disciplined and focused study.",
+          highlights: [
+            "Conflict-free scheduling that blocks overlapping classes per student",
+            "Multi-course management for instructors with enrollment and attendance tracking",
+            "Timed assessments with scheduled windows and automatic availability rules",
+            "Role-based portals for students and teachers",
+            "FastAPI backend with OpenAPI and Swagger support",
+            "Database switching between PostgreSQL and MySQL via SQLAlchemy",
+            "Docker and Docker Compose for environment consistency",
+            "CI/CD pipelines using GitHub Actions",
+          ],
+          tech: [
+            {
+              key: "Frontend",
+              value: "Next.js, React, responsive UI, REST integration",
+            },
+            { key: "Backend", value: "FastAPI, Python, Pydantic, SQLAlchemy" },
+            { key: "Databases", value: "PostgreSQL or MySQL" },
+            {
+              key: "DevOps",
+              value:
+                "Docker, Docker Compose, GitHub Actions, Azure-ready deployment",
+            },
+          ],
+          result:
+            "A scalable cloud-ready learning platform delivering disciplined scheduling, strong teacher workflows, and reliable student experiences.",
+          skills: [
+            "CI/CD",
+            "Docker Compose",
+            "FastAPI",
+            "Docker",
+            "GitHub",
+            "SQLAlchemy",
+            "MySQL",
+            "PostgreSQL",
+            "Next.js",
+            "Kubernetes",
+          ],
+          previewTags: ["EdTech", "FastAPI", "Next.js", "CI/CD"],
+          stackShort: "Next.js, FastAPI, SQLAlchemy",
+          links: [
+            {
+              label: "GitHub",
+              url: "https://github.com/nafizpervez/Online_Learning_Platform",
+            },
+          ],
+        },
+        {
+          title: "ArcGIS Customized Experience Builder Dashboard",
+          type: "Enterprise Dashboard",
+          category: "Custom Experience Builder / Enterprise GIS",
+          focus: "Custom widgets, enterprise layers, analytics dashboard",
+          summary:
+            "A bespoke ArcGIS Experience Builder dashboard using custom React and Redux widgets for map-first enterprise analytics.",
+          overview:
+            "A custom ArcGIS Experience Builder dashboard powered by React and Redux widgets for fast map-first analytics. Users filter enterprise feature layers via dropdowns and text inputs, run ArcGIS REST queries against Portal and Server data, and view polygon results with synchronized statistical reporting in a secured client-facing hosted item.",
+          highlights: [
+            "Custom React and Redux widgets embedded in Experience Builder",
+            "Multi-criteria filtering via dropdowns and text inputs",
+            "Live attribute-based polygon rendering on hosted web maps",
+            "Synchronized statistical reporting table",
+            "ArcGIS REST and Enterprise REST integration",
+            "Secure deployment as a token-protected hosted item",
+            "Node.js custom dev server for Experience Builder Dev Edition workflows",
+          ],
+          tech: [
+            { key: "Platform", value: "ArcGIS Experience Builder Dev Edition" },
+            { key: "Frontend", value: "React, Redux, JavaScript" },
+            {
+              key: "GIS Services",
+              value:
+                "ArcGIS Enterprise, Portal, Server, ArcGIS REST API, Feature Layers",
+            },
+            {
+              key: "Runtime",
+              value: "Node.js, custom dev server, CORS tooling",
+            },
+          ],
+          result:
+            "Created a single secure analytics workspace that turns enterprise GIS data into instant, map-aligned insights for stakeholders.",
+          skills: [
+            "React.js",
+            "ArcGIS Enterprise",
+            "REST APIs",
+            "Redux",
+            "JavaScript",
+          ],
+          previewTags: ["Dashboard", "ArcGIS", "React", "Enterprise"],
+          stackShort: "React, Redux, ArcGIS Enterprise",
+          links: [],
+        },
+        {
+          title: "Telemetry Extractor",
+          type: "Data Extraction Tool",
+          category: "Video Telemetry / Media Analytics",
+          focus:
+            "Telemetry decoding, structured outputs, geo-enabled media data",
+          summary:
+            "A full-stack application that extracts and decodes telemetry metadata embedded in GoPro-recorded videos.",
+          overview:
+            "Telemetry Extraction is a full-stack application designed to extract, decode, and process metadata embedded in GoPro-recorded videos, transforming raw footage into actionable, data-enriched media. The backend decodes telemetry streams directly from MP4 containers and processes GPS coordinates, speed, altitude, orientation, and motion data for analytical and visualization use cases.",
+          highlights: [
+            "Accurate extraction of GPS, orientation, speed, and environmental telemetry",
+            "Validated against multiple GoPro Hero 6 Black recordings",
+            "Exports structured outputs for GIS, analytics, and custom applications",
+            "Node.js backend for MP4 telemetry decoding",
+            "Minimal React interface for upload and output workflows",
+          ],
+          tech: [
+            {
+              key: "Backend",
+              value: "Node.js, MP4 telemetry decoding, large-file handling",
+            },
+            { key: "Frontend", value: "React, responsive UI" },
+            {
+              key: "Devices / Data",
+              value: "GoPro Hero 6 Black telemetry streams",
+            },
+            {
+              key: "Use Case",
+              value: "Media analytics, mapping, and derived telemetry insight",
+            },
+          ],
+          result:
+            "Turns ordinary GoPro footage into data-rich, analysis-ready media that bridges video, mapping, and analytics.",
+          skills: ["Node.js", "React.js", "GIS", "Telemetry Processing"],
+          previewTags: ["Node.js", "Telemetry", "React", "GIS"],
+          stackShort: "Node.js, React, telemetry decoding",
+          links: [
+            {
+              label: "GitHub",
+              url: "https://github.com/nafizpervez/Telemetry-Extractor-by-nafizpervez",
+            },
+          ],
+        },
+        {
+          title: "PayME",
+          type: "FinTech Product",
+          category: "Mobile Wallet / Payment Platform",
+          focus: "Digital wallet, payments, multilingual mobile experience",
+          summary:
+            "A modern multilingual mobile wallet built with Flutter and Laravel for instant transfers, QR payments, recharge, and agent operations.",
+          overview:
+            "PayME is a modern, bKash-style multilingual mobile wallet built with Flutter and Laravel. It enables instant P2P transfers, QR merchant payments, bill payment, mobile recharge, and agent cash-in and cash-out while delivering a responsive experience across Android, iOS, and web with strong security controls.",
+          highlights: [
+            "Instant P2P transfers and request flows",
+            "EMV-style QR merchant payment experience",
+            "Bill payment and mobile recharge support",
+            "Agent cash-in and cash-out workflows",
+            "PIN, biometric, OTP, and device-binding security features",
+            "Double-entry ledger concepts with reversals and refunds",
+            "Merchant and agent dashboards with settlement visibility",
+          ],
+          tech: [
+            { key: "Frontend", value: "Flutter 3.x for Android, iOS, and Web" },
+            {
+              key: "Backend",
+              value: "Laravel 10/11, REST APIs, JWT, queue workflows",
+            },
+            {
+              key: "Data / Infra",
+              value: "PostgreSQL or MySQL, Redis, Docker, Nginx",
+            },
+            {
+              key: "Security",
+              value: "Audit logging, encrypted fields, idempotent APIs",
+            },
+          ],
+          result:
+            "A scalable wallet product that balances strong operational governance with smooth everyday payment UX.",
+          skills: [
+            "Flutter",
+            "Laravel",
+            "MySQL",
+            "PHP",
+            "Redis",
+            "Digital Payments",
+          ],
+          previewTags: ["FinTech", "Flutter", "Laravel", "Wallet"],
+          stackShort: "Flutter, Laravel, MySQL",
+          links: [
+            {
+              label: "GitHub",
+              url: "https://github.com/nafizpervez/PAYme",
+            },
+          ],
+        },
+        {
+          title: "Mastodon Marketplace",
+          type: "Full Stack Marketplace",
+          category: "Automotive Commerce / Service Marketplace",
+          focus: "Vendor storefronts, bookings, e-commerce, promotions",
+          summary:
+            "A full-stack automotive marketplace for booking car services and buying accessories from home through a responsive commerce experience.",
+          overview:
+            "An automotive marketplace that lets drivers book services and buy accessories from home. A clean responsive Bootstrap interface is paired with a Laravel backend for authentication, vendor management, inventory, orders, and promotions. It combines on-demand service workflows with a modern e-commerce experience tailored for car care.",
+          highlights: [
+            "Home-service booking and accessories shopping in one platform",
+            "Catalog with categories, search, featured products, and best sellers",
+            "Flash sales and coupon-driven pricing logic",
+            "Vendor storefronts and role-based dashboards",
+            "Order workflow and tracking",
+            "Responsive performance across devices",
+            "Secure authentication and validation controls",
+          ],
+          tech: [
+            {
+              key: "Frontend",
+              value: "Bootstrap, Blade templates, vanilla JavaScript",
+            },
+            {
+              key: "Backend",
+              value: "Laravel, PHP, Eloquent ORM, middleware and policies",
+            },
+            { key: "Database", value: "MySQL / PostgreSQL" },
+            {
+              key: "Infra",
+              value: "Nginx / Apache, background jobs, media storage",
+            },
+          ],
+          result:
+            "Built a scalable car-care marketplace that merges on-demand service workflows with e-commerce convenience.",
+          skills: [
+            "Full-Stack Development",
+            "Laravel",
+            "Bootstrap",
+            "Nginx",
+            "MySQL",
+          ],
+          previewTags: ["Marketplace", "Laravel", "Bootstrap", "Automotive"],
+          stackShort: "Laravel, Bootstrap, MySQL",
+          links: [
+            {
+              label: "Live Site",
+              url: "https://mastodonbd.com/",
+            },
+          ],
+        },
+        {
+          title: "LENUS",
+          type: "Healthcare Platform",
+          category: "Healthcare / Location-Aware Service Platform",
+          focus: "Telemedicine, medicine orders, ambulance, hospitals, maps",
+          summary:
+            "An all-in-one healthcare platform for medicine ordering, tele-consults, appointments, ambulance booking, and nearby hospital support.",
+          overview:
+            "LENUS is a healthcare platform that combines medicine orders, prescription uploads, doctor consultations, ambulance booking, clinic or home appointments, and nearby hospital discovery into one responsive web application. It is location-aware and built to connect patients with services in a more direct and practical way.",
+          highlights: [
+            "Medicine ordering and prescription upload workflows",
+            "Message, call, WhatsApp, and video consultation options",
+            "One-tap ambulance dispatch to current location",
+            "Clinic and home-visit booking flows",
+            "Blood bank and distribution center contact search",
+            "Nearby hospitals with emergency contacts and COVID-ready views",
+            "Real-time updates for orders, appointments, and alerts",
+          ],
+          tech: [
+            { key: "Backend / Web", value: "Django behind Nginx" },
+            { key: "UI", value: "Bootstrap 5, SCSS" },
+            { key: "Realtime & Maps", value: "Firebase, Google Maps API" },
+            {
+              key: "Use Case",
+              value: "Healthcare access, location-aware service coordination",
+            },
+          ],
+          result:
+            "Delivered a fast and location-aware healthcare hub that connects patients, providers, and services in one experience.",
+          skills: [
+            "Django",
+            "Bootstrap 5",
+            "SCSS",
+            "Firebase",
+            "Google Maps API",
+            "Nginx",
+          ],
+          previewTags: ["Healthcare", "Django", "Firebase", "Maps"],
+          stackShort: "Django, Firebase, Google Maps API",
+          links: [
+            {
+              label: "GitHub",
+              url: "https://github.com/nafizpervez/Django_Projects",
+            },
+          ],
+        },
+        {
+          title: "SolutionBrisk",
+          type: "Cross-Platform Service Marketplace",
+          category: "Vehicle Services / Marketplace / Auctions",
+          focus:
+            "Repair bookings, vehicle trading, auctions, parts, realtime sync",
+          summary:
+            "A cross-platform vehicle platform that combines repair booking, buy-sell workflows, auctions, and parts commerce with location-aware services.",
+          overview:
+            "SolutionBrisk is a cross-platform app that brings the vehicle lifecycle into one place. Users can book at-home repairs, buy or sell cars, run auctions, and shop parts. Built around Firebase services and map integrations, it emphasizes realtime experience, role-based dashboards, and location-aware interaction.",
+          highlights: [
+            "On-site repair booking with live location and ETA support",
+            "Vehicle buy and sell marketplace with listing workflows",
+            "Parts store with cart, category, and coupon logic",
+            "Vehicle auctions with timed bidding and realtime updates",
+            "Leaflet and Google Maps based geosearch and routing",
+            "Realtime Firestore sync and push notifications",
+            "Role-based dashboards for users, mechanics, vendors, and admins",
+          ],
+          tech: [
+            {
+              key: "Platform",
+              value: "Responsive Web / PWA / mobile-friendly experience",
+            },
+            {
+              key: "Firebase",
+              value: "Auth, Firestore, Cloud Functions, Storage, Hosting",
+            },
+            { key: "Maps", value: "Leaflet, Google Maps APIs" },
+            {
+              key: "Use Case",
+              value:
+                "Vehicle lifecycle platform and location-aware service marketplace",
+            },
+          ],
+          result:
+            "Built a single platform connecting drivers, mechanics, and sellers while simplifying vehicle services and commerce.",
+          skills: [
+            "Firebase",
+            "Firestore",
+            "Cloud Functions",
+            "Leaflet",
+            "Google Maps API",
+            "PWA",
+          ],
+          previewTags: ["Firebase", "Marketplace", "Leaflet", "Vehicle"],
+          stackShort: "Firebase, Leaflet, Google Maps",
+          links: [
+            {
+              label: "GitHub",
+              url: "https://github.com/nafizpervez/SolutionBrisk-WebApp-Firebase-LeafletApi-Firestore",
+            },
+          ],
+        },
+        {
+          title: "FoodManiac",
+          type: "Food Delivery Platform",
+          category: "Food Ordering / Delivery Marketplace",
+          focus:
+            "Location-based ordering, delivery workflows, restaurant dashboards",
+          summary:
+            "A responsive food-ordering platform built around nearby restaurants, geo-aware ordering, and live delivery status.",
+          overview:
+            "FoodManiac is a responsive food-ordering platform built with Bootstrap on the frontend and Laravel on the backend. Users discover nearby restaurants, browse menus, apply promo codes, and place orders quickly, while restaurants and riders use dashboards to manage availability, menus, dispatch, and order flow.",
+          highlights: [
+            "Geo-aware restaurant discovery based on user location",
+            "Smooth checkout with customizations and fee breakdowns",
+            "Live order status through delivery workflow stages",
+            "Restaurant and rider dashboards",
+            "Role-based access and secure transaction flow",
+            "Queue jobs and caching for operational stability",
+          ],
+          tech: [
+            { key: "Frontend", value: "Bootstrap, Blade, JavaScript" },
+            { key: "Backend", value: "Laravel, REST APIs, queues, Apache" },
+            { key: "Database & Maps", value: "MySQL, Google Maps API" },
+            { key: "Use Case", value: "Location-aware delivery marketplace" },
+          ],
+          result:
+            "Created a modern, location-driven delivery marketplace that connects users with local kitchens through a fast and clear workflow.",
+          skills: [
+            "Laravel",
+            "Bootstrap",
+            "MySQL",
+            "Apache",
+            "Google Maps API",
+            "Blade/JS",
+          ],
+          previewTags: ["Delivery", "Laravel", "MySQL", "Maps"],
+          stackShort: "Laravel, MySQL, Google Maps API",
+          links: [
+            {
+              label: "GitHub",
+              url: "https://github.com/nafizpervez/FoodManiac-A-complete-WebApp-FrontEnd",
+            },
+          ],
+        },
+        {
+          title: "Telegram Bot",
+          type: "Conversational Utility",
+          category: "Bot / Automation",
+          focus: "News, small-talk, location-aware responses",
+          summary:
+            "A Telegram bot for news, casual interactions, and lightweight utility responses based on topic and location.",
+          overview:
+            "A Telegram-based conversational bot that provides news across multiple topics such as sports and entertainment, can engage in simple small-talk, and can also show context-aware information such as health-related location information. It was built as a practical utility and conversational experimentation project.",
+          highlights: [
+            "Topic-based news delivery",
+            "Supports small-talk and simple conversational interaction",
+            "Lightweight utility behavior with location-oriented responses",
+            "Built as an accessible messaging-based interaction layer",
+          ],
+          tech: [
+            { key: "Bot Layer", value: "Telegram Bot integration" },
+            {
+              key: "Logic",
+              value: "Python-based bot behavior and utility flows",
+            },
+            {
+              key: "Use Case",
+              value: "Conversational utility and lightweight automation",
+            },
+          ],
+          result:
+            "Created a simple but useful bot experience that combines information delivery with conversational interaction.",
+          skills: [
+            "Python",
+            "Bot Development",
+            "Automation",
+            "Conversational Logic",
+          ],
+          previewTags: ["Bot", "Python", "Utility", "Telegram"],
+          stackShort: "Python, Telegram Bot",
+          links: [],
+        },
+      ];
+
+      function projectCardHTML(project, index) {
+        return `
+          <div class="col-xl-4 col-lg-6 mb-4">
+            <div class="project-card" data-project-index="${index}">
+              <div class="project-card-top">
+                <div class="project-type-pill">${project.type}</div>
+                <div class="project-arrow">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+
+              <h3 class="project-card-title">${project.title}</h3>
+
+              <p class="project-card-summary">${project.summary}</p>
+
+              <div class="project-card-meta">
+                <div class="project-card-meta-row">
+                  <span class="meta-label">Category</span>
+                  <span class="meta-value">${project.category}</span>
+                </div>
+                <div class="project-card-meta-row">
+                  <span class="meta-label">Stack</span>
+                  <span class="meta-value">${project.stackShort}</span>
+                </div>
+              </div>
+
+              <div class="project-card-tags">
+                ${project.previewTags
+                  .map((tag) => `<span class="project-tag">${tag}</span>`)
+                  .join("")}
+              </div>
+
+              <div class="project-card-footer">
+                <span class="project-card-focus">${project.focus}</span>
+                <button type="button" class="project-view-btn">
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function renderProjectList(items) {
+        const grid = document.getElementById("projectGrid");
+        grid.innerHTML = items
+          .map((project, index) => projectCardHTML(project, index))
+          .join("");
+      }
+
+      function openProjectModal(index) {
+        const project = projects[index];
+        if (!project) return;
+
+        document.getElementById("projectPreviewModalLabel").textContent =
+          project.title;
+        document.getElementById("projectModalType").textContent = project.type;
+        document.getElementById("projectModalCategory").textContent =
+          project.category;
+        document.getElementById("projectModalStack").textContent =
+          project.stackShort;
+        document.getElementById("projectModalFocus").textContent =
+          project.focus;
+        document.getElementById("projectModalOverview").textContent =
+          project.overview;
+        document.getElementById("projectModalResult").textContent =
+          project.result;
+
+        document.getElementById("projectModalHighlights").innerHTML =
+          project.highlights.map((item) => `<li>${item}</li>`).join("");
+
+        document.getElementById("projectModalTech").innerHTML = project.tech
+          .map(
+            (item) => `
+              <div class="project-kv-item">
+                <div class="project-kv-key">${item.key}</div>
+                <div class="project-kv-value">${item.value}</div>
+              </div>
+            `,
+          )
+          .join("");
+
+        document.getElementById("projectModalSkills").innerHTML = project.skills
+          .map((skill) => `<span class="project-skill-chip">${skill}</span>`)
+          .join("");
+
+        const linksWrap = document.getElementById("projectModalLinks");
+        if (project.links && project.links.length) {
+          linksWrap.innerHTML = project.links
+            .map(
+              (link) => `
+                <a class="project-action-btn" href="${link.url}" target="_blank" rel="noopener noreferrer">
+                  ${link.label}
+                </a>
+              `,
+            )
+            .join("");
+        } else {
+          linksWrap.innerHTML = "";
+        }
+
+        $("#projectPreviewModal").modal("show");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderProjectList(projects);
+
+        document.addEventListener("click", function (event) {
+          const card = event.target.closest(".project-card");
+          if (!card) return;
+          const index = Number(card.getAttribute("data-project-index"));
+          openProjectModal(index);
+        });
+      });
+    </script>
   </body>
 </html>
