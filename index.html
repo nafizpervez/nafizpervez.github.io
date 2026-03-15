@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="dark-mode.css" />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Arizonia&family=Montserrat:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -30,6 +30,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     />
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -46,6 +47,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=G-WZXPVQDR2Q"
@@ -56,11 +58,10 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-WZXPVQDR2Q");
   </script>
 
-  <body class="container-fluid body_section">
+  <body class="container-fluid body_section modern-homepage">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand brand-name" href="#">Nafiz Pervez</a>
@@ -79,7 +80,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link headerachor" href="index.html">Home</a>
+              <a class="nav-link headerachor active-page" href="index.html"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link headerachor" href="education.html"
@@ -107,288 +110,291 @@
       </nav>
     </header>
 
-    <section id="Home">
-      <div class="row column1">
-        <div class="col-lg-6 col-md-6 first-image">
-          <img class="boyimage" src="Image/20200630_162659.gif" alt="" />
-        </div>
-        <div class="col-lg-6 section-1">
-          <h1 class="Hello">
-            Hello All! I'm Nafiz <span class="wave">👋</span>
-          </h1>
-          <p>
-            Highly motivated and versatile Geo Software Developer & GIS
-            Specialist with over five years of experience in GIS, FinTech, and
-            full-stack application development.
-          </p>
-          <p>
-            I specialize in developing GIS-powered applications, customizing
-            Esri Experience Builder widgets, automating workflows, and
-            leveraging cutting-edge technologies.
-          </p>
-          <p>
-            Passionate about AI-powered geospatial intelligence, I merge
-            technology with data-driven insights to create transformative
-            applications across GIS, fintech, mobile, web, and hardware
-            solutions.
-          </p>
-          <div class="social_media_icon">
-            <!-- <a class="btn" href="https://www.instagram.com/Nafiz.verma_/" target="_blank">
-              <i class="fab fa-instagram"></i>
-            </a> -->
-            <a
-              class="btn"
-              href="https://www.linkedin.com/in/nafizpervez/"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a
-              class="btn"
-              href="https://github.com/nafizpervez"
-              target="_blank"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a class="btn" href="mailto:nafizpervez@gmail.com" target="_blank">
-              <i class="fab fa-google"></i>
-            </a>
-            <a
-              class="btn"
-              href="mailto:nafiz.pervez@icloud.com"
-              target="_blank"
-            >
-              <i class="fab fa-apple"></i>
-            </a>
-          </div>
-        </div>
-        <div class="Image-boy col-lg-6">
-          <img class="boy" src="Image/Boy-image.png" alt="" />
-        </div>
-      </div>
-    </section>
+    <main>
+      <section id="Home" class="hero-modern">
+        <div class="row align-items-center hero-row">
+          <div class="col-lg-7 col-md-12 hero-left">
+            <div class="hero-badge">
+              <span><i class="fas fa-circle"></i> Open to impactful roles</span>
+            </div>
 
-    <section id="Whatido">
-      <h1>What I Do ?</h1>
-      <div class="row feature-1">
-        <div class="col-lg-6 col-md-6 Feature-first-image">
-          <img class="Feature-svg-image" src="Image/Data_Analysis.svg" alt="" />
-        </div>
-        <div class="col-lg-6 col-md-6">
-          <h1 class="Feature-Heading">Geo App Development</h1>
-          <ul class="dev-icon">
-            <li>
-              <img
-                class="numpy"
-                style="
-                  height: auto;
-                  width: 150px;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                "
-                src="Image/Esri.svg"
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                class="numpy"
-                style="
-                  height: auto;
-                  width: 150px;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                "
-                src="Image/arcpy.png"
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                class="pandas"
-                style="
-                  height: auto;
-                  width: 150px;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                "
-                src="Image/kindpng_5747046.png"
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                class="numpy"
-                style="
-                  height: auto;
-                  width: 150px;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                "
-                src="Image/typescript.png"
-                alt=""
-              />
-            </li>
-            <li>
-              <img
-                class="numpy"
-                style="
-                  height: auto;
-                  width: 70px;
-                  padding-left: 10px;
-                  padding-right: 10px;
-                "
-                src="Image/rest.png"
-                alt=""
-              />
-            </li>
-          </ul>
-          <div class="Data-Analytic">
-            <p class="Features-paragraph">
-              💥 Develop and maintain GIS applications using Esri’s ArcGIS
-              suite, including ArcGIS Online, ArcGIS Enterprise, and ArcGIS Pro.
-              I also build responsive GIS web applications using modern
-              frameworks like React, Angular, and Vue, integrated with ArcGIS
-              APIs.
-            </p>
-            <p class="Features-paragraph">
-              💥 Perform spatial data analysis and visualization using ArcGIS
-              tools, implementing geospatial algorithms to analyze geographic
-              patterns and derive meaningful insights.
-            </p>
-            <p class="Features-paragraph">
-              💥 Leverage machine learning and AI technologies to enhance
-              geospatial analysis and develop proof-of-concept projects using
-              ArcGIS tools.
-            </p>
-            <p class="Features-paragraph">
-              💥 Create custom tools and plugins for ArcGIS Pro and ArcGIS
-              Online, automating workflows and scripting tasks using Python,
-              JavaScript, and REST APIs.
-            </p>
-            <p class="Features-paragraph">
-              💥 Experience of working with different python Libraries like
-              Arcpy, PyTorch, Pandas, Matplotlib etc. and have knowledge of Data
-              analysis algorithms and techniques.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row feature-2">
-        <div class="col-lg-6 col-md-6 feature-web">
-          <h1 class="Feature-Heading">Web App Development</h1>
-          <ul class="dev-icon">
-            <li>
-              <img
-                class="numpy"
-                style="
-                  height: auto;
-                  width: 150px;
-                  padding-left: 5px;
-                  padding-right: 5px;
-                "
-                src="Image/typescript.png"
-                alt=""
-              />
-            </li>
-            <li>
-              <i
-                class="fab fa-bootstrap fa-5x"
-                style="color: #543b79; padding-left: 5px; padding-right: 5px"
-              ></i>
-            </li>
-            <li>
-              <i
-                class="fab fa-js-square fa-5x"
-                style="color: #f7df1e; padding-left: 5px; padding-right: 5px"
-              ></i>
-            </li>
-            <li>
-              <i
-                class="fab fa-react fa-5x"
-                style="color: #61dafb; padding-left: 5px; padding-right: 5px"
-              ></i>
-            </li>
-            <li>
-              <i
-                class="fab fa-node fa-5x"
-                style="color: #679e63; padding-left: 5px; padding-right: 5px"
-              ></i>
-            </li>
-            <li>
-              <img
-                class="numpy"
-                style="
-                  height: auto;
-                  width: 100px;
-                  padding-left: 5px;
-                  padding-right: 5px;
-                "
-                src="Image/next.png"
-                alt=""
-              />
-            </li>
-            <li>
-              <i
-                class="fab fa-figma fa-5x"
-                style="color: #f24e1e; padding-left: 5px; padding-right: 5px"
-              ></i>
-            </li>
-          </ul>
-          <div class="Data-Analytic">
-            <p class="Features-paragraph">
-              💥 Building fully responsive and user-friendly applications using
-              modern programming languages and frameworks, ensuring seamless
-              performance across devices and delivering exceptional user
-              experiences.
-            </p>
-            <p class="Features-paragraph">
-              💥 Proficient in React, Next.js, and Node.js, with experience
-              designing and developing scalable, maintainable, and
-              high-performance web applications using modern JavaScript
-              frameworks and best practices.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 Feature-second-image">
-          <img
-            class="Feature-svg-image"
-            style="padding-bottom: 20px"
-            src="Image/react-next-landing.png"
-            alt=""
-          />
-        </div>
-      </div>
-      <div class="row feature-3">
-        <div class="col-lg-6 col-md-6 Feature-third-image">
-          <img class="Feature-svg-image-3" src="Image/Coding.svg" alt="" />
-        </div>
-        <div class="col-lg-6 col-md-6 feature-coding">
-          <h1 class="Feature-Heading">Data Structures and Algorithms</h1>
-          <ul class="dev-icon">
-            <li></li>
-            <li><i class="fas fa-laptop-code fa-4x"></i></li>
+            <h1 class="hero-title">
+              Geo Software Developer &<br />
+              GIS Solutions Specialist
+            </h1>
 
-            <li>
-              <i class="fas fa-file-code fa-4x" style="color: #a8afcb"></i>
-            </li>
-          </ul>
-          <div class="Data-Analytic">
-            <p class="Features-paragraph">
-              💥 I have knowledge of Data Structures like Hash Tables, Trees,
-              Tries, Graphs, and various algorithms for solving various problems
-              efficiently.
+            <p class="hero-subtitle">
+              I build modern geospatial, web, and enterprise solutions that
+              combine GIS intelligence, software engineering, automation, and
+              data-driven problem solving.
             </p>
-            <p class="Features-paragraph">
-              💥 As I know Data Structures and Algorithms are the heart of
-              programming, so I love to solve programming questions in different
-              competitive websites like Codeforces, Codechef, Hackerrank and
-              many more.
+
+            <p class="hero-description">
+              With over five years of experience across GIS, full-stack
+              development, fintech, automation, and software delivery, I design
+              scalable applications using ArcGIS, Python, React, Next.js,
+              TypeScript, .NET, and modern cloud-ready engineering practices.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="project.html" class="hero-btn primary-btn">
+                View My Projects
+              </a>
+              <a href="contact.html" class="hero-btn secondary-btn">
+                Contact Me
+              </a>
+            </div>
+
+            <div class="social_media_icon modern-social-icons">
+              <a
+                class="btn"
+                href="https://www.linkedin.com/in/nafizpervez/"
+                target="_blank"
+              >
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a
+                class="btn"
+                href="https://github.com/nafizpervez"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                class="btn"
+                href="mailto:nafizpervez@gmail.com"
+                target="_blank"
+              >
+                <i class="fab fa-google"></i>
+              </a>
+              <a
+                class="btn"
+                href="mailto:nafiz.pervez@icloud.com"
+                target="_blank"
+              >
+                <i class="fab fa-apple"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-12 hero-right">
+            <div class="hero-image-card">
+              <img
+                class="hero-profile-image"
+                src="Image/Boy-image.png"
+                alt="Nafiz Profile"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="snapshot-section">
+        <div class="snapshot-grid">
+          <div class="snapshot-card">
+            <h3>5+ Years</h3>
+            <p>
+              Professional experience across GIS, software engineering, and
+              automation.
+            </p>
+          </div>
+          <div class="snapshot-card">
+            <h3>GIS + Web</h3>
+            <p>
+              Bridging geospatial systems with modern frontend and backend
+              application delivery.
+            </p>
+          </div>
+          <div class="snapshot-card">
+            <h3>Enterprise Focus</h3>
+            <p>
+              Experience building scalable tools, workflows, widgets,
+              dashboards, and integrations.
+            </p>
+          </div>
+          <div class="snapshot-card">
+            <h3>Problem Solver</h3>
+            <p>
+              Strong focus on practical solutions, performance, usability, and
+              maintainability.
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="professional-summary-section">
+        <div class="section-heading-wrap text-center">
+          <span class="section-tag">Professional Summary</span>
+          <h2 class="section-title">
+            Building high-value digital solutions with geospatial intelligence
+          </h2>
+          <p class="section-subtitle">
+            I focus on delivering real-world systems that are reliable,
+            scalable, and aligned with operational goals.
+          </p>
+        </div>
+
+        <div class="row summary-content">
+          <div class="col-lg-6">
+            <div class="summary-card">
+              <h3>What I bring</h3>
+              <p>
+                I combine GIS knowledge with strong software engineering skills
+                to develop applications that support mapping, data analysis,
+                workflow automation, reporting, and business operations.
+              </p>
+              <p>
+                My experience includes developing ArcGIS-based web applications,
+                custom widgets, Python automation tools, responsive frontend
+                interfaces, API-driven systems, and enterprise-level software
+                workflows.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="summary-card">
+              <h3>What I aim for</h3>
+              <p>
+                I am focused on roles where I can contribute to impactful
+                products, solve complex technical problems, improve workflows,
+                and help teams deliver better digital solutions at scale.
+              </p>
+              <p>
+                I value clean architecture, modern UI, strong business
+                understanding, and technology that creates measurable outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Whatido" class="expertise-modern-section">
+        <div class="section-heading-wrap text-center">
+          <span class="section-tag">Core Expertise</span>
+          <h2 class="section-title">What I do</h2>
+          <p class="section-subtitle">
+            My work sits at the intersection of GIS, software engineering, web
+            development, and intelligent automation.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+          <div class="expertise-card">
+            <div class="expertise-icon"><i class="fas fa-globe-asia"></i></div>
+            <h3>GIS Application Development</h3>
+            <p>
+              Design and build GIS-powered applications using ArcGIS Online,
+              ArcGIS Enterprise, ArcGIS Pro, ArcPy, REST APIs, and custom Esri
+              workflows for spatial analysis and operational delivery.
+            </p>
+          </div>
+
+          <div class="expertise-card">
+            <div class="expertise-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Modern Web Development</h3>
+            <p>
+              Develop responsive, maintainable, and performance-focused web
+              applications using React, Next.js, TypeScript, JavaScript,
+              Bootstrap, and scalable frontend architecture patterns.
+            </p>
+          </div>
+
+          <div class="expertise-card">
+            <div class="expertise-icon"><i class="fas fa-cogs"></i></div>
+            <h3>Automation & Integration</h3>
+            <p>
+              Create workflow automation, data pipelines, and system
+              integrations using Python, .NET, APIs, and enterprise tools to
+              reduce manual effort and improve accuracy.
+            </p>
+          </div>
+
+          <div class="expertise-card">
+            <div class="expertise-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Data & Analytical Thinking</h3>
+            <p>
+              Apply structured problem solving, spatial analysis, data
+              processing, and algorithmic thinking to build systems that are
+              both functional and decision-oriented.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="technology-section">
+        <div class="section-heading-wrap text-center">
+          <span class="section-tag">Technology Stack</span>
+          <h2 class="section-title">Tools and platforms I work with</h2>
+        </div>
+
+        <div class="tech-stack-grid">
+          <span>ArcGIS</span>
+          <span>ArcGIS Enterprise</span>
+          <span>ArcPy</span>
+          <span>Python</span>
+          <span>React</span>
+          <span>Next.js</span>
+          <span>TypeScript</span>
+          <span>JavaScript</span>
+          <span>.NET</span>
+          <span>REST API</span>
+          <span>Bootstrap</span>
+          <span>Git / GitHub</span>
+        </div>
+      </section>
+
+      <section class="career-highlights-section">
+        <div class="section-heading-wrap text-center">
+          <span class="section-tag">Highlights</span>
+          <h2 class="section-title">What defines my work</h2>
+        </div>
+
+        <div class="row highlight-row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="highlight-card">
+              <h3>Geospatial Engineering</h3>
+              <p>
+                Strong hands-on experience in spatial systems, geospatial data,
+                ArcGIS development, and GIS workflow automation.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="highlight-card">
+              <h3>Frontend Excellence</h3>
+              <p>
+                Focused on clean UI, responsive design, usability, and
+                professional application experiences for end users.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="highlight-card">
+              <h3>Business-Oriented Delivery</h3>
+              <p>
+                I build solutions with practical outcomes in mind, balancing
+                user needs, technical feasibility, and operational value.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta-section text-center">
+        <div class="final-cta-box">
+          <h2>Let’s build something valuable together</h2>
+          <p>
+            I am interested in opportunities where I can contribute through GIS,
+            software engineering, modern web development, and intelligent
+            automation.
+          </p>
+          <a href="contact.html" class="hero-btn primary-btn">Get In Touch</a>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">Made with ~ ✌︎㋡ ~ by Nafiz Pervez</footer>
     <script src="dark-mode.js"></script>
   </body>
