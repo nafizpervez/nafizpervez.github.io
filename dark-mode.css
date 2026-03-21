@@ -10,8 +10,8 @@
   --dark-text-soft: #94a3b8;
   --dark-button-color: #7c3aed;
   --dark-button-hover: #8b5cf6;
-  --dark-accent: #8b5cf6;
-  --dark-accent-2: #6366f1;
+  --dark-accent: #a78bfa;
+  --dark-accent-2: #60a5fa;
   --dark-accent-soft: rgba(139, 92, 246, 0.16);
   --dark-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
   --dark-shadow-md: 0 14px 34px rgba(0, 0, 0, 0.32);
@@ -34,6 +34,7 @@ iframe {
 /* =========================================================
    GLOBAL DARK FOUNDATION
 ========================================================= */
+body.dark-mode,
 .dark-mode {
   background:
     radial-gradient(
@@ -55,19 +56,8 @@ iframe {
   color: var(--dark-text-color) !important;
 }
 
-.dark-mode body,
-.dark-mode html {
-  background: transparent !important;
+body.dark-mode {
   color: var(--dark-text-color) !important;
-}
-
-.dark-mode p,
-.dark-mode li,
-.dark-mode small,
-.dark-mode span,
-.dark-mode div,
-.dark-mode label {
-  color: inherit;
 }
 
 .dark-mode p {
@@ -106,7 +96,11 @@ iframe {
 .dark-mode .snapshot-card h3,
 .dark-mode .edu-card h3,
 .dark-mode .platform-card h4,
-.dark-mode .certificate-title {
+.dark-mode .certificate-title,
+.dark-mode .contact-action-card h3,
+.dark-mode .skill-name,
+.dark-mode .skill-percent,
+.dark-mode .os-value {
   color: var(--dark-text-color) !important;
 }
 
@@ -132,7 +126,11 @@ iframe {
 .dark-mode .expertise-card p,
 .dark-mode .highlight-card p,
 .dark-mode .snapshot-card p,
-.dark-mode .info-card p {
+.dark-mode .info-card p,
+.dark-mode .hero-stat-card p,
+.dark-mode .mini-stat p,
+.dark-mode .section-count-badge small,
+.dark-mode .certificate-open {
   color: var(--dark-text-muted) !important;
 }
 
@@ -221,6 +219,7 @@ iframe {
 /* =========================================================
    HERO / GLASS CONTAINERS
 ========================================================= */
+.dark-mode .hero-modern,
 .dark-mode .education-hero,
 .dark-mode .projects-hero,
 .dark-mode .contact-hero,
@@ -259,7 +258,8 @@ iframe {
 .dark-mode .certificate-category-badge,
 .dark-mode .skill-count-pill,
 .dark-mode .section-count-badge,
-.dark-mode .status-pill {
+.dark-mode .status-pill,
+.dark-mode .edu-year {
   background: var(--dark-accent-soft) !important;
   color: #ddd6fe !important;
   border: 1px solid rgba(139, 92, 246, 0.2) !important;
@@ -289,24 +289,14 @@ iframe {
   box-shadow: none !important;
 }
 
-.dark-mode .hero-title .accent {
-  background: linear-gradient(90deg, #c4b5fd, #93c5fd) !important;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.dark-mode .hero-stat-card h3,
-.dark-mode .mini-stat h3,
-.dark-mode .snapshot-card h3,
-.dark-mode .section-count-badge span {
-  color: #ffffff !important;
-}
-
-.dark-mode .section-count-badge small,
-.dark-mode .hero-stat-card p,
-.dark-mode .mini-stat p {
-  color: var(--dark-text-soft) !important;
+/* IMPORTANT FIX: do not use transparent clipped text in dark mode */
+.dark-mode .hero-title .accent,
+.dark-mode .section-title .accent {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: var(--dark-accent) !important;
 }
 
 /* =========================================================
@@ -314,6 +304,21 @@ iframe {
 ========================================================= */
 .dark-mode .column1 {
   background: transparent !important;
+}
+
+.dark-mode .hero-title,
+.dark-mode .section-title {
+  color: #f8fafc !important;
+}
+
+.dark-mode .hero-subtitle,
+.dark-mode .hero-description,
+.dark-mode .section-subtitle,
+.dark-mode .snapshot-card p,
+.dark-mode .summary-card p,
+.dark-mode .expertise-card p,
+.dark-mode .highlight-card p {
+  color: var(--dark-text-muted) !important;
 }
 
 .dark-mode .btn {
@@ -342,17 +347,47 @@ iframe {
   color: #ffffff !important;
 }
 
+.dark-mode .primary-btn,
+.dark-mode .hero-btn.primary-btn,
+.dark-mode .project-link-btn,
+.dark-mode .primary-action,
+.dark-mode .cta-btn,
+.dark-mode .edu-link,
+.dark-mode .resume-action-btn.primary-action {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.35) !important;
+}
+
+.dark-mode .primary-btn:hover,
+.dark-mode .hero-btn.primary-btn:hover,
+.dark-mode .project-link-btn:hover,
+.dark-mode .primary-action:hover,
+.dark-mode .cta-btn:hover,
+.dark-mode .edu-link:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%) !important;
+  color: #ffffff !important;
+}
+
+.dark-mode .secondary-btn,
+.dark-mode .hero-btn.secondary-btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ddd6fe !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .secondary-btn:hover,
+.dark-mode .hero-btn.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
 /* =========================================================
    EDUCATION PAGE
 ========================================================= */
 .dark-mode .education-line {
   background: linear-gradient(180deg, #8b5cf6 0%, #334155 100%) !important;
-}
-
-.dark-mode .edu-year {
-  background: rgba(139, 92, 246, 0.14) !important;
-  color: #e9d5ff !important;
-  border: 1px solid rgba(139, 92, 246, 0.18) !important;
 }
 
 .dark-mode .edu-dot {
@@ -376,29 +411,6 @@ iframe {
   ) !important;
   color: #ddd6fe !important;
   box-shadow: none !important;
-}
-
-.dark-mode .edu-link,
-.dark-mode .project-link-btn,
-.dark-mode .primary-action,
-.dark-mode .primary-btn,
-.dark-mode .cta-btn,
-.dark-mode .hero-btn.primary-btn,
-.dark-mode .resume-action-btn.primary-action {
-  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.35) !important;
-}
-
-.dark-mode .edu-link:hover,
-.dark-mode .project-link-btn:hover,
-.dark-mode .primary-btn:hover,
-.dark-mode .primary-action:hover,
-.dark-mode .cta-btn:hover,
-.dark-mode .hero-btn.primary-btn:hover {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%) !important;
-  color: #ffffff !important;
 }
 
 .dark-mode .cert-search-wrap input {
@@ -477,19 +489,6 @@ iframe {
   background: linear-gradient(135deg, #475569, #0f172a) !important;
 }
 
-.dark-mode .secondary-btn,
-.dark-mode .hero-btn.secondary-btn {
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: #ddd6fe !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.dark-mode .secondary-btn:hover,
-.dark-mode .hero-btn.secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-}
-
 /* =========================================================
    SKILLS PAGE
 ========================================================= */
@@ -510,17 +509,6 @@ iframe {
     #6366f1 55%,
     #3b82f6 100%
   ) !important;
-}
-
-.dark-mode .skill-name,
-.dark-mode .skill-percent,
-.dark-mode .os-value,
-.dark-mode .os-name,
-.dark-mode .chips-title,
-.dark-mode .skill-category-meta,
-.dark-mode .skill-chip,
-.dark-mode .cert-skill-item {
-  color: var(--dark-text-color) !important;
 }
 
 .dark-mode .skill-category-meta,
