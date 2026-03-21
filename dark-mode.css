@@ -474,47 +474,13 @@ body.dark-mode {
   color: var(--dark-text-muted) !important;
 }
 
-/* =========================================================
-   CONTACT PAGE
-========================================================= */
-.dark-mode .email-icon {
-  background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
-}
-
-.dark-mode .linkedin-icon {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
-}
-
-.dark-mode .github-icon {
-  background: linear-gradient(135deg, #475569, #0f172a) !important;
-}
-
-/* =========================================================
-   SKILLS PAGE
-========================================================= */
-.dark-mode .skill-item {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-}
-
-.dark-mode .skill-bar-track {
-  background: rgba(255, 255, 255, 0.08) !important;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.24) !important;
-}
-
-.dark-mode .skill-bar-fill {
-  background: linear-gradient(
-    90deg,
-    #8b5cf6 0%,
-    #6366f1 55%,
-    #3b82f6 100%
-  ) !important;
-}
-
-.dark-mode .skill-category-meta,
-.dark-mode .skill-note,
-.dark-mode .os-caption {
+.dark-mode .project-duration,
+.dark-mode .project-duration span {
   color: var(--dark-text-soft) !important;
+}
+
+.dark-mode .project-duration i {
+  color: #a78bfa !important;
 }
 
 /* =========================================================
@@ -557,6 +523,106 @@ body.dark-mode {
   color: #e2e8f0 !important;
   text-shadow: none !important;
   opacity: 1 !important;
+}
+
+/* =========================================================
+   PROJECT MODAL FIXES
+========================================================= */
+.dark-mode .project-modal .modal-title {
+  color: #f8fafc !important;
+}
+
+.dark-mode .project-modal .modal-subtitle {
+  color: #cbd5e1 !important;
+}
+
+.dark-mode .project-modal .modal-section-title {
+  color: #f8fafc !important;
+}
+
+.dark-mode .project-modal .modal-panel .modal-section-title,
+.dark-mode .project-modal .modal-panel h1,
+.dark-mode .project-modal .modal-panel h2,
+.dark-mode .project-modal .modal-panel h3,
+.dark-mode .project-modal .modal-panel h4,
+.dark-mode .project-modal .modal-panel h5,
+.dark-mode .project-modal .modal-panel h6 {
+  color: #f8fafc !important;
+}
+
+.dark-mode .project-modal .modal-paragraph,
+.dark-mode .project-modal .modal-list li,
+.dark-mode .project-modal .preview-note,
+.dark-mode .project-modal .preview-unavailable {
+  color: var(--dark-text-muted) !important;
+}
+
+.dark-mode .project-modal .modal-panel {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.92) 0%,
+    rgba(15, 23, 42, 0.96) 100%
+  ) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow: var(--dark-shadow-md) !important;
+}
+
+.dark-mode .project-modal .preview-box {
+  background: #0f172a !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.dark-mode .project-modal .preview-frame {
+  background: #0b1020 !important;
+}
+
+.dark-mode .project-modal .modal-duration {
+  background: rgba(139, 92, 246, 0.16) !important;
+  color: #ddd6fe !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+}
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+.dark-mode .email-icon {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+}
+
+.dark-mode .linkedin-icon {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+}
+
+.dark-mode .github-icon {
+  background: linear-gradient(135deg, #475569, #0f172a) !important;
+}
+
+/* =========================================================
+   SKILLS PAGE
+========================================================= */
+.dark-mode .skill-item {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark-mode .skill-bar-track {
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.24) !important;
+}
+
+.dark-mode .skill-bar-fill {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6 0%,
+    #6366f1 55%,
+    #3b82f6 100%
+  ) !important;
+}
+
+.dark-mode .skill-category-meta,
+.dark-mode .skill-note,
+.dark-mode .os-caption {
+  color: var(--dark-text-soft) !important;
 }
 
 /* =========================================================
